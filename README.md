@@ -1,18 +1,18 @@
 # Translation in progress...
 
-# General CSS notes, advice and guidelines
+# Allgemeine Notizen, Ratschläge und Richtlinien zu CSS
 
 ---
 
- Beim Arbeiten an großen, über große Zeiträume hinweg laufenden Projekten, mit duzenden Entwicklern, ist es wichtig, dass wir alle in einheitlicher Art und Weise arbeiten um:
+ Gerade bei langen und komplexen Projekten mit dutzenden von Entwicklern, ist es wichtig, dass wir alle einheitlich und nach denselben Richtlinien arbeiten um:
  
  * Unsere Stylesheets wartbar zu halten
- * Unseren Code transparent und lesbar zu halten
+ * Unseren Code verständlich und gut lesbar zu halten
  * Unsere Stylesheets erweiterbar zu halten
 
- Es gibt eine Vielzahl von Techniken, die wir verwenden um diese Ziele zu erfüllen.
+ Um diese Ziele zu erfüllen, müssen wir eine Vielzahl an Techniken anwenden.
  
- Der erste Teil dieses Dokuments behandelt Syntax, Formatierung und CSS Anatomie, der zweite Teil behandelt Herangehensweise und Grundhaltung um CSS zu konzipieren. Aufregend, oder?
+ Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von CSS, der zweite Teil beschäftigt sich mit der Herangehensweise und Grundhaltung um CSS zu konzipieren. Aufregend, oder?
 
 ## Inhalte
 

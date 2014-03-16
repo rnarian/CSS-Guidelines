@@ -4,15 +4,15 @@
 
 ---
 
- Gerade bei langen und komplexen Projekten mit dutzenden von Entwicklern, ist es wichtig, dass wir alle einheitlich und nach denselben Richtlinien arbeiten um:
+Gerade bei langen und komplexen Projekten mit dutzenden von Entwicklern, ist es wichtig, dass wir alle einheitlich und nach denselben Richtlinien arbeiten um:
  
  * Unsere Stylesheets wartbar zu halten
  * Unseren Code verständlich und gut lesbar zu halten
  * Unsere Stylesheets erweiterbar zu halten
 
- Um diese Ziele zu erfüllen, müssen wir eine Vielzahl an Techniken anwenden.
- 
- Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von CSS, der zweite Teil beschäftigt sich mit der Herangehensweise und Grundhaltung um CSS zu konzipieren. Aufregend, oder?
+Um diese Ziele zu erfüllen, müssen wir eine Vielzahl an Techniken anwenden.
+
+Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von CSS, der zweite Teil beschäftigt sich mit der Herangehensweise und Grundhaltung um CSS zu konzipieren. Aufregend, oder?
 
 ## Inhalte
 

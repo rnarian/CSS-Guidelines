@@ -51,23 +51,23 @@
 
 ---
 
-## CSS Dokument Anatomie
+## Anatomie eines CSS Dokumentes
 
-Egal welches Dokument, wir müssen immer versuchen eine gemeinsame Formatierung zu bewahren. Das bedeutet einheitliches Kommentieren, einheitliche Syntax und einheitliche Benennungen.
+Egal um welches Dokument es sich handelt, unser Ziel ist immer eine gleichbleibende Formatierung zu schaffen und zu erhalten. Das bedeutet einheitliche Kommentare, einheitliche Syntax und einheitliche Benennungen.
 
 ### Allgemein
 
-Begrenze deine Stylesheets wenn möglich auf eine maximale Breite von 80 Zeichen. Ausnahmen können Gradient Syntax und URLs in Kommentaren sein. Das ist in Ordnung und es gibt nichts was wir dagegen tun könnten.
+Begrenze deine Stylesheets wo es möglich ist auf eine maximale Breite von 80 Zeichen. Von dieser Faustregel ausgenommen sind Gradient Syntax und URLs in Kommentaren. Das ist in Ordnung, denn es gibt nichts was wir dagegen machen können.
 
-Ich bevorzuge vier (4) Leerzeichen gegenüber von Tabs und schreibe mehrzeiliges CSS
+Ich bevorzuge Einrückungen von vier (4) Leerzeichen gegenüber Tabs und schreibe mein CSS mehrzeilig.
 
 ### Eine Datei vs. Viele Dateien
 
-Manche Menschen ziehen es vor mit einzelnen, großen Dateien zu arbeiten. Das ist in Ordnung, und wenn du dich an die folgenden Richtlinien hältst wirst du keine Probleme bekommen. Seit dem Wechsel zu Sass habe ich angefangen meine Stylesheets in viele kleine Includes aufzuteilen. Das ist auch in Ordnung... Welche Methode du auch wählst, die folgenden Regeln und Richtlinien sind einzuhalten. Der einzige beachtenswerte Unterschied besteht hinsichtlich unserer Inhaltsangabe und unserer Abschnittstitel. Lies weiter für weitere Erläuterungen...
+Einige bevorzugen es mit einzelnen, großen Dateien zu arbeiten. Das ist auch in Ordnung und solange du dich an die folgenden Richtlinien hältst wirst du dadurch auch keine Probleme bekommen. Seit dem Wechsel zu Sass habe ich angefangen meine Stylesheets in viele kleine Includes aufzuteilen. Das ist auch in Ordnung... Die folgenden Regeln und Richtlinien sind zutreffend, unabhängig davon, für welche Methode du dich entscheidest. Der einzige beachtenswerte Unterschied besteht hinsichtlich unserer Inhaltsangabe und unserer Abschnittstitel. Lies weiter für weitere Erläuterungen...
 
 ### Inhaltsangabe
 
-Am Anfang von Stylesheets, pflege ich eine Inhaltsangabe welche die Abschnitte des Dokuments beschreibt, zum Beispiel:
+Am Anfang eines Stylesheets pflege ich eine Inhaltsangabe, welche die Abschnitte des Dokuments beschreibt. Zum Beispiel:
 
     /*------------------------------------*\
        $CONTENTS
@@ -80,17 +80,17 @@ Am Anfang von Stylesheets, pflege ich eine Inhaltsangabe welche die Abschnitte d
 
 Das gibt dem nächsten Entwickler Aufschluss darüber, was genau er oder sie von der Datei erwarten kann. Jeder Punkt der Inhaltsangabe zeigt genau auf einen Abschnittstitel.
 
-Wenn du mit einem großen Stylesheet arbeitest, wird der zugehörige Abschnittstitel ebenfalls in der selben Datei sein. Wenn du mit mit mehreren Dateien arbeitest, wird jeder Punkt der Inhaltsangabe auf einen Include zeigen, der diesen Abschnitt einzieht.
+Wenn du mit einem großen Stylesheet arbeitest, wird der zugehörige Abschnittstitel ebenfalls in der selben Datei befinden. Wenn du mit mit mehreren Dateien arbeitest, wird jeder Punkt der Inhaltsangabe auf einen Include zeigen, der diesen Abschnitt eingliedert.
 
 ### Abschnittstitel
 
-Die Inhaltsangabe ohne zugehörige Abschnittstitel wäre sinnlos. Kennzeichne deshalb jeden Abschnitt folgendermaßen:
+Eine Inhaltsangabe ohne zugehörige Abschnittstitel wäre sinnlos. Kennzeichne deshalb jeden deiner Abschnitte folgendermaßen:
 
     /*------------------------------------*\
         $RESET
     \*------------------------------------*/
    
-Das vorangestellte `$`-Zeichen ermöglicht uns eine Suche ([Cmd|Ctrl]+F) nach `$[ABSCHNITTSTITEL]` zu starten und diese **auf die Abschnittstitel zu beschränken**.
+Das vorangestellte `$`-Zeichen ermöglicht uns dabei eine Suche ([Cmd|Ctrl]+F) nach `$[ABSCHNITTSTITEL]` zu starten und diese damit **auf die Abschnittstitel zu beschränken**.
 
 Wenn du mit einem großen Stylesheet arbeitest, lasse fünf (5) Leerzeilen zwischen jedem Abschnitt:
 
@@ -115,7 +115,7 @@ Wenn du mit mehreren Dateien arbeitest, beginne jede Datei mit einem Abschnittst
 
 ### Ordnung innerhalb der Stylesheets
 
-Versuche die Stylesheets nach Spezifität zu ordnen. Das garantiert, dass du den Vorteil der Vererbung und CSS' erstem <i>C</i>, der `Cascade, nutzt.
+Versuche die Stylesheets nach Spezifität zu ordnen. Das garantiert, dass du den Vorteil der Vererbung und CSS' erstem <i>C</i>, der Cascade, nutzt.
 
 Ein ordentlich geordnetes Stylesheet sieht ungefähr so aus:
 
@@ -125,9 +125,9 @@ Ein ordentlich geordnetes Stylesheet sieht ungefähr so aus:
 **Komponenten** - Komplette Komponenten konstruiert aus Objekten und ihren Extensions.
 **Style Trümpfe** - error states etc.
 
-Das bedeutet, jeder Abschnitt baut auf und erbt von den Vorherigen. Dadurch sollte weniger Überschreiben, weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
+Das bedeutet, dass jeder Abschnitt auf den Vorherigen aufbaut und dessen Eigenschaften erbt. Dadurch sollte weniger Überschreiben, weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
 
-Für mehr Informationen kann ich Jonathan Snooks [SMACSS](http://smacss.com) wärmstens empfehlen.
+Wenn du dich noch ausgiebiger mit diesem Thema beschäftigen möchtest, kann ich dir Jonathan Snooks [SMACSS](http://smacss.com) wärmstens empfehlen.
 
 ## Anatomie von rulesets
 
@@ -136,7 +136,7 @@ Für mehr Informationen kann ich Jonathan Snooks [SMACSS](http://smacss.com) wä
         [<-- Deklaration -->]
     }
 
-Ich habe einige Standards beim strukturieren von rulesets:
+Ich habe einige Standards beim Strukturieren von rulesets:
 
 * Nutze mit Bindestrich getrennte Klassennamen (Ausgenommen BEM Notation,
   [siehe unten](#naming-conventions))

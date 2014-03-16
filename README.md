@@ -1,49 +1,36 @@
+# Translation in progress...
+
 # General CSS notes, advice and guidelines
 
 ---
 
-## Translations
+ Beim Arbeiten an großen, über große Zeiträume hinweg laufenden Projekten, mit duzenden Entwicklern, ist es wichtig, dass wir alle in einheitlicher Art und Weise arbeiten um:
+ 
+ * Unsere Stylesheets wartbar zu halten
+ * Unseren Code transparent und lesbar zu halten
+ * Unsere Stylesheets erweiterbar zu halten
 
-* [Russian](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
-* [Simplified Chinese](https://github.com/chadluo/CSS-Guidelines/blob/master/README.md)
-* [Traditional Chinese](https://github.com/doggy8088/CSS-Guidelines/blob/master/README.md)
-* [French](https://github.com/flexbox/CSS-Guidelines/blob/master/README.md)
-* [Japanese](https://github.com/kiwanami/CSS-Guidelines/blob/master/README.ja.md)
-* [Spanish](https://github.com/Wakkos/CSS-Guidelines/blob/master/README.md)
+ Es gibt eine Vielzahl von Techniken, die wir verwenden um diese Ziele zu erfüllen.
+ 
+ Der erste Teil dieses Dokuments behandelt Syntax, Formatierung und CSS Anatomie, der zweite Teil behandelt Herangehensweise und Grundhaltung um CSS zu konzipieren. Aufregend, oder?
 
----
+## Inhalte
 
-In working on large, long running projects with dozens of developers, it is
-important that we all work in a unified way in order to, among other things:
-
-* Keep stylesheets maintainable
-* Keep code transparent and readable
-* Keep stylesheets scalable
-
-There are a variety of techniques we must employ in order to satisfy these
-goals.
-
-The first part of this document will deal with syntax, formatting and CSS
-anatomy, the second part will deal with approach, mindframe and attitude toward
-writing and architecting CSS. Exciting, huh?
-
-## Contents
-
-* [CSS document anatomy](#css-document-anatomy)
-  * [General](#general)
-  * [One file vs. many files](#one-file-vs-many-files)
-  * [Table of contents](#table-of-contents)
-  * [Section titles](#section-titles)
-* [Source order](#source-order)
-* [Anatomy of rulesets](#anatomy-of-rulesets)
-* [Naming conventions](#naming-conventions)
+* [CSS Dokument Anatomie](#css-document-anatomy)
+  * [Allgemein](#general)
+  * [Eine Datei vs. Viele Dateien](#one-file-vs-many-files)
+  * [Inhaltsangabe](#table-of-contents)
+  * [Abschnittstitel](#section-titles)
+* [Ordnung innerhalb der Stylesheets](#source-order)
+* [Anatomie von rulesets](#anatomy-of-rulesets)
+* [Namenskonventionen](#naming-conventions)
   * [JS hooks](#js-hooks)
-  * [Internationalisation](#internationalisation)
-* [Comments](#comments)
-  * [Comments on steroids](#comments-on-steroids)
+  * [Internationalisierung](#internationalisation)
+* [Kommentare](#comments)
+  * [Kommentare auf Steroiden](#comments-on-steroids)
     * [Quasi-qualified selectors](#quasi-qualified-selectors)
-    * [Tagging code](#tagging-code)
-    * [Object/extension pointers](#objectextension-pointers)
+    * [Code Tags](#tagging-code)
+    * [Objekt/Extension Pointer](#objectextension-pointers)
 * [Writing CSS](#writing-css)
 * [Building new components](#building-new-components)
 * [OOCSS](#oocss)
@@ -64,69 +51,54 @@ writing and architecting CSS. Exciting, huh?
 
 ---
 
-## CSS Document Anatomy
+## CSS Dokument Anatomie
 
-No matter the document, we must always try and keep a common formatting. This
-means consistent commenting, consistent syntax and consistent naming.
+Egal welches Dokument, wir müssen immer versuchen eine gemeinsame Formatierung zu bewahren. Das bedeutet einheitliches Kommentieren, einheitliche Syntax und einheitliche Benennungen.
 
-### General
+### Allgemein
 
-Limit your stylesheets to a maximum 80 character width where possible.
-Exceptions may be gradient syntax and URLs in comments. That’s fine, there’s
-nothing we can do about that.
+Begrenze deine Stylesheets wenn möglich auf eine maximale Breite von 80 Zeichen. Ausnahmen können Gradient Syntax und URLs in Kommentaren sein. Das ist in Ordnung und es gibt nichts was wir dagegen tun könnten.
 
-I prefer four (4) space indents over tabs and write multi-line CSS.
+Ich bevorzuge vier (4) Leerzeichen gegenüber von Tabs und schreibe mehrzeiliges CSS
 
-### One file vs. many files
+### Eine Datei vs. Viele Dateien
 
-Some people prefer to work with single, large files. This is fine, and by
-sticking to the following guidelines you’ll encounter no problems. Since moving
-to Sass I have started sharding my stylesheets out into lots of tiny includes.
-This too is fine… Whichever method you choose, the following rules and
-guidelines apply. The only notable difference is with regards our table of
-contents and our section titles. Read on for further explanation…
+Manche Menschen ziehen es vor mit einzelnen, großen Dateien zu arbeiten. Das ist in Ordnung, und wenn du dich an die folgenden Richtlinien hältst wirst du keine Probleme bekommen. Seit dem Wechsel zu Sass habe ich angefangen meine Stylesheets in viele kleine Includes aufzuteilen. Das ist auch in Ordnung... Welche Methode du auch wählst, die folgenden Regeln und Richtlinien sind einzuhalten. Der einzige beachtenswerte Unterschied besteht hinsichtlich unserer Inhaltsangabe und unserer Abschnittstitel. Lies weiter für weitere Erläuterungen...
 
-### Table of contents
+### Inhaltsangabe
 
-At the top of stylesheets, I maintain a table of contents which will detail the
-sections contained in the document, for example:
+Am Anfang von Stylesheets, pflege ich eine Inhaltsangabe welche die Abschnitte des Dokuments beschreibt, zum Beispiel:
 
     /*------------------------------------*\
-        $CONTENTS
+       $CONTENTS
     \*------------------------------------*/
     /**
-     * CONTENTS............You’re reading it!
-     * RESET...............Set our reset defaults
-     * FONT-FACE...........Import brand font files
+     * CONTENTS............Liest du gerade
+     * RESET...............Reset 
+     * FONT-FACE...........Importiert font files
      */
 
-This will tell the next developer(s) exactly what they can expect to find in
-this file. Each item in the table of contents maps directly to a section title.
+Das gibt dem nächsten Entwickler Aufschluss darüber, was genau er oder sie von der Datei erwarten kann. Jeder Punkt der Inhaltsangabe zeigt genau auf einen Abschnittstitel.
 
-If you are working in one big stylesheet, the corresponding section will also be
-in that file. If you are working across multiple files then each item in the
-table of contents will map to an include which pulls that section in.
+Wenn du mit einem großen Stylesheet arbeitest, wird der zugehörige Abschnittstitel ebenfalls in der selben Datei sein. Wenn du mit mit mehreren Dateien arbeitest, wird jeder Punkt der Inhaltsangabe auf einen Include zeigen, der diesen Abschnitt einzieht.
 
-### Section titles
+### Abschnittstitel
 
-The table of contents would be of no use unless it had corresponding section
-titles. Denote a section thus:
+Die Inhaltsangabe ohne zugehörige Abschnittstitel wäre sinnlos. Kennzeichne deshalb jeden Abschnitt folgendermaßen:
 
     /*------------------------------------*\
         $RESET
     \*------------------------------------*/
+   
+Das vorangestellte `$`-Zeichen ermöglicht uns eine Suche ([Cmd|Ctrl]+F) nach `$[ABSCHNITTSTITEL]` zu starten und diese **auf die Abschnittstitel zu beschränken**.
 
-The `$` prefixing the name of the section allows us to run a find ([Cmd|Ctrl]+F)
-for `$[SECTION-NAME]` and **limit our search scope to section titles only**.
-
-If you are working in one large stylesheet, you leave five (5) carriage returns
-between each section, thus:
+Wenn du mit einem großen Stylesheet arbeitest, lasse fünf (5) Leerzeilen zwischen jedem Abschnitt:
 
     /*------------------------------------*\
         $RESET
     \*------------------------------------*/
-    [Our
-    reset
+    [Unsere
+    Reset
     styles]
 
 
@@ -137,52 +109,45 @@ between each section, thus:
         $FONT-FACE
     \*------------------------------------*/
 
-This large chunk of whitespace is quickly noticeable when scrolling quickly
-through larger files.
+Der große Leerraum fällt beim schnellen Scrollen durch große Dateien rasch auf.
 
-If you are working across multiple, included stylesheets, start each of those
-files with a section title and there is no need for any carriage returns.
+Wenn du mit mehreren Dateien arbeitest, beginne jede Datei mit einem Abschnittstitel, wobei hier keine extra Leerzeilen nötig sind.
 
-## Source order
+### Ordnung innerhalb der Stylesheets
 
-Try and write stylesheets in specificity order. This ensures that you take full
-advantage of inheritance and CSS’ first <i>C</i>; the cascade.
+Versuche die Stylesheets nach Spezifität zu ordnen. Das garantiert, dass du den Vorteil der Vererbung und CSS' erstem <i>C</i>, der `Cascade, nutzt.
 
-A well ordered stylesheet will be ordered something like this:
+Ein ordentlich geordnetes Stylesheet sieht ungefähr so aus:
 
-1. **Reset** – ground zero.
-2. **Elements** – unclassed `h1`, unclassed `ul` etc.
-3. **Objects and abstractions** — generic, underlying design patterns.
-4. **Components** – full components constructed from objects and their
-   extensions.
-5. **Style trumps** – error states etc.
+**Reset**
+**Elemente** - `h1`, `ul`, etc. ohne Klassen
+**Objekte und Abstraktionen** - allgemeine, grundlegende Design Patterns
+**Komponenten** - Komplette Komponenten konstruiert aus Objekten und ihren Extensions.
+**Style Trümpfe** - error states etc.
 
-This means that—as you go down the document—each section builds upon and
-inherits sensibly from the previous one(s). There should be less undoing of
-styles, less specificity problems and all-round better architected stylesheets.
+Das bedeutet, jeder Abschnitt baut auf und erbt von den Vorherigen. Dadurch sollte weniger Überschreiben, weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
 
-For further reading I cannot recommend Jonathan Snook’s
-[SMACSS](http://smacss.com) highly enough.
+Für mehr Informationen kann ich Jonathan Snooks [SMACSS](http://smacss.com) wärmstens empfehlen.
 
-## Anatomy of rulesets
+## Anatomie von rulesets
 
-    [selector] {
-        [property]: [value];
-        [<- Declaration -->]
+    [Selektor] {
+        [Eigenschaft]: [Wert];
+        [<-- Deklaration -->]
     }
 
-I have a number of standards when structuring rulesets.
+Ich habe einige Standards beim strukturieren von rulesets:
 
-* Use hyphen delimited class names (except for BEM notation,
-  [see below](#naming-conventions))
-* 4 space indented
-* Multi-line
-* Declarations in relevance (NOT alphabetical) order
-* Indent vendor prefixed declarations so that their values are aligned
-* Indent our rulesets to mirror the DOM
-* Always include the final semi-colon in a ruleset
+* Nutze mit Bindestrich getrennte Klassennamen (Ausgenommen BEM Notation,
+  [siehe unten](#naming-conventions))
+* Eingerückt mit 4 Leerzeichen
+* Mehrzeilig
+* Deklarationen sortiert nach Relevanz (NICHT alphabetisch)
+* Rücke vendor-prefix Deklarationen so ein, dass ihre Werte ausgerichtet sind
+* Rücke rulesets so ein, dass sie den DOM wiederspiegeln
+* Verzichte nie auf das letzte Semikolon im ruleset
 
-A brief example:
+Ein kleines Beispiel:
 
     .widget {
         padding: 10px;
@@ -202,16 +167,11 @@ A brief example:
             padding: 0.25em;
         }
 
-Here we can see that `.widget-heading` must be a child of `.widget` as we have
-indented the `.widget-heading` ruleset one level deeper than `.widget`. This is
-useful information to developers that can now be gleaned just by a glance at the
-indentation of our rulesets.
+Hier sehen wir, dass `.widget-heading` ein Kind von `.widget` sein muss, weil wir `.widget-heading` eine Ebene tiefer als `.widget` eingerückt haben. Das sind nützliche Informationen für Entwickler, die nun durch einen Blick auf die Einrückung unserer rulesets erfasst werden können.
 
-We can also see that `.widget-heading`’s declarations are ordered by their
-relevance; `.widget-heading` must be a textual element so we begin with our
-text rules, followed by everything else.
+Wir sehen auch, dass die Deklarationen von `.widget-heading` nach ihrer Relevanz geordnet sind; `.widget-heading` ist ein Text-Element also beginnen wir mit unseren Text Regeln, gefolgt von allem anderen.
 
-One exception to our multi-line rule might be in cases of the following:
+Eine Ausnahme zu unseren mehrzeiligen Regeln können folgende Fälle sein:
 
     .t10    { width: 10% }
     .t20    { width: 20% }
@@ -227,31 +187,30 @@ One exception to our multi-line rule might be in cases of the following:
     .t80    { width: 80% }
     .t90    { width: 90% }
 
-In this example (from [inuit.css’s table grid system](https://github.com/csswizardry/inuit.css/blob/master/base/_tables.scss#L96))
-it makes more sense to single-line our CSS.
+In diesem Beispiel (aus [inuit.css’s table grid system](https://github.com/csswizardry/inuit.css/blob/master/base/_tables.scss#L96))
+macht es mehr Sinn unser CSS einzeilig zu schreiben.
 
-## Naming conventions
+## Namenskonventionen
 
 For the most part I simply use hyphen delimited classes (e.g. `.foo-bar`, not
 `.foo_bar` or `.fooBar`), however in certain circumstances I use BEM (Block,
 Element, Modifier) notation.
 
-<abbr title="Block, Element, Modifier">BEM</abbr> is a methodology for naming
-and classifying CSS selectors in a way to make them a lot more strict,
-transparent and informative.
+Zum größten Teil verwende ich durch Bindestrich getrennte Klassen (z.B. `.foo-bar`, nicht `.foo_bar` oder `.fooBar`), allerdings nutze ich unter gewissen Umständen die BEM (Block, Element, Modifier) Notation.
 
-The naming convention follows this pattern:
+<abbr title="Block, Element, Modifier">BEM</abbr> ist eine Methode um CSS Selektoren durch ihre Benennung und Klassifizierung viel exakter, transparent und informativ zu machen.
+
+Die Namenskonvention folgt diesem Muster:
 
     .block {}
     .block__element {}
     .block--modifier {}
 
-* `.block` represents the higher level of an abstraction or component.
-* `.block__element` represents a descendent of `.block` that helps form `.block`
-  as a whole.
-* `.block--modifier` represents a different state or version of `.block`.
+* `.block` repräsentiert die höhere Ebene einer Abstraktion oder einer Komponente.
+* `.block__element` repräsentiert eine Kindelement von `.block` das hilft `.block` als ein Ganzes zu formen.
+* `.block--modifier` repräsentiert einen anderen Status oder eine andere Version von `.block`.
 
-An **analogy** of how BEM classes work might be:
+Eine **Analogie** vom Aufbau mit BEM Klassen könnte sein:
 
     .person {}
     .person--woman {}
@@ -259,148 +218,101 @@ An **analogy** of how BEM classes work might be:
         .person__hand--left {}
         .person__hand--right {}
 
-Here we can see that the basic object we’re describing is a person, and that a
-different type of person might be a woman. We can also see that people have
-hands; these are sub-parts of people, and there are different variations,
-like left and right.
+Hier sehen wir, dass das grundlegende Objekt das wir beschreiben eine Person ist, und das eine anderer Typ der Person eine Frau sein könnte. Wir können auch sehen, dass diese Person Hände hat; Das sind weitere "Unterteile" von Person, und es gibt verschiedene Varianten, wie 'left' und 'right'.
 
-We can now namespace our selectors based on their base objects and we can also
-communicate what job the selector does; is it a sub-component (`__`) or a
-variation (`--`)?
+Nun können wir unsere Selektoren basierend auf ihrerem Basis Objekt benennen und kommunizieren welche Aufgabe der Selektor hat; Ist er ein eine Unter-Komponente (`__`) oder eine Variation (`--`)?
 
-So, `.page-wrapper` is a standalone selector; it doesn’t form part of an
-abstraction or a component and as such it named correctly. `.widget-heading`,
-however, _is_ related to a component; it is a child of the `.widget` construct
-so we would rename this class `.widget__heading`.
+Also, `.page-wrapper` ist ein unabhängiger Selektor; Er form keinen Teil einer Abstraktion oder einer Komponente und ist somit korrekt benannt. Der Selektor `.widget-heading` dagegen, _ist_ einer Komponente zugehörig; Er ist ein Kind von `.widget` also würden wir diese Klasse umbenennen in `.widget__heading`.
 
-BEM looks a little uglier, and is a lot more verbose, but it grants us a lot of
-power in that we can glean the functions and relationships of elements from
-their classes alone. Also, BEM syntax will typically compress (gzip) very well
-as compression favours/works well with repetition.
+BEM sieht etwas hässlicher aus und ist viel ausführlicher, aber es garantiert uns viel Macht, da wir die Funktionen und Beziehungen der Elemente von ihrem Klassennamen allein erfassen können. Ausserdem wird die BEM Syntax normalerweise ziemlich gut komprimiert (gzip), sodass die vielen Wiederholungen nicht sonderlich ins Gewicht fallen.
 
-Regardless of whether you need to use BEM or not, always ensure classes are
-sensibly named; keep them as short as possible but as long as necessary. Ensure
-any objects or abstractions are very vaguely named (e.g. `.ui-list`, `.media`)
-to allow for greater reuse. Extensions of objects should be much more explicitly
-named (e.g. `.user-avatar-link`). Don’t worry about the amount or length of
-classes; gzip will compress well written code _incredibly_ well.
+Unabhängig davon, ob du BEM nutzt oder nicht, stelle immer sicher, dass Klassen vernünftig benannt sind; Halte sie so kurz wie möglich, aber so lang wie nötig. Stelle sicher, das alle Objekte oder Abstraktionen sehr unbestimmt benannt sind (z.B. `.ui-list`, `.media`) um größere Wiederverwendbarkeit zu gewährleisten. Extensions von Objekten sollten viel genauer benannt sein (z.B. `.user-avatar-link`). Mach dir keine Gedanken über die Länge von Klassennamen; gzip wird ordentlich geschriebenen Code _erstaunlich_ gut komprimieren.
 
-### Classes in HTML
+### Klassen im HTML
 
-In a bid to make things easier to read, separate classes in your HTML with two
-(2) spaces, thus:
+Um Dinge lesbar zu halten, trenne Klassen im HTML mit zwei (2) Leerzeichen:
 
     <div class="foo--bar  bar__baz">
 
-This increased whitespace should hopefully allow for easier spotting and reading
-of multiple classes.
+Der erweiterte Leerraum sollte das Ausmachen von mehreren Klassen erleichtern.
 
 ### JS hooks
 
-**Never use a CSS _styling_ class as a JavaScript hook.** Attaching JS behaviour
-to a styling class means that we can never have one without the other.
+**Nutze niemals CSS _styling_ Klassen als JavaScript hook.** Anfügen von JS Verhalten an eine styling Klassen bedeutet, dass wir das Eine nie ohne das Andere nutzen können.
 
-If you need to bind to some markup use a JS specific CSS class. This is simply a
-class namespaced with `.js-`, e.g. `.js-toggle`, `.js-drag-and-drop`. This means
-that we can attach both JS and CSS to classes in our markup but there will never
-be any troublesome overlap.
+Wenn du JavaScript ans Markup binden musst, nutze eine spezielle JS CSS Klasse. Das ist einfach eine Klasse mit vorangestelltem `.js-`, z.B. `.js-toggle`, `.js-drag-and-drop`. Das bedeutet, dass wir JS und CSS an Klassen hängen können, ohne mühsame Überlappungen.
 
     <th class="is-sortable  js-is-sortable">
     </th>
 
-The above markup holds two classes; one to which you can attach some styling for
-sortable table columns and another which allows you to add the sorting
-functionality.
+Das obige Markup hält zwei Klassen; Eine über die du Styles für sortierbare Table-Columns anhängen kannst, und eine Andere welche uns erlaubt Sortierungsfunktionalität hinzuzufügen.
 
-### Internationalisation
+### Internationalisierung
 
-Despite being a British developer—and spending all my life writing <i>colour</i>
-instead of <i>color</i>—I feel that, for the sake of consistency, it is better
-to always use US-English in CSS. CSS, as with most (if not all) other languages,
-is written in US-English, so to mix syntax like `color: red;` with classes like
-`.colour-picker {}` lacks consistency. I have previously suggested and advocated
-writing bilingual classes, for example:
+Obwohl ich ein Britischer Entwickler bin—und mein ganzes Leben <i>colour</i> statt <i>color</i> schreibe—denke ich, dass es besser ist, zum Wohle der Beständigkeit, im CSS immer US-English zu nutzen. CSS, wie die meisten (wenn nicht alle) anderen Sprachen wird in US-English geschrieben, sodass es Misch-Syntax wie `color: red;` in Klassen wie `.colour-picker {}` an Beständigkeit mangelt. Ich habe bislang nahegelegt Klassennamen zweisprachig auszuformulieren, zum Beispiel:
 
     .color-picker,
     .colour-picker {
     }
 
-However, having recently worked on a very large Sass project where there were
-dozens of colour variables (e.g. `$brand-color`, `$highlight-color` etc.),
-maintaining two versions of each variable soon became tiresome. It also means
-twice as much work with things like find and replace.
+Allerdings wurde das Beibehalten von zwei Versionen von jeder Variable beim Arbeiten an einem sehr großen Sass Project mit duzenden Farb-Variablen (z.B. `$brand-color`, `$highlight-color` etc.) schnell lästig. Es bedeutet auch doppelt so viel arbeit bei Dingen wie "Finden und Ersetzen".
 
-In the interests of consistency, always name classes and variables in the locale
-of the language you are working with.
+Benenne Klassen und Variablen deshalb immer in der Sprache in der du arbeitest.
 
-## Comments
+## Kommentare
 
-I use a docBlock-esque commenting style which I limit to 80 characters in length:
+Ich nutze einen docBlock-ähnlichen Kommentar Stil welchen ich auf 80 Zeichen beschränke:
 
     /**
-     * This is a docBlock style comment
+     * Das ist ein docBlock Kommentar
      *
-     * This is a longer description of the comment, describing the code in more
-     * detail. We limit these lines to a maximum of 80 characters in length.
+     * Das ist eine längere Beschreibung des Kommentars, der den Code genauer 
+     * beschreibt. Wir limitieren diese Zeilen auf maximal 80 Zeichen. 
      *
-     * We can have markup in the comments, and are encouraged to do so:
+     * Wir können markup in Kommentaren nutzen und sind ermutigt das 
+     * folgendermaßen zu tun:
      *
        <div class=foo>
            <p>Lorem</p>
        </div>
      *
-     * We do not prefix lines of code with an asterisk as to do so would inhibit
-     * copy and paste.
+     * Wir stellen Codezeilen kein Sternchen vor, um Copy und Paste zu 
+     * ermöglichen.
      */
 
-You should document and comment our code as much as you possibly can, what may
-seem or feel transparent and self explanatory to you may not be to another dev.
-Write a chunk of code then write about it.
+Du solltest deinen Code so gut wie möglich kommentieren und dokumentieren. Was für dich transparent oder selbsterklärend wirkt, ist es womöglich nicht für einen anderen Entwickler. Schreib einen Brocken Code und dann schreib darüber. 
 
-### Comments on steroids
+### Kommentare auf Steroiden
 
-There are a number of more advanced techniques you can employ with regards
-comments, namely:
+Es gibt eine Reihe von fortgeschritteneren Techniken die du verwenden kannst, und zwar:
 
-* Quasi-qualified selectors
-* Tagging code
-* Object/extension pointers
+* Quasi-Qualifizierte Selektoren
+* Code markieren
+* Objekt/Extension Hinweise
 
-#### Quasi-qualified selectors
+#### Quasi-Qualifizierte Selektoren
 
-You should never qualify your selectors; that is to say, we should never write
-`ul.nav {}` if you can just have `.nav`. Qualifying selectors decreases selector
-performance, inhibits the potential for reusing a class on a different type of
-element and it increases the selector’s specificity. These are all things that
-should be avoided at all costs.
+Du solltest deine Selektoren niemals einschränken; also niemals `ul.nav {}` schreiben, wenn du einfach `.nav` nutzen kannst. Das einschränken von Selektoren mindert die Leistung, verhindert das Potenzial die Klasse auf einem anderen Element-Typ wiederzuverwenden und die Spezifität des Selektors nimmt zu. Das sind alles Dinge, die unter allen Umständen vermieden werden sollten.
 
-However, sometimes it is useful to communicate to the next developer(s) where
-you intend a class to be used. Let’s take `.product-page` for example; this
-class sounds as though it would be used on a high-level container, perhaps the
-`html` or `body` element, but with `.product-page` alone it is impossible to
-tell.
+Jedoch ist es manchmal nützlich dem nächsten Entwickler zu zeigen wo eine Klasse genutzt werden soll. Nehmen wie `.product-page` als Beispiel; Diese Klasse hört sich so an, als würde sie auf einem Container auf hoher Ebene genutzt werden, eventuell das `html` oder `body` Element, aber mit `.product-page` alleine ist das unmöglich zu sagen.
 
-By quasi-qualifying this selector (i.e. commenting out the leading type
-selector) we can communicate where we wish to have this class applied, thus:
+Indem wir den Selektor quasi-qualifizieren (auskommentieren des vorangestellten Selektor Typs) können wir kommunizieren wo wir die Klasse nutzen möchten:
 
     /*html*/.product-page {}
 
-We can now see exactly where to apply this class but with none of the
-specificity or non-reusability drawbacks.
+So sehen wir genau wo die Klasse angewand werden soll, ohne die Nachteile der Spezifität oder nichtvorhandenen Wiederverwendbarkeit.
 
-Other examples might be:
+Andere Beispiele können sein:
 
     /*ol*/.breadcrumb {}
     /*p*/.intro {}
     /*ul*/.image-thumbs {}
 
-Here we can see where we intend each of these classes to be applied without
-actually ever impacting the specificity of the selectors.
+Hier können wir sehen, wo wir jede dieser Klassen zu platzieren beabsichtigen, ohne jemals die Spezifität der Selektoren zu beeinflussen.
 
-#### Tagging code
+#### Code Tags
 
-If you write a new component then leave some tags pertaining to its function in
-a comment above it, for example:
+Wenn du eine neue Komponente schreibst, hinterlasse einige Tags die ihre Funktionalität beschreiben in einem Kommentar oberhalb, zum Beispiel:
 
     /**
      * ^navigation ^lists
@@ -412,57 +324,46 @@ a comment above it, for example:
      */
     .matrix {}
 
-These tags allow other developers to find snippets of code by searching for
-function; if a developer needs to work with lists they can run a find for
-`^lists` and find the `.nav` and `.matrix` objects (and possibly more).
+Diese Tags erlauben anderen Entwicklern Code-Snippets zu finden indem sie nach Funktionalität suchen; Wenn ein Entwickler mit Listen arbeiten muss, kann er oder sie eine Suche nach `^lists` starten und findet die `.nav` und `.matrix` Objekte (und vermutlich noch mehr).
 
-#### Object/extension pointers
+#### Objekt/Extension Pointer
 
-When working in an object oriented manner you will often have two chunks of CSS
-(one being the skeleton (the object) and the other being the skin (the
-extension)) that are very closely related, but that live in very different
-places. In order to establish a concrete link between the object and its
-extension with use <i>object/extension pointers</i>. These are simply comments
-which work thus:
+Beim Arbeiten in einer Objektorientieren Art und Weise wirst du oft zwei Brocken von CSS haben (einer das Skelett (das Objekt) und einer die Haut (die Extension)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Um eine feste Verbindung zwischen dem Objekt und seiner Extension herzustellen nutze <i>Objekt/Extension Pointer</i>. Diese sind einfach Kommentare die folgendermaßen funktionieren:
 
-In your base stylesheet:
+In deinem Base-Stylesheet:
 
     /**
      * Extend `.foo` in theme.css
      */
      .foo {}
 
-In your theme stylesheet:
+In deinem Theme-Stylesheet:
 
     /**
      * Extends `.foo` in base.css
      */
      .bar {}
 
-Here we have established a concrete relationship between two very separate
-pieces of code.
+Hier haben wir eine feste Verbindung zwischen zwei getrennten Stücken Code hergestellt.
 
 ---
 
 ## Writing CSS
 
-The previous section dealt with how we structure and form our CSS; they were
-very quantifiable rules. The next section is a little more theoretical and deals
-with our attitude and approach.
+Der vorherige Abschnitt behandelte wie wir unser CSS strukturieren und formen; Sie waren quantifizierbare Regeln. Der nächste Abschnitt ist etwas mehr theoretisch und behandelt unsere Einstellung und Herangehensweise.
 
-## Building new components
+## Erstellen von neuen Komponenten
 
-When building a new component write markup **before** CSS. This means you can
-visually see which CSS properties are naturally inherited and thus avoid
-reapplying redundant styles.
+Wenn du eine neue Komponente erstellst, schreibe dein Markup **vor** dem CSS. So kannst du sehen welche CSS Eigenschaften natürlich vererbt werden und vermeidest dadurch das wiederanwenden von überflüssigen Styles.
 
-By writing markup first you can focus on data, content and semantics and then
-apply only the relevant classes and CSS _afterwards_.
+Durch das vorherige niederschreiben vom Markup kannst du dich auf Daten, Inhalt und Semantik konzentrieren und _danach_ nur die relevanten Classen und CSS verwenden.
 
 ## OOCSS
 
 I work in an OOCSS manner; I split components into structure (objects) and
 skin (extensions). As an **analogy** (note, not example) take the following:
+
+Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte) und Skin (Extensions). Als **Analogie** stell dir folgendes vor: 
 
     .room {}
 

@@ -360,9 +360,6 @@ Durch das vorherige niederschreiben vom Markup kannst du dich auf Daten, Inhalt 
 
 ## OOCSS
 
-I work in an OOCSS manner; I split components into structure (objects) and
-skin (extensions). As an **analogy** (note, not example) take the following:
-
 Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte) und Skin (Extensions). Als **Analogie** stell dir folgendes vor: 
 
     .room {}
@@ -371,45 +368,21 @@ Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte)
     .room--bedroom {}
     .room--bathroom {}
 
-We have several types of room in a house, but they all share similar traits;
-they all have floors, ceilings, walls and doors. We can share this information
-in an abstracted `.room {}` class. However we have specific types of room that
-are different from the others; a kitchen might have a tiled floor and a bedroom
-might have carpets, a bathroom might not have a window but a bedroom most likely
-will, each room likely has different coloured walls. OOCSS teaches us to
-abstract the shared styles out into a base object and then _extend_ this
-information with more specific classes to add the unique treatment(s).
+In diesem Beispiel haben wir verschiedene Arten von Räumen, wovon alle ähnliche Eigenschaften teilen; Alle haben Flure, Dächer, Wände und Türen. Wir können diese Informationen in einer abstrahierten Klasse `.room {}` festhalten. Jedoch haben wir auch besondere Arten von Räumen, die sich von den Anderen unterscheiden; Eine Küche hat unter Umständen einen gekachelten Boden, ein Schlafzimmer jedoch eher einen Teppich, ein Bad hat nicht unbedingt ein Fenster, aber ein Schlafzimmer höchstwahrscheinlich schon. Jeder Raum hat vermutlich unterschliedlich gestrichene Wände. OOCSS lehrt uns die geteilten Eigenschaften in einem Basisobjekt zu abstrahieren und diese Information dann mit spezifischeren Klassen zu erweitern.
 
-So, instead of building dozens of unique components, try and spot repeated
-design patterns across them all and abstract them out into reusable classes;
-build these skeletons as base ‘objects’ and then peg classes onto these to
-extend their styling for more unique circumstances.
+Also, statt duzende gesonderte Komponenten zu erstellen, versuche die sich wiederholenden Muster zu erkennen und abstrahiere sie in wiederverwendbare Klassen; Erstelle diese "Skelette" als Basisobjekte und baue mit weiteren Klassen auf ihnen auf und erweitere somit ihr Styling unter anderen Gegebenheiten.
 
-If you have to build a new component split it into structure and skin; build the
-structure of the component using very generic classes so that we can reuse that
-construct and then use more specific classes to skin it up and add design
-treatments.
+Wenn du eine neue Komponente erstellst, teile sie in Struktur und Aussehen; Erstelle die Struktur einer Komponente mit Hilfe von allgemeineren Klassen und nutze dann spezifischere Klassen um das Aussehen zu erweitern und anzupassen.
 
 ## Layout
 
-All components you build should be left totally free of widths; they should
-always remain fluid and their widths should be governed by a parent/grid system.
+Alle Komponenten sollten ohne Angabe von `width` erstellt werden; Sie sollten immer fluide bleiben und die Breite sollte vom Elterelement (z.B. Grid System) bestimmt werden.
 
-Heights should **never** be be applied to elements. Heights should only be
-applied to things which had dimensions _before_ they entered the site (i.e.
-images and sprites). Never ever set heights on `p`s, `ul`s, `div`s, anything.
-You can often achieve the desired effect with `line-height` which is far more
-flexible.
+`height` sollte auf Elemente **niemals** angewandt werden. Nur bei Elementen mit festen Maßen, wie Bildern oder Sprites, darf die Höhe oder Breite definiert werden. Setze niemals die Höhe von `p`s, `ul`s, `div`s, und eigentlich auch allem Anderen. Oft kann der gewünschte Effekt über `line-height` erreicht werden, was darüber hinaus noch viel flexibler ist.
 
-Grid systems should be thought of as shelves. They contain content but are not
-content in themselves. You put up your shelves then fill them with your stuff.
-By setting up our grids separately to our components you can move components
-around a lot more easily than if they had dimensions applied to them; this makes
-our front-ends a lot more adaptable and quick to work with.
+Grid Systeme sollte man sich wie Regale vorstellen. Sie enthalten Inhalte aber sind aber nicht selbst Inhalte. Du stellst erst dein Regal auf und füllst es dann mit deinem Kram. Wenn wir also unser Grid seperat von den Komponenten aufbauen, können die Komponenten viel leichter bewegt werden, als wenn wir die Höhe oder Breite definiert hätten; Das macht unser Front-End viel anpassungsfähiger und wir können effektiver daran arbeiten.
 
-You should never apply any styles to a grid item, they are for layout purposes
-only. Apply styling to content _inside_ a grid item. Never, under _any_
-circumstances, apply box-model properties to a grid item.
+Du darfst Styles nie auf das Grid System selbst anwenden, sie dienen nur dazu das Layout zu definieren. Wende Styles auf die Inhalte _im_ Grid System an. Wende niemals, unter _keinen_ Umständen, box-model Eigenschaften auf Grid System Elemente an.
 
 ## Sizing UIs
 

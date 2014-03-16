@@ -53,7 +53,7 @@
 
 ## Anatomie eines CSS Dokumentes
 
-Egal um welches Dokument es sich handelt, unser Ziel ist immer eine gleichbleibende Formatierung zu schaffen und zu erhalten. Das bedeutet einheitliche Kommentare, einheitliche Syntax und einheitliche Benennungen.
+Egal um welches Dokument es sich handelt, unser Ziel ist es immer eine gleichbleibende Formatierung zu schaffen und zu erhalten. Das bedeutet einheitliche Kommentare, einheitliche Syntax und einheitliche Benennungen.
 
 ### Allgemein
 

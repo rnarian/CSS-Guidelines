@@ -401,12 +401,7 @@ Ich nutze Pixel nur bei Elementen die schon feste Abmessungen hatten, bevor sie 
 
 ### Font sizing
 
-I define a series of classes akin to a grid system for sizing fonts. These
-classes can be used to style type in a double stranded heading hierarchy. For a
-full explanation of how this works please refer to my article
-[Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css)
-
-
+Ich definiere eine Serie von Klassen, ähnlich die dem Grid System, um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
 
 ## Shorthand
 

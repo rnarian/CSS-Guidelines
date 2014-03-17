@@ -386,26 +386,18 @@ Du darfst Styles nie auf das Grid System selbst anwenden, sie dienen nur dazu da
 
 ## Sizing UIs
 
-I use a combination of methods for sizing UIs. Percentages, pixels, ems, rems
-and nothing at all.
+Ich nutze verschiedene Methoden um User Interfaces . Prozente, Pixel, ems, rems, (and nothing at all).
 
-Grid systems should, ideally, be set in percentages. Because I use grid systems
-to govern widths of columns and pages, I can leave components totally free of
-any dimensions (as discussed above).
+Grid Systeme sollte idealerweise in Prozenten gesetzt werden. Weil ich ein Grid System nutze, um die Breiten von Spalten und Seiten zu beeinflussen, kann ich die Komponenten (wie oben beschrieben) ohne Angabe von Höhe oder Breite umsetzen.
 
-Font sizes I set in rems with a pixel fallback. This gives the accessibility
-benefits of ems with the confidence of pixels. Here is a handy Sass mixin to
-work out a rem and pixel fallback for you (assuming you set your base font
-size in a variable somewhere):
+Schriftgrößen setze ich in rems mit Pixel-Fallback. Dies gewährt uns alle Vorteile der Barrierefreiheit von ems (with the confidence of pixels). Anschließend ein nützliches Sass-Mixin zur Berechnung von rem und Pixel-Fallback (davon ausgehend du setzt deine Basefontsize in einer Variable):
 
     @mixin font-size($font-size) {
         font-size: $font-size +px;
         font-size: $font-size / $base-font-size +rem;
     }
 
-I only use pixels for items whose dimensions were defined before the came into
-the site. This includes things like images and sprites whose dimensions are
-inherently set absolutely in pixels.
+Ich nutze Pixel nur bei Elementen die schon feste Abmessungen hatten, bevor sie auf die Seite kamen. Hier handelt es sich um Elemente wie Bilder oder Sprites, deren Dimensionen von Haus aus in Pixel gesetzt sind.
 
 ### Font sizing
 
@@ -413,6 +405,8 @@ I define a series of classes akin to a grid system for sizing fonts. These
 classes can be used to style type in a double stranded heading hierarchy. For a
 full explanation of how this works please refer to my article
 [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css)
+
+
 
 ## Shorthand
 

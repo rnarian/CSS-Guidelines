@@ -401,27 +401,19 @@ Ich nutze Pixel nur bei Elementen die schon feste Abmessungen hatten, bevor sie 
 
 ### Font sizing
 
-Ich definiere eine Serie von Klassen, ähnlich die dem Grid System, um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
+Ich definiere eine Serie von Klassen, ähnlich die des Grid Systems, um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
 
 ## Shorthand
 
-**Shorthand CSS needs to be used with caution.**
+**Shorthand CSS muss immer mit Vorsicht genutzt werden.**
 
-It might be tempting to use declarations like `background: red;` but in doing so
-what you are actually saying is ‘I want no image to scroll, aligned top-left,
-repeating X and Y, and a background colour of red’. Nine times out of ten this
-won’t cause any issues but that one time it does is annoying enough to warrant
-not using such shorthand. Instead use `background-color: red;`.
+Deklarationen wie `background: red;` mögen erstmal verlocken, aber was du damit tatsächlich ausdrückst ist folgendes: ‘Ich möchte kein Bild was scrollt, links-oben ausgerichtet ist, sich nach X oder Y wiederholt, sondern eine rote Hintergrundfarbe’. In neun von zehn Fällen wird das auch problemlos funktionieren, aber der Fall der Auswirkungen nach sich zieht ist nervig genug um komplett auf solche Shorthands zu verzichten. Nutze stattdessen einfach `background-color: red;`.
 
-Similarly, declarations like `margin: 0;` are nice and short, but
-**be explicit**. If you actually only really want to affect the margin on
-the bottom of an element then it is more appropriate to use `margin-bottom: 0;`.
+Auch Deklarationen wie `margin: 0;` sind nett und kurz, aber wenn du sie benutzt, achte darauf, sie mit Bedacht zu nutzen. Wenn du eigentlich nur das margin unten beeinflussen willst, ist es besser auch `margin-bottom: 10px;` zu definieren, statt `margin: 0 0 10px 0`.
 
-Be explicit in which properties you set and take care to not inadvertently unset
-others with shorthand. E.g. if you only want to remove the bottom margin on an
-element then there is no sense in setting all margins to zero with `margin: 0;`.
+Definiere klar welche Eigenschaften du setzen willst und achte darauf nicht versehentlich andere Eigenschaften mit dem Shorthand zu überschreiben.
 
-Shorthand is good, but easily misused.
+Shorthands sind nützlich aber werden schnell falsch angewandt.
 
 ## IDs
 

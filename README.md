@@ -453,41 +453,26 @@ Ein weiteres Beispie für einen zu spezifischen Selektor wäre `ul.nav li a {}`.
 
 ### Performance von Selektoren
 
-Obwohl es richtig ist, dass Browsers in der Zukunft nur noch schneller werden, was das rendern von CSS betrifft, solltest du die Effizienz deines CSS trotzdem im Auge behalten.
+Obwohl es richtig ist, dass Browser in der Zukunft nur noch schneller werden, was das Rendern von CSS betrifft, solltest du die Effizienz deines CSS trotzdem im Auge behalten.
 
-Das Verwenden von kurzen, nicht verschachtelte Selektoren, das Verzichten auf den universal Selektor (`* {}`) als Schlüssel Selektor, sowie das Vermeiden von komplexeren CSS3 Selektoren sollten dabei helfen diese Probleme zu umgehen.
+Das Verwenden von kurzen, nicht verschachtelte Selektoren, das Verzichten auf den Universal-Selektor (`* {}`) als Schlüssel-Selektor, sowie das Vermeiden von komplexeren CSS3-Selektoren sollten dabei helfen diese Probleme zu umgehen.
 
 
-## CSS selector intent
+## Absicht eines CSS Selektor
 
-Instead of using selectors to drill down the DOM to an element, it is often best
-to put a class on the element you explicitly want to style. Let’s take a
-specific example with a selector like `.header ul {}`…
+Anstatt sich mit Selektoren am DOM entlang zu einem Element zu hangeln, ist es meißtens besser dem Element, welches du stylen möchtest eine Klasse zu geben. Lass uns das an einem konkreten Beispiel, mit einem Selektor wie `.header ul {}` besprechen ...
 
-Let’s imagine that `ul` is indeed the main navigation for our website. It lives
-in the header as you might expect and is currently the only `ul` in there;
-`.header ul {}` will work, but it’s not ideal or advisable. It’s not very future
-proof and certainly not explicit enough. As soon as we add another `ul` to that
-header it will adopt the styling of our main nav and the the chances are it
-won’t want to. This means we either have to refactor a lot of code _or_ undo a
-lot of styling on subsequent `ul`s in that `.header` to remove the effects of
-the far reaching selector.
+Nehmen wir an, dass diese `ul` tatsächlich die Hauptnavigation unserer Webseite darstellt. Sie befindet sich - wie erwartet - im Header und ist dort momentan die einzige `ul`. `.header ul {}` funktioniert zwar, ist aber weder ideal noch ratsam.
 
-Your selector’s intent must match that of your reason for styling something;
-ask yourself **‘am I selecting this because it’s a `ul` inside of `.header` or
-because it is my site’s main nav?’**. The answer to this will determine your
-selector.
+Es ist nicht zukunftsorientiert und definitiv nicht spezifisch genug. Sobald wir in diesem Header eine weitere `ul` einfügen, wird diese das Styling unserer Hauptnavigation annehmen und es besteht eine hohe Wahrscheinlichkeit, dass wir das nicht möchten. Das bedeutet, dass wir entweder große Teile unseres Codes refactoren _oder_ viele Style-Anweisungen rückgängig machen müssen um die Effekte des weitreichenden Selektors zu entfernen.
 
-Make sure your key selector is never an element/type selector or
-object/abstraction class. You never really want to see selectors like
-`.sidebar ul {}` or `.footer .media {}` in our theme stylesheets.
+Die Absicht deines Selektors sollte deinem Grund entsprechend, aus dem du etwas stylen möchstes. Frag dich **‘wähle ich diese Selektoren, weil es eine `ul` innerhalb von `.header`, oder weil es die Hauptnavigation meiner Seite ist?‘**. Die Antwort darauf hilft dir dabei, deinen Selektor richtig zu wählen.
 
-Be explicit; target the element you want to affect, not its parent. Never assume
-that markup won’t change. **Write selectors that target what you want, not what
-happens to be there already.**
+Stelle sicher, dass dein Schlüssel-Selektor niemals ein Element-/Typen-Selektor oder eine Objekt-/Abstraktions- Klasse ist. Selektoren wie `.sidebar ul {}` oder `.footer .media {}` möchtest du nicht in deinem Stylesheet haben.
 
-For a full write up please see my article
-[Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
+Greife explizit auf das Element zu, das du verändern möchtest, nicht auf sein Elternelement. Gehe niemals davon aus, dass sich dein markup nicht verändern wird. **Verwende Selektoren, die auf das zugreifen, was du verändern möchtest, nicht auf das was bereits vorhanden ist.**
+
+Für eine ausführliche Beschreibung und Zusammenfassung, schau dir meinen Artikel [Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/) an.
 
 ## `!important`
 

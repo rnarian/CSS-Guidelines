@@ -28,24 +28,24 @@ Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von
   * [Internationalisierung](#internationalisation)
 * [Kommentare](#comments)
   * [Kommentare auf Steroiden](#comments-on-steroids)
-    * [Quasi-qualified selectors](#quasi-qualified-selectors)
+    * [Quasi-qualifizierte Selektoren](#quasi-qualified-selectors)
     * [Code Tags](#tagging-code)
-    * [Objekt/Erweiterung Pointer](#objectErweiterung-pointers)
-* [Writing CSS](#writing-css)
-* [Building new components](#building-new-components)
+    * [Objekt/Erweiterung Zeiger](#objectErweiterung-pointers)
+* [CSS schreiben](#writing-css)
+* [Erstellen neuer Komponenten](#building-new-components)
 * [OOCSS](#oocss)
 * [Layout](#layout)
-* [Sizing UIs](#sizing-uis)
-  * [Font sizing](#font-sizing)
+* [Größenangaben für Benutzeroberflächen](#sizing-uis)
+  * [Anpassen von Schriftgrößen](#font-sizing)
 * [Shorthand](#shorthand)
 * [IDs](#ids)
 * [Selektoren](#selectors)
-  * [Over qualified selectors](#over-qualified-selectors)
+  * [Zu spezifische Selektoren](#over-qualified-selectors)
   * [Performance von Selektoren](#selector-performance)
-* [CSS selector intent](#css-selector-intent)
+* [Absicht eines CSS Selektors](#css-selector-intent)
 * [`!important`](#important)
-* [Magic numbers and absolutes](#magic-numbers-and-absolutes)
-* [Conditional stylesheets](#conditional-stylesheets)
+* [Magische Zahlen und Konstanten](#magic-numbers-and-absolutes)
+* [Conditional Stylesheets](#conditional-stylesheets)
 * [Debugging](#debugging)
 * [Preprocessors](#preprocessors)
 
@@ -290,7 +290,7 @@ Es gibt eine Reihe an fortgeschrittenen Techniken die du verwenden kannst was Ko
 * Code taggen
 * Objekt/Erweiterung Hinweise
 
-#### Quasi-Qualifizierte Selektoren
+#### Quasi-qualifizierte Selektoren
 
 Du solltest deine Selektoren niemals zusätzlich qualifizieren - also niemals `ul.nav {}` schreiben, wenn du einfach `.nav` nutzen kannst. Das Qualifizieren von Selektoren vermindert die Leistung, verhindert ein potenzielles Wiederverwenden der Klasse auf einen anderen Element-Typ und die Spezifität des Selektors nimmt zu. Das sind alles Dinge, die unter allen Umständen vermieden werden müssen.
 
@@ -348,11 +348,11 @@ Hier haben wir eine feste Verbindung zwischen zwei getrennten Stücken Code herg
 
 ---
 
-## Writing CSS
+## CSS schreiben
 
 Im vorherigen Abschnitt haben wir damit beschäftigt, wie wir anhand einiger quantifizierbaren Regeln unser CSS strukturieren und formen. Der nächste Abschnitt ist hingegen etwas theoretischer und behandelt unsere Einstellung und Herangehensweise.
 
-## Erstellen von neuen Komponenten
+## Erstellen neuer Komponenten
 
 Wenn du eine neue Komponente erstellst, schreibe dein Markup **vor** dem CSS. So kannst du leicht erkennen welche CSS Eigenschaften automatisch vererbt werden und vermeidest dadurch das Wiederanwenden von überflüssigen Styles.
 
@@ -458,7 +458,7 @@ Obwohl es richtig ist, dass Browser in der Zukunft nur noch schneller werden, wa
 Das Verwenden von kurzen, nicht verschachtelte Selektoren, das Verzichten auf den Universal-Selektor (`* {}`) als Schlüssel-Selektor, sowie das Vermeiden von komplexeren CSS3-Selektoren sollten dabei helfen diese Probleme zu umgehen.
 
 
-## Absicht eines CSS Selektor
+## Absicht eines CSS Selektors
 
 Anstatt sich mit Selektoren am DOM entlang zu einem Element zu hangeln, ist es meißtens besser dem Element, welches du stylen möchtest eine Klasse zu geben. Lass uns das an einem konkreten Beispiel, mit einem Selektor wie `.header ul {}` besprechen ...
 

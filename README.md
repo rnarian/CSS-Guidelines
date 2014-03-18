@@ -53,7 +53,7 @@ Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von
 
 ## Anatomie eines CSS Dokumentes
 
-Egal um welches Dokument es sich handelt, unser Ziel ist es immer eine gleichbleibende Formatierung zu schaffen und zu erhalten. Das bedeutet einheitliche Kommentare, einheitliche Syntax und einheitliche Benennungen.
+Egal um welches Dokument es sich handelt, unser Ziel ist es immer eine gleichbleibende Formatierung zu schaffen und erhalten. Das bedeutet einheitliche Kommentare, einheitliche Syntax und einheitliche Benennungen.
 
 ### Allgemein
 
@@ -63,7 +63,7 @@ Ich bevorzuge Einrückungen von vier (4) Leerzeichen gegenüber Tabs und schreib
 
 ### Eine Datei vs. Viele Dateien
 
-Einige bevorzugen es mit einzelnen, großen Dateien zu arbeiten. Das ist auch in Ordnung und solange du dich an die folgenden Richtlinien hältst wirst du dadurch auch keine Probleme bekommen. Seit dem Wechsel zu Sass habe ich angefangen meine Stylesheets in viele kleine Includes aufzuteilen. Das ist auch in Ordnung... Die folgenden Regeln und Richtlinien sind zutreffend, unabhängig davon, für welche Methode du dich entscheidest. Der einzige beachtenswerte Unterschied besteht hinsichtlich unserer Inhaltsangabe und unserer Abschnittstitel. Lies weiter für weitere Erläuterungen...
+Einige bevorzugen es mit einzelnen, großen Dateien zu arbeiten. Das ist auch in Ordnung und solange du dich an die folgenden Richtlinien hältst wirst du dadurch auch keine Probleme bekommen. Seit dem Wechsel zu Sass habe ich angefangen meine Stylesheets in viele kleine Includes aufzuteilen. Das ist auch in Ordnung... Die folgenden Regeln und Richtlinien sind unabhängig davon, für welche Methode du dich entscheidest. Der einzige beachtenswerte Unterschied besteht hinsichtlich unserer Inhaltsangabe und unserer Abschnittstitel. Lies weiter für weitere Erläuterungen...
 
 ### Inhaltsangabe
 
@@ -121,13 +121,13 @@ Ein ordentlich geordnetes Stylesheet sieht ungefähr so aus:
 
 **Reset**
 **Elemente** - `h1`, `ul`, etc. ohne Klassen
-**Objekte und Abstraktionen** - allgemeine, grundlegende Design Patterns
-**Komponenten** - Komplette Komponenten konstruiert aus Objekten und ihren Erweiterungen.
+**Objekte und Abstraktionen** - allgemeine, grundlegende Design Pattern
+**Komponenten** - komplette Komponenten bestehend aus Objekten und ihren Erweiterungen
 **Style Trümpfe** - error states etc.
 
 Das bedeutet, dass jeder Abschnitt auf den Vorherigen aufbaut und dessen Eigenschaften erbt. Dadurch sollte weniger Überschreiben, weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
 
-Wenn du dich noch ausgiebiger mit diesem Thema beschäftigen möchtest, kann ich dir Jonathan Snooks [SMACSS](http://smacss.com) wärmstens empfehlen.
+Wenn du dich noch ausgiebiger mit diesem Thema beschäftigen möchtest kann ich dir Jonathan Snooks [SMACSS](http://smacss.com) wärmstens empfehlen.
 
 ## Anatomie von rulesets
 
@@ -140,9 +140,9 @@ Ich habe einige Standards beim Strukturieren von rulesets:
 
 * Nutze mit Bindestrich getrennte Klassennamen (Ausgenommen BEM Notation,
   [siehe unten](#naming-conventions))
-* Eingerückt mit 4 Leerzeichen
-* Mehrzeilig
-* Deklarationen sortiert nach Relevanz (NICHT alphabetisch)
+* Rücke mit 4 Leerzeichen ein
+* Schreibe Mehrzeilig
+* Sortiere Deklarationen nach Relevanz (NICHT alphabetisch)
 * Rücke vendor-prefix Deklarationen so ein, dass ihre Werte ausgerichtet sind
 * Rücke rulesets so ein, dass sie den DOM wiederspiegeln
 * Verzichte nie auf das letzte Semikolon im ruleset
@@ -169,7 +169,7 @@ Ein kleines Beispiel:
 
 Hier sehen wir, dass `.widget-heading` ein Kind von `.widget` sein muss, weil wir `.widget-heading` eine Ebene tiefer als `.widget` eingerückt haben. Das sind nützliche Informationen für Entwickler, die nun durch einen Blick auf die Einrückung unserer rulesets erfasst werden können.
 
-Wir sehen auch, dass die Deklarationen von `.widget-heading` nach ihrer Relevanz geordnet sind; `.widget-heading` ist ein Text-Element also beginnen wir mit unseren Text Regeln, gefolgt von allem anderen.
+Wir sehen auch, dass die Deklarationen von `.widget-heading` nach ihrer Relevanz geordnet sind: `.widget-heading` ist ein Text-Element also beginnen wir mit unseren Text Regeln, gefolgt von allem anderen.
 
 Eine Ausnahme zu unseren mehrzeiligen Regeln können folgende Fälle sein:
 
@@ -192,11 +192,7 @@ macht es mehr Sinn unser CSS einzeilig zu schreiben.
 
 ## Namenskonventionen
 
-For the most part I simply use hyphen delimited classes (e.g. `.foo-bar`, not
-`.foo_bar` or `.fooBar`), however in certain circumstances I use BEM (Block,
-Element, Modifier) notation.
-
-Zum größten Teil verwende ich durch Bindestrich getrennte Klassen (z.B. `.foo-bar`, nicht `.foo_bar` oder `.fooBar`), benutze allerdings unter gewissen Umständen die BEM (Block, Element, Modifier) Notation.
+Zum größten Teil verwende ich durch Bindestrich getrennte Klassen (z.B. `.foo-bar`, nicht `.foo_bar` oder `.fooBar`), unter gewissen Umständen allerdings die BEM (Block, Element, Modifier) Notation.
 
 <abbr title="Block, Element, Modifier">BEM</abbr> ist eine Methode um CSS-Selektoren durch ihre Benennung und Klassifizierung viel exakter, transparenter und informativer zu machen.
 
@@ -218,11 +214,11 @@ Eine **Analogie** zum Aufbau einer BEM Klassen könnte sein:
         .person__hand--left {}
         .person__hand--right {}
 
-Hier sehen wir, dass das grundlegende Objekt welches wir beschreiben eine Person ist, und das ein anderer Typ der Person eine Frau sein könnte. Wir können auch sehen, dass diese Person Hände hat; diese sind weitere "Bestandteile" von Personen und es gibt verschiedene Varianten, wie 'left' und 'right'.
+Hier sehen wir, dass das grundlegende Objekt welches wir beschreiben eine Person ist, und das ein anderer Typ der Person eine Frau sein könnte. Wir können auch sehen, dass diese Person Hände hat. Diese sind weitere "Bestandteile" von Personen und es gibt verschiedene Varianten, wie 'left' und 'right'.
 
-Nun können wir unsere Selektoren basierend auf dem grundlegendem Objekt benennen und kommunizieren zugleich welche Aufgabe der Selektor hat; handel es sich um einen Bestandteil (`__`) oder eine Variation (`--`)?
+Nun können wir unsere Selektoren basierend auf dem grundlegendem Objekt benennen und kommunizieren zugleich welche Aufgabe der Selektor hat. Handelt es sich um einen Bestandteil (`__`) oder eine Variation (`--`)?
 
-`.page-wrapper` ist also ein unabhängiger Selektor. Er ist weder Teil einer Abstraktion noch einer Komponente und ist somit korrekt benannt. Der Selektor `.widget-heading` dagegen, _ist_ einer Komponente zugehörig; Er ist ein Kind von `.widget` also sollten wir diese Klasse in `.widget__heading` umbenennen.
+`.page-wrapper` ist also ein unabhängiger Selektor. Er ist weder Teil einer Abstraktion noch einer Komponente und ist somit korrekt benannt. Der Selektor `.widget-heading` dagegen, _ist_ einer Komponente zugehörig. Er ist ein Kind von `.widget` also sollten wir diese Klasse in `.widget__heading` umbenennen.
 
 BEM sieht etwas hässlicher aus und ist viel ausführlicher, aber es bietet uns auch viel Übersicht, da wir die Funktionen von Elementen und deren Beziehungen zueinander allein anhand ihres Klassennamens erfassen können. Desweiteren lässt sich die BEM Syntax normalerweise - gerade durch die vielen Wiederholungen - gut komprimieren (gzip).
 
@@ -234,18 +230,18 @@ Um die Lesbarkeit zu verbessern, trenne deine Klassen im HTML mit zwei (2) Leerz
 
     <div class="foo--bar  bar__baz">
 
-Durch den größeren Leerraum sollte es leichter sein mehrere Klassen zu erkennen und lesen.
+Durch den größeren Leerraum sollte es leichter sein, mehrere Klassen zu erkennen und lesen.
 
 ### JS hooks
 
 **Nutze niemals CSS _styling_ Klassen als JavaScript hook.** Anfügen von JS Verhalten an eine styling Klassen bedeutet, dass wir das Eine nie ohne das Andere nutzen können.
 
-Wenn du JavaScript ans Markup binden musst, nutze eine spezielle JS CSS Klasse. Das ist einfach eine Klasse mit vorangestelltem `.js-`, z.B. `.js-toggle`, `.js-drag-and-drop`. Das bedeutet, dass wir JS und CSS an Klassen hängen können, ohne mühsame Überlappungen.
+Wenn du JavaScript ans Markup binden musst, nutze eine spezielle JS CSS Klasse. Das ist einfach eine Klasse mit vorangestelltem `.js-`, z.B. `.js-toggle`, `.js-drag-and-drop`. Das bedeutet, dass wir JS und CSS ohne etwaige Überschneidungen an Klassen hängen können.
 
     <th class="is-sortable  js-is-sortable">
     </th>
 
-Das obige Markup beinhaltet zwei Klassen. Eine über die du Styles für sortierbare Table-Columns anhängen kannst, und eine weitere welche uns erlaubt die Sortierungsfunktionalität hinzuzufügen.
+Das obige Markup beinhaltet zwei Klassen. Eine über die du Styles für sortierbare Table-Columns anhängen kannst, und eine weitere um die Sortierungsfunktionalität zu gewährleisten.
 
 ### Internationalisierung
 
@@ -255,13 +251,13 @@ Obwohl ich ein Britischer Entwickler bin—und mein ganzes Leben damit verbracht
     .colour-picker {
     }
 
-Allerdings wurde das Beibehalten von zwei Versionen von jeder Variable beim Arbeiten an einem sehr großen Sass Project mit dutzenden Farb-Variablen (z.B. `$brand-color`, `$highlight-color` etc.) schnell lästig. Es bedeutet auch doppelt so viel arbeit bei Dingen wie "Suchen und Ersetzen".
+Allerdings wurde das Beibehalten von zwei Versionen von jeder Variable beim Arbeiten an einem sehr großen Sass Projekt mit dutzenden Farb-Variablen (z.B. `$brand-color`, `$highlight-color` etc.) schnell lästig. Es bedeutet auch doppelt so viel arbeit bei Dingen wie "Suchen und Ersetzen".
 
 Benenne Klassen und Variablen deshalb immer in der Sprache in der du arbeitest.
 
 ## Kommentare
 
-Ich nutze einen docBlock-ähnlichen Kommentar Stil welchen ich in der Länge auf 80 Zeichen pro Zeile beschränke:
+Ich nutze einen docBlock-ähnlichen Kommentar Stil, den ich in der Länge auf 80 Zeichen pro Zeile beschränke:
 
     /**
      * Das ist ein docBlock Kommentar
@@ -269,7 +265,7 @@ Ich nutze einen docBlock-ähnlichen Kommentar Stil welchen ich in der Länge auf
      * Das ist eine längere Beschreibung des Kommentars, der den Code genauer 
      * beschreibt. Wir beschränken diese Zeilen auf maximal 80 Zeichen. 
      *
-     * Wir können markup in den Kommentaren nutzen und sollten das 
+     * Wir können Markup in den Kommentaren nutzen und sollten das 
      * auch tun:
      *
        <div class=foo>
@@ -280,7 +276,7 @@ Ich nutze einen docBlock-ähnlichen Kommentar Stil welchen ich in der Länge auf
      * ermöglichen.
      */
 
-Du solltest deinen Code so gut wie möglich kommentieren und dokumentieren. Selbst was dir verständlich und selbsterklärend erscheint, ist womöglich für einen anderen Entwickler nicht ganz so leicht zu erkennen. Schreib einen Brocken Code und dokumentiere ihn anschließend. 
+Du solltest deinen Code so gut wie möglich kommentieren und dokumentieren. Selbst was dir verständlich und selbsterklärend erscheint, ist womöglich für einen anderen Entwickler nicht ganz so leicht zu erkennen. Schreib einen chunk Code und dokumentiere ihn anschließend.
 
 ### Kommentare auf Steroiden
 
@@ -300,7 +296,7 @@ Indem wir den Selektor quasi-qualifizieren (auskommentieren des vorangestellten 
 
     /*html*/.product-page {}
 
-So sehen wir genau wo die Klasse angewendet werden soll, jedoch ohne die Nachteile der Spezifität oder an Wiederverwendbarkeit einzubüßen.
+So sehen wir genau wo die Klasse angewendet werden soll, jedoch ohne den Nachteil der Spezifität und ohne dabei an Wiederverwendbarkeit einzubüßen.
 
 Andere Beispiele könnten sein:
 
@@ -308,7 +304,7 @@ Andere Beispiele könnten sein:
     /*p*/.intro {}
     /*ul*/.image-thumbs {}
 
-Hier können wir sehen, wo wir beabsichtigen jede dieser Klassen zu platzieren, ohne dabei die Spezifität der Selektoren zu beeinflussen.
+Hier können wir sehen, wo wir diese Klassen platzieren möchten, ohne dabei die Spezifität der Selektoren zu beeinflussen.
 
 #### Code Tags
 
@@ -328,7 +324,7 @@ Diese Tags erlauben anderen Entwicklern Code-Snippets zu finden, indem sie nach 
 
 #### Objekt/Erweiterung Zeiger
 
-Beim Arbeiten in einer Objektorientieren Art und Weise wird es oft vorkommen, dass du zwei Brocken von CSS hast (einer für das Skelett (das Objekt) und ein anderer für die Haut (die Erweiterung)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Verwende sog. <i>Objekt/Erweiterung Zeiger</i>, um eine feste Verbindung zwischen dem Objekt und seiner Erweiterung herzustellen. Diese sind einfach Kommentare die folgendermaßen funktionieren:
+Wenn du in einer objekt-orientieren Art und Weise arbeitest, wird es oft vorkommen, dass du zwei chunks an CSS hast (einer für das Skelett (das Objekt) und ein anderer für die Haut (die Erweiterung)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Verwende sog. <i>Objekt/Erweiterung Zeiger</i>, um eine feste Verbindung zwischen dem Objekt und seiner Erweiterung herzustellen. Diese sind einfach Kommentare die folgendermaßen funktionieren:
 
 In deinem Base-Stylesheet:
 
@@ -350,17 +346,17 @@ Hier haben wir eine feste Verbindung zwischen zwei getrennten Stücken Code herg
 
 ## CSS schreiben
 
-Im vorherigen Abschnitt haben wir damit beschäftigt, wie wir anhand einiger quantifizierbaren Regeln unser CSS strukturieren und formen. Der nächste Abschnitt ist hingegen etwas theoretischer und behandelt unsere Einstellung und Herangehensweise.
+Im vorherigen Abschnitt haben wir uns damit beschäftigt, wie wir anhand einiger quantifizierbaren Regeln unser CSS strukturieren und formen können . Der nächste Abschnitt ist hingegen etwas theoretischer und behandelt unsere Einstellung und Herangehensweise beim Schreiben von CSS.
 
 ## Erstellen neuer Komponenten
 
-Wenn du eine neue Komponente erstellst, schreibe dein Markup **vor** dem CSS. So kannst du leicht erkennen welche CSS Eigenschaften automatisch vererbt werden und vermeidest dadurch das Wiederanwenden von überflüssigen Styles.
+Wenn du eine neue Komponente erstellst, schreibe dein Markup **bevor** du CSS schreibst. So kannst du leicht erkennen welche CSS Eigenschaften automatisch vererbt werden und vermeidest dadurch das Wiederanwenden von überflüssigen Styles.
 
 Außerdem kannst du dich dadurch voll und Ganz auf Daten, Inhalt und Semantik konzentrieren und _anschließend_ nur die relevanten Klassen und CSS verwenden.
 
 ## OOCSS
 
-Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte) und Skin (Erweiterungen) auf. Als **Analogie** (nicht als Beispiel) kannst du dir folgendes vorstellen:
+Ich arbeite auf OOCSS Art und Weise. Ich teile Komponenten in Struktur (Objekte) und Skin (Erweiterungen) auf. Als **Analogie** (nicht als Beispiel) kannst du dir folgendes vorstellen:
 
     .room {}
 
@@ -368,9 +364,9 @@ Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte)
     .room--bedroom {}
     .room--bathroom {}
 
-In diesem Beispiel haben wir verschiedene Arten von Räumen, wovon alle ähnliche Eigenschaften teilen. Alle haben Flure, Dächer, Wände und Türen. Wir können diese Informationen in einer abstrahierten Klasse `.room {}` festhalten. Es gibt jedoch auch besondere Arten von Räumen, die sich von den Anderen unterscheiden. Eine Küche hat unter Umständen einen gekachelten Boden, ein Schlafzimmer eher einen Teppich, ein Bad hat nicht unbedingt ein Fenster, aber ein Schlafzimmer höchstwahrscheinlich schon. Jeder Raum hat vermutlich unterschliedlich gestrichene Wände. OOCSS lehrt uns die geteilten Eigenschaften in einem Basisobjekt zu abstrahieren und diese Information dann mit spezifischeren Klassen zu erweitern.
+In diesem Beispiel haben wir verschiedene Arten von Räumen, wovon alle ähnliche Eigenschaften teilen. Alle haben Flure, Dächer, Wände und Türen. Diese Informationen können wir in einer abstrahierten Klasse `.room {}` festhalten. Es gibt jedoch auch besondere Arten von Räumen, die sich von den Anderen unterscheiden. Eine Küche hat unter Umständen einen gekachelten Boden, ein Schlafzimmer eher einen Teppich, ein Bad hat nicht unbedingt ein Fenster, aber ein Schlafzimmer höchstwahrscheinlich schon. Jeder Raum hat vermutlich unterschliedlich gestrichene Wände. OOCSS lehrt uns die geteilten Eigenschaften in einem Basisobjekt zu abstrahieren und diese Information dann mit spezifischeren Klassen zu erweitern.
 
-Also, anstatt dutzende gesonderte Komponenten zu erstellen, versuche die sich wiederholenden Muster zu erkennen und abstrahiere sie in wiederverwendbare Klassen. Erstelle diese "Skelette" als Basisobjekte, baue mit weiteren Klassen auf ihnen auf und erweitere somit ihr Styling unter anderen Gegebenheiten.
+Versuche also, anstatt dutzende gesonderte Komponenten zu erstellen, die sich wiederholenden Muster zu erkennen und in wiederverwendbaren Klassen zu abstrahieren. Erstelle diese "Skelette" als Basisobjekte, baue mit weiteren Klassen auf ihnen auf und erweitere somit ihr Styling unter anderen Gegebenheiten.
 
 Wenn du eine neue Komponente erstellst, teile sie in Struktur und Aussehen. Erstelle die Struktur einer Komponente mit Hilfe von sehr allgemeinen Klassen, damit wir dieses Konstrukt wiederverwenden können und nutze dann spezifischere Klassen um das Aussehen zu erweitern und anzupassen.
 
@@ -378,7 +374,7 @@ Wenn du eine neue Komponente erstellst, teile sie in Struktur und Aussehen. Erst
 
 Alle Komponenten sollten ohne feste Breitenangaben erstellt werden. Sie sollten immer fluide bleiben und ihre Breite sollte vom jeweiligen Elterelement (z.B. Grid System) bestimmt werden.
 
-`height` sollte **niemals** auf Elemente angewandt werden. Nur bei Elementen mit festen Maßen, wie Bildern oder Sprites, darf eine Höhe oder Breite definiert werden. Setze niemals die Höhe von `p`s, `ul`s, `div`s, und eigentlich auch allem Anderen. Oft kann der gewünschte Effekt über `line-height` erreicht werden, was darüber hinaus noch viel flexibler ist.
+`height` sollte **niemals** auf Elemente angewandt werden. Nur bei Elementen mit festen Abmessungen, wie Bildern oder Sprites, darf eine Höhe oder Breite definiert werden. Setze niemals die Höhe von `p`s, `ul`s, `div`s, und eigentlich auch allem Anderen. Oft kann der gewünschte Effekt auch über `line-height` erreicht werden, was darüber hinaus noch viel flexibler ist.
 
 Grid Systeme sollte man sich wie Regale vorstellen. Sie besitzen Inhalte, sind aber nicht selbst Inhalte. Du stellst erst dein Regal auf und füllst es dann mit deinem Kram. Wenn wir also unser Grid separat von den Komponenten aufbauen, können die Komponenten viel leichter bewegt werden, als wenn wir deren Höhe oder Breite definiert hätten. Das macht unsere Front-Ends um einiges anpassungsfähiger und wir können effektiver damit arbeiten.
 
@@ -386,11 +382,11 @@ Du darfst Styles nie auf das Grid System selbst anwenden, dieses dient nur dazu 
 
 ## Größenangaben für Benutzeroberflächen
 
-Ich verwende und kombiniere verschiedene Methoden um Größe in Benutzeroberflächen anzugeben. Prozente, Pixel, ems, rems, (und teilweise auch ohne die Angabe einer Einheit).
+Ich verwende und kombiniere verschiedene Methoden um Größen in Benutzeroberflächen anzugeben. Prozente, Pixel, ems, rems, (und teilweise auch ohne die Angabe einer Einheit).
 
 Die Breiten in Grid Systemen sollten idealerweise in Prozenten angegeben werden. Da ich ein Grid System nutze, um die Breiten von Spalten und Seiten zu beeinflussen, kann ich die Komponenten (wie oben beschrieben) ohne Angabe von Höhe oder Breite umsetzen.
 
-Schriftgrößen gebe ich in rems mit Pixel-Fallback an. Dies gewährt uns alle Vorteile der Barrierefreiheit von ems (with the confidence of pixels). Hier ist ein nützliches Sass-Mixin zur Berechnung von rem und Pixel-Fallback (davon ausgehend, dass du deine Basefontsize in einer Variable setzt):
+Schriftgrößen gebe ich in rems mit Pixel-Fallback an. Das gewährleistet uns alle Vorteile der Barrierefreiheit von ems (with the confidence of pixels). Hier ist ein nützliches Sass-Mixin zur Berechnung von rem und Pixel-Fallback (davon ausgehend, dass du deine Basefontsize in einer Variable setzt):
 
     @mixin font-size($font-size) {
         font-size: $font-size +px;
@@ -401,7 +397,7 @@ Pixel verwende ich nur bei Elementen, die schon feste Abmessungen hatten bevor s
 
 ### Anpassen von Schriftgrößen
 
-Ich definiere eine Reihe von Klassen - ähnlich wie beim Grid System - um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
+Ich definiere eine Reihe von Klassen - ähnlich wie beim Grid System - um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig von ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
 
 ## Shorthand
 
@@ -416,8 +412,6 @@ Sei dir im Klaren darüber, welche Eigenschaften du setzen willst und achte dara
 Shorthands sind nützlich aber auch leicht falsch zu verwenden.
 
 ## IDs
-
-A quick note on IDs in CSS before we dive into selectors in general.
 
 Eine kurze Bemerkung zu IDs in CSS, bevor wir uns um Selektoren im Allgemeinen kümmern
 
@@ -437,81 +431,75 @@ Zu lange Selektoren bringen außerdem Performance Problemen mit sich: Je mehr Ab
 
 Stelle deshalb sicher, dass deine Styles unabhängig von ihrer Position sind, wähle deine Selektoren mit Bedacht und halte sie kurz.
 
-Selektoren als Ganzes soltten so kurz gehalten werden wie möglich (zum Beispiel nur eine Klasse tief), die Klasse selber jedoch sollte so lange wie nötig sein. Eine Klasse `.user-avatar` ist wesentlich angenehmer als `.usr-avt`.
+Selektoren als Ganzes sollten so kurz wie möglich gehalten werden (zum Beispiel nur eine Klasse tief), die Klasse selber jedoch sollte so lange wie nötig sein. Eine Klasse `.user-avatar` ist wesentlich angenehmer als `.usr-avt`.
 
 **Merke**: Klassen sind weder semantisch noch unsemantisch, sie sind entweder sinnig oder unsinnig! Mach dir keine Gedanken über die "Semantik" einer Klasse, suche lieber nach etwas sinnigem und zukunftstauglichen.
 
 ### Zu spezifische Selektoren
 
-Wie zuvor bereits erwähnt bedeuten spezifische Selektoren sind meißtens nichts gutes.
+Wie zuvor bereits erwähnt bedeuten spezifische Selektoren meißt nichts gutes.
 
 Ein zu spezifischer Selektor ist beispielsweise `div.promo`. Du könntest vermutlich den selben Effekt erzielen, wenn du einfach  `.promo` verwenden würdest. Natürlich wird es manchmal den Fall geben, dass du eine Klasse _bewusst_ in Verbindung mit einem Element spezifizierst, z.b. wenn du eine allgemeine `.error` Klasse hast, die - je nachdem auf welchem Element sie angewendet wird - unterschiedlich aussehen soll (z.B.
 `.error { color: red; }` `div.error { padding: 14px; }`), im Allgemeinen solltest du es allerdings wo es möglich ist vermeiden.
 
-Ein weiteres Beispie für einen zu spezifischen Selektor wäre `ul.nav li a {}`. Wie im obigen Beispiel, können wir die `ul` ersatzlos weglassen und da wir wissen, dass `.nav` eine Liste ist und daraus schließen können, das `a` in einem `li` sein _muss_, können wir `ul.nav li a {}` auf `.nav a {}` vereinfachen.
-
+Ein weiteres Beispiel für einen zu spezifischen Selektor wäre `ul.nav li a {}`. Auch hier können wir die `ul` ersatzlos streichen und da wir wissen, dass `.nav` eine Liste ist und daraus schließen können, das `a` in einem `li` sein _muss_, können wir `ul.nav li a {}` auf `.nav a {}` vereinfachen.
 
 ### Performance von Selektoren
 
-Obwohl es richtig ist, dass Browser in der Zukunft nur noch schneller werden, was das Rendern von CSS betrifft, solltest du die Effizienz deines CSS trotzdem im Auge behalten.
+Obwohl es richtig ist, dass Browser in der Zukunft nur noch schneller werden, was das Rendern von CSS betrifft, solltest du die Effizienz deiner CSS trotzdem im Auge behalten.
 
-Das Verwenden von kurzen, nicht verschachtelte Selektoren, das Verzichten auf den Universal-Selektor (`* {}`) als Schlüssel-Selektor, sowie das Vermeiden von komplexeren CSS3-Selektoren sollten dabei helfen diese Probleme zu umgehen.
-
+Das Verwenden von kurzen, unverschachtelte Selektoren, das Verzichten auf den Universal-Selektor (`* {}`) als Schlüssel-Selektor, sowie das Vermeiden von komplexeren CSS3-Selektoren sollten dabei helfen diese Probleme zu umgehen.
 
 ## Absicht eines CSS Selektors
 
-Anstatt sich mit Selektoren am DOM entlang zu einem Element zu hangeln, ist es meißtens besser dem Element, welches du stylen möchtest eine Klasse zu geben. Lass uns das an einem konkreten Beispiel, mit einem Selektor wie `.header ul {}` besprechen ...
+Anstatt sich mit Selektoren am DOM entlang zu einem Element zu hangeln, ist es meistens ratsamer dem Element, welches du stylen möchtest eine Klasse zu geben. Lass uns das an einem konkreten Beispiel, mit einem Selektor wie `.header ul {}` besprechen ...
 
-Nehmen wir an, dass diese `ul` tatsächlich die Hauptnavigation unserer Webseite darstellt. Sie befindet sich - wie erwartet - im Header und ist dort momentan die einzige `ul`. `.header ul {}` funktioniert zwar, ist aber weder ideal noch ratsam.
+Nehmen wir an, dass diese `ul` tatsächlich die Hauptnavigation unserer Webseite darstellt. Sie befindet sich - wie erwartet - im Header und ist dort momentan die einzige `ul`. `.header ul {}` funktioniert zwar, ist aber in diesem Fall weder ideal noch ratsam.
 
-Es ist nicht zukunftsorientiert und definitiv nicht spezifisch genug. Sobald wir in diesem Header eine weitere `ul` einfügen, wird diese das Styling unserer Hauptnavigation annehmen und es besteht eine hohe Wahrscheinlichkeit, dass wir das nicht möchten. Das bedeutet, dass wir entweder große Teile unseres Codes refactoren _oder_ viele Style-Anweisungen rückgängig machen müssen um die Effekte des weitreichenden Selektors zu entfernen.
+Es ist nicht zukunftsorientiert und definitiv nicht spezifisch genug. Sobald wir in diesem Header eine weitere `ul` einfügen, wird diese das Styling unserer Hauptnavigation annehmen und es besteht eine hohe Wahrscheinlichkeit, dass wir das nicht möchten. Das bedeutet, dass wir entweder große Teile unseres Codes refactoren _oder_ viele Style-Anweisungen rückgängig machen müssen um die Effekte des weitreichenden Selektors wieder zu entfernen.
 
-Die Absicht deines Selektors sollte deinem Grund entsprechend, aus dem du etwas stylen möchstes. Frag dich **‘wähle ich diese Selektoren, weil es eine `ul` innerhalb von `.header`, oder weil es die Hauptnavigation meiner Seite ist?‘**. Die Antwort darauf hilft dir dabei, deinen Selektor richtig zu wählen.
+Die Absicht deines Selektors sollte dem Grund entsprechend, aus dem du etwas stylen möchstes. Frag dich **‘wähle ich diese Selektoren, weil es eine `ul` innerhalb von `.header`, oder weil es die Hauptnavigation meiner Seite ist?‘**. Die Antwort darauf hilft dir dabei, deinen Selektor richtig zu wählen.
 
 Stelle sicher, dass dein Schlüssel-Selektor niemals ein Element-/Typen-Selektor oder eine Objekt-/Abstraktions- Klasse ist. Selektoren wie `.sidebar ul {}` oder `.footer .media {}` möchtest du nicht in deinem Stylesheet haben.
 
-Greife explizit auf das zu verändernde Element zu, nicht auf sein Elternelement. Gehe niemals davon aus, dass sich dein markup nicht verändern wird. **Verwende Selektoren, die auf das zugreifen, was du verändern möchtest, nicht auf das was bereits vorhanden ist.**
+Greife explizit auf das zu verändernde Element zu, nicht auf sein Elternelement. Gehe niemals davon aus, dass sich dein Markup nicht verändern wird. **Verwende Selektoren, die auf das zugreifen, was du verändern möchtest, nicht auf das was bereits vorhanden ist.**
 
 Für eine ausführliche Beschreibung und Zusammenfassung, schau dir meinen Artikel [Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/) an.
 
 ## `!important`
 
-Verwende `!important` nur auf Helper Klassen. Es ist ok, wenn du `!important` vorsorglich verwendest, wie beispielsweise bei `.error { color: red !important }`, wenn du weißt, dass diese Anweisung **immer** Vorrang haben sollte.
+Verwende `!important` nur auf Helper-Klassen. Es ist ok, wenn du `!important` vorsorglich verwendest, wie beispielsweise bei `.error { color: red !important }`, wenn du weißt, dass diese Anweisung **immer** Vorrang haben sollte.
 
 `!important` nachträglich zu verwenden - zum Beispiel um Spezifitäts-Problemen abzuwenden - ist nicht empfohlen. 
 
-Verändere deine CSS und versuche diese Probleme zu lösen, indem du deine Selektoren refactorst. Wenn du deine Selektoren kurz hältst und IDs vermeidest, wird dir das hier massiv helfen.
-
+Verändere deine CSS und versuche diese Probleme zu lösen, indem du deine Selektoren refactorst. Wenn du deine Selektoren kurz hältst und IDs vermeidest, wird dir das massiv helfen.
 
 ## Magische Zahlen und Konstanten
 
-Eine magische Zahl ist eine Zahl, die verwendet wird, weil es `einfach funktionier`. Diese sind schlecht, weil sie in den wenigsten Fällen aus einem bestimmten Grund funktionieren und in der Regel weder zukunftstauglich noch flexibel sind. Sie neigen dazu Symptome zu bekämpfen, keine Probleme.
+Eine magische Zahl ist eine Zahl, die verwendet wird, weil es `einfach funktioniert`. Diese sind schlecht, weil sie in den wenigsten Fällen aus einem bestimmten Grund funktionieren und in der Regel weder zukunftstauglich noch flexibel sind. Sie neigen dazu Symptome zu bekämpfen, keine Probleme.
 
-Beispiel: `.dropdown-nav li:hover ul { top: 37px; }` dazu zu verwenden um ein Dropdown beim Hovern unter die Navigation zu schieben ist schlecht, da 37px eine magische Nummer ist. 37px funktioniert hier nur, weil in diesem speziellen Szenario die `.dropdown-nav` 37px hoch ist.
+Beispiel: `.dropdown-nav li:hover ul { top: 37px; }` dazu zu verwenden um ein Dropdown bei Hover unter die Navigation zu schieben ist schlecht, da 37px eine magische Nummer ist. 37px funktioniert hier nur, weil in diesem speziellen Szenario die `.dropdown-nav` 37px hoch ist.
 
 Stattdessen solltest du `.dropdown-nav li:hover ul { top: 100%; }` verwenden, da das Dropdown dadurch immer mit einem Abstand von 100% ausgerichtet sein wir, egal wie hoch die `.dropdown-nav` wird.
 
-Überlege dir zweimal, ob du eine Nummer fest vergibst. Wenn du es mit Hilfe von Keywords oder ‘aliases’ (z.B. `top: 100%` was soviel bedeutet wie ‘den kompletten Abstand von oben’) oder - noch besser - ohne Angabe von Abmessungen vermeiden kannst, solltest du das tun.
+Überlege dir zweimal, ob du eine feste Nummer vergibst. Wenn du es mit Hilfe von Keywords oder ‘aliases’ (z.B. `top: 100%` was soviel bedeutet wie ‘den kompletten Abstand von oben’) oder - noch besser - ohne Angabe von Abmessungen vermeiden kannst, solltest du das tun.
 
 Jeder Wert, den du von Hand vergibts, ist ein Zugeständnis, das du möglicherweise nicht einräumen willst.
 
-
 ## Conditional Stylesheets
 
-Spezielle IE Stylesheets können in den meißten Fällen komplett vermieden werden, es sei denn, du musst eine fehlende Browserunterstützung ausgleichen (z.B. PNG
+Spezielle IE Stylesheets können in den meisten Fällen komplett vermieden werden, es sei denn, du musst eine fehlende Browserunterstützung ausgleichen (z.B. PNG
 fixes).
 
-Im Allgemeinen können und werden alle layout und box-model Anweisungen ohne eine IE Stylesheet funktionierem, wenn du dein CSS refactorst und überarbeitest. Das bedeutet, dass du niemals `<!--[if IE 7]> element { margin-left: -9px; } < ![endif]-->` oder ähnliches CSS verwenden willst, dass offensichtlich grundloses Styling verwendet nur damit Sachen wieder ‘funktionieren‘.
+Im Allgemeinen können und werden alle layout und box-model Anweisungen auch ohne eine IE Stylesheet funktionierem, wenn du dein CSS refactorst und überarbeitest. Das bedeutet, dass du niemals `<!--[if IE 7]> element { margin-left: -9px; } < ![endif]-->` oder ähnliches CSS verwenden willst, dass offensichtlich grundloses Styling verwendet nur damit Sachen wieder ‘funktionieren‘.
 
 ## Debugging
 
-Wenn du ein CSS Problem entdeckst, 
-**entferne zuallererst Code, bevor du damit anfängst noch mehr hinzuzufügen** um es zu lösen. Da das Problem im CSS besteht, das du schon geschrieben hast, ist mehr CSS nicht die richtige Antwort!
+Wenn du ein CSS Problem entdeckst, **entferne zuallererst Code, bevor du damit anfängst noch mehr hinzuzufügen** um es zu lösen. Da das Problem in dem CSS besteht, das du schon geschrieben hast, ist mehr CSS nicht die richtige Antwort!
 
-Lösche solange markup und CSS, bis dein Problem verschwindet. Anschließend kannst du bestimmten in welchem Teil deines Codes das Problem liegt.
+Lösche solange Markup und CSS, bis dein Problem verschwindet. Anschließend kannst du bestimmten in welchem Teil deines Codes das Problem liegt.
 
 Es ist sehr verlockend einem Element `overflow: hidden;` oder ähnliches zu geben um damit die Effekte eines Layout Problems zu verstecken, aber overflow war möglicherweise nie das Problem - **Behandle das Problem, nicht seine Symptome**.
-
 
 ## Preprocessors
 

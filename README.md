@@ -441,23 +441,17 @@ Selektoren als Ganzes soltten so kurz gehalten werden wie möglich (zum Beispiel
 
 **Merke**: Klassen sind weder semantisch noch unsemantisch, sie sind entweder sinnig oder unsinnig! Mach dir keine Gedanken über die "Semantik" einer Klasse, suche lieber nach etwas sinnigem und zukunftstauglichen.
 
-### Over-qualified selectors
+### Zu spezifische Selektoren
 
-As discussed above, qualified selectors are bad news.
+Wie zuvor bereits erwähnt bedeuten spezifische Selektoren sind meißtens nichts gutes.
 
-An over-qualified selector is one like `div.promo`. You could probably get the
-same effect from just using `.promo`. Of course sometimes you will _want_ to
-qualify a class with an element (e.g. if you have a generic `.error` class that
-needs to look different when applied to different elements (e.g.
-`.error { color: red; }` `div.error { padding: 14px; }`)), but generally avoid it
-where possible.
+Ein zu spezifischer Selektor ist beispielsweise `div.promo`. Du könntest vermutlich den selben Effekt erzielen, wenn du einfach  `.promo` verwenden würdest. Natürlich wird es manchmal den Fall geben, dass du eine Klasse _bewusst_ in Verbindung mit einem Element spezifizierst, z.b. wenn du eine allgemeine `.error` Klasse hast, die - je nachdem auf welchem Element sie angewendet wird - unterschiedlich aussehen soll (z.B.
+`.error { color: red; }` `div.error { padding: 14px; }`), im Allgemeinen solltest du es allerdings wo es möglich ist vermeiden.
 
-Another example of an over-qualified selector might be `ul.nav li a {}`. As
-above, we can instantly drop the `ul` and because we know `.nav` is a list, we
-therefore know that any `a` _must_ be in an `li`, so we can get `ul.nav li a {}`
-down to just `.nav a {}`.
+Ein weiteres Beispie für einen zu spezifischen Selektor wäre `ul.nav li a {}`. Wie im obigen Beispiel, können wir die `ul` ersatzlos weglassen und da wir wissen, dass `.nav` eine Liste ist und daraus schließen können, das `a` in einem `li` sein _muss_, können wir `ul.nav li a {}` auf `.nav a {}` vereinfachen.
 
-### Selector performance
+
+### Performance von Selektoren
 
 Whilst it is true that browsers will only ever keep getting faster at rendering
 CSS, efficiency is something you could do to keep an eye on. Short, unnested

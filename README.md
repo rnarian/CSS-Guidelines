@@ -515,16 +515,15 @@ Es ist sehr verlockend einem Element `overflow: hidden;` oder ähnliches zu gebe
 
 ## Preprocessors
 
-Sass is my preprocessor of choice. **Use it wisely.** Use Sass to make your CSS
-more powerful but avoid nesting like the plague! Nest only when it would
-actually be necessary in vanilla CSS, e.g.
+Sass ist der preprocessor meiner Wahl. **Verwende ihn weise**. Benutze Sass um dein CSS mächtiger zu machen aber vermeide Verschachtelungen unter allen Umständen! Verschachtele nur, wenn es auch in vanilla CSS notwendig wäre, z.B.
 
     .header {}
     .header .site-nav {}
     .header .site-nav li {}
     .header .site-nav li a {}
 
-Would be wholly unnecessary in normal CSS, so the following would be **bad**
+wäre in normalem CSS absolut unnötig und daher wäre das Folgende **schlecht**
+
 Sass:
 
     .header {
@@ -535,7 +534,7 @@ Sass:
         }
     }
 
-If you were to Sass this up you’d write it as:
+In Sass würdest du es so schreiben:
 
     .header {}
     .site-nav {

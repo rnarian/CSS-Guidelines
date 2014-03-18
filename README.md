@@ -292,27 +292,27 @@ Es gibt eine Reihe an fortgeschrittenen Techniken die du verwenden kannst was Ko
 
 #### Quasi-Qualifizierte Selektoren
 
-Du solltest deine Selektoren niemals einschränken; also niemals `ul.nav {}` schreiben, wenn du einfach `.nav` nutzen kannst. Das einschränken von Selektoren mindert die Leistung, verhindert das Potenzial die Klasse auf einem anderen Element-Typ wiederzuverwenden und die Spezifität des Selektors nimmt zu. Das sind alles Dinge, die unter allen Umständen vermieden werden sollten.
+Du solltest deine Selektoren niemals zusätzlich qualifizieren - also niemals `ul.nav {}` schreiben, wenn du einfach `.nav` nutzen kannst. Das Qualifizieren von Selektoren vermindert die Leistung, verhindert ein potenzielles Wiederverwenden der Klasse auf einen anderen Element-Typ und die Spezifität des Selektors nimmt zu. Das sind alles Dinge, die unter allen Umständen vermieden werden müssen.
 
-Jedoch ist es manchmal nützlich dem nächsten Entwickler zu zeigen wo eine Klasse genutzt werden soll. Nehmen wie `.product-page` als Beispiel; Diese Klasse hört sich so an, als würde sie auf einem Container auf hoher Ebene genutzt werden, eventuell das `html` oder `body` Element, aber mit `.product-page` alleine ist das unmöglich zu sagen.
+Allerdings ist es manchmal hilfreich dem nächsten Entwickler zu zeigen wo eine Klasse genutzt werden soll. Nehmen wir `.product-page` als Beispiel; Diese Klasse hört sich so an, als würde sie auf einem Container auf hoher Ebene genutzt werden, eventuell das `html` oder `body` Element, aber mit `.product-page` alleine ist das unmöglich zu sagen.
 
-Indem wir den Selektor quasi-qualifizieren (auskommentieren des vorangestellten Selektor Typs) können wir kommunizieren wo wir die Klasse nutzen möchten:
+Indem wir den Selektor quasi-qualifizieren (auskommentieren des vorangestellten Selektor Typs) können wir kommunizieren an welcher Stelle wir diese Klasse anwenden möchten:
 
     /*html*/.product-page {}
 
-So sehen wir genau wo die Klasse angewand werden soll, ohne die Nachteile der Spezifität oder nichtvorhandenen Wiederverwendbarkeit.
+So sehen wir genau wo die Klasse angewendet werden soll, jedoch ohne die Nachteile der Spezifität oder an Wiederverwendbarkeit einzubüßen.
 
-Andere Beispiele können sein:
+Andere Beispiele könnten sein:
 
     /*ol*/.breadcrumb {}
     /*p*/.intro {}
     /*ul*/.image-thumbs {}
 
-Hier können wir sehen, wo wir jede dieser Klassen zu platzieren beabsichtigen, ohne jemals die Spezifität der Selektoren zu beeinflussen.
+Hier können wir sehen, wo wir beabsichtigen jede dieser Klassen zu platzieren, ohne dabei die Spezifität der Selektoren zu beeinflussen.
 
 #### Code Tags
 
-Wenn du eine neue Komponente schreibst, hinterlasse einige Tags die ihre Funktionalität beschreiben in einem Kommentar oberhalb, zum Beispiel:
+Wenn du eine neue Komponente schreibst, hinterlasse einige Tags in einem vorangestellten Kommentar, um ihre Funktionalität beschreiben. Zum Beispiel:
 
     /**
      * ^navigation ^lists
@@ -324,7 +324,7 @@ Wenn du eine neue Komponente schreibst, hinterlasse einige Tags die ihre Funktio
      */
     .matrix {}
 
-Diese Tags erlauben anderen Entwicklern Code-Snippets zu finden indem sie nach Funktionalität suchen; Wenn ein Entwickler mit Listen arbeiten muss, kann er oder sie eine Suche nach `^lists` starten und findet die `.nav` und `.matrix` Objekte (und vermutlich noch mehr).
+Diese Tags erlauben anderen Entwicklern Code-Snippets zu finden, indem sie nach Funktionalität suchen. Wenn ein Entwickler mit Listen arbeiten muss, kann er oder sie eine Suche nach `^lists` starten und findet die `.nav` und `.matrix` Objekte (und vermutlich noch weitere).
 
 #### Objekt/Extension Pointer
 

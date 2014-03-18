@@ -483,27 +483,18 @@ Verwende `!important` nur auf Helper Klassen. Es ist ok, wenn du `!important` vo
 Verändere deine CSS und versuche diese Probleme zu lösen, indem du deine Selektoren refactorst. Wenn du deine Selektoren kurz hältst und IDs vermeidest, wird dir das hier massiv helfen.
 
 
-## Magic numbers and absolutes
+## Magische Zahlen und Konstanten
 
-A magic number is a number which is used because ‘it just works’. These are bad
-because they rarely work for any real reason and are not usually very
-futureproof or flexible/forgiving. They tend to fix symptoms and not problems.
+Eine magische Zahl ist eine Zahl, die verwendet wird, weil es `einfach funktionier`. Diese sind schlecht, weil sie in den wenigsten Fällen aus einem bestimmten Grund funktionieren und in der Regel weder zukunftstauglich noch flexibel sind. Sie neigen dazu Symptome zu bekämpfen, keine Probleme.
 
-For example, using `.dropdown-nav li:hover ul { top: 37px; }` to move a dropdown
-to the bottom of the nav on hover is bad, as 37px is a magic number. 37px only
-works here because in this particular scenario the `.dropdown-nav` happens to be
-37px tall.
+Beispiel: `.dropdown-nav li:hover ul { top: 37px; }` dazu zu verwenden um ein Dropdown beim Hovern unter die Navigation zu schieben ist schlecht, da 37px eine magische Nummer ist. 37px funktioniert hier nur, weil in diesem speziellen Szenario die `.dropdown-nav` 37px hoch ist.
 
-Instead you should use `.dropdown-nav li:hover ul { top: 100%; }` which means no
-matter how tall the `.dropdown-nav` gets, the dropdown will always sit 100% from
-the top.
+Stattdessen solltest du `.dropdown-nav li:hover ul { top: 100%; }` verwenden, da das Dropdown dadurch immer mit einem Abstand von 100% ausgerichtet sein wir, egal wie hoch die `.dropdown-nav` wird.
 
-Every time you hard code a number think twice; if you can avoid it by using
-keywords or ‘aliases’ (i.e. `top: 100%` to mean ‘all the way from the top’)
-or&mdash;even better&mdash;no measurements at all then you probably should.
+Überlege dir zweimal, ob du eine Nummer fest vergibst. Wenn du es mit Hilfe von Keywords oder ‘aliases’ (z.B. `top: 100%` was soviel bedeutet wie ‘den kompletten Abstand von oben’) oder - noch besser - ohne Angabe von Abmessungen vermeiden kannst, solltest du das tun.
 
-Every hard-coded measurement you set is a commitment you might not necessarily
-want to keep.
+Jeder Wert, den du von Hand vergibts, ist ein Zugeständnis, das du möglicherweise nicht einräumen willst.
+
 
 ## Conditional stylesheets
 

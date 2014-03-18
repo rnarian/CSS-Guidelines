@@ -39,9 +39,9 @@ Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von
   * [Font sizing](#font-sizing)
 * [Shorthand](#shorthand)
 * [IDs](#ids)
-* [Selectors](#selectors)
+* [Selektoren](#selectors)
   * [Over qualified selectors](#over-qualified-selectors)
-  * [Selector performance](#selector-performance)
+  * [Performance von Selektoren](#selector-performance)
 * [CSS selector intent](#css-selector-intent)
 * [`!important`](#important)
 * [Magic numbers and absolutes](#magic-numbers-and-absolutes)
@@ -427,29 +427,19 @@ Du kannst Sie in deinem Markup als JS Hooks oder als Fragmentbezeichner verwende
 
 Klassen haben den Vorteil, dass sie wiederverwendbar sind (selbst wenn wir das nicht brauchen, die Möglichkeit bleibt bestehen) und kommen mit einer angenehmen, niedrigen Spezifität. Spezifität ist eine der schnellsten Wege um bei Projekten in Probleme zu geraten, daher ist es erforderlich sie zu allen Zeiten so gering wie möglich zu halten. Eine ID ist **255** mal spezifischer als eine Klasse, benutze sie deshalb _niemals_ in CSS.
 
-## Selectors
+## Selektoren
 
-Keep selectors short, efficient and portable.
+Halte deine Selektoren so kurz, effizient und wiederverwendbar wie möglich.
 
-Heavily location-based selectors are bad for a number of reasons. For example,
-take `.sidebar h3 span {}`. This selector is too location-based and thus we
-cannot move that `span` outside of a `h3` outside of `.sidebar` and maintain
-styling.
+Selektoren, die stark von ihrer Position abhängig sind, sind aus mehreren Gründen unpraktisch. Nehmen wir zum Beispiel `.sidebar h3 span {}`. Dieser Selektor ist zu stark von seiner Position abhängig, weshalb wir die `span` nicht außerhalb einer `h3`, und diese wiederum nicht außerhalb von `.sidebar` verwenden, ohne dabei unser Styling zu verlieren.
 
-Selectors which are too long also introduce performance issues; the more checks
-in a selector (e.g. `.sidebar h3 span` has three checks, `.content ul p a` has
-four), the more work the browser has to do.
+Zu lange Selektoren bringen außerdem Performance Problemen mit sich: Je mehr Abgleiche in einem Selektor enthalten sind (`.sidebar h3 span` hat beispielsweise drei Abgleiche, `.content ul p a` hat vier), desto mehr Arbeit hat der Browser damit.
 
-Make sure styles aren’t dependent on location where possible, and make sure
-selectors are nice and short.
+Stelle deshalb sicher, dass deine Styles unabhängig von ihrer Position sind, wähle deine Selektoren mit Bedacht und halte sie kurz.
 
-Selectors as a whole should be kept short (e.g. one class deep) but the class
-names themselves should be as long as they need to be. A class of `.user-avatar`
-is far nicer than `.usr-avt`.
+Selektoren als Ganzes soltten so kurz gehalten werden wie möglich (zum Beispiel nur eine Klasse tief), die Klasse selber jedoch sollte so lange wie nötig sein. Eine Klasse `.user-avatar` ist wesentlich angenehmer als `.usr-avt`.
 
-**Remember:** classes are neither semantic or insemantic; they are sensible or
-insensible! Stop stressing about ‘semantic’ class names and pick something
-sensible and futureproof.
+**Merke**: Klassen sind weder semantisch noch unsemantisch, sie sind entweder sinnig oder unsinnig! Mach dir keine Gedanken über die "Semantik" einer Klasse, suche lieber nach etwas sinnigem und zukunftstauglichen.
 
 ### Over-qualified selectors
 

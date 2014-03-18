@@ -14,7 +14,7 @@ Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von
 
 ## Inhalte
 
-* [CSS Dokument Anatomie](#css-dokument-anatomie)
+* [Anatomie eines CSS Dokumentes](#anatomie-eines-css-dokumentes)
   * [Allgemein](#allgemein)
   * [Eine Datei vs. Viele Dateien](#eine-datei-vs-viele-dateien)
   * [Inhaltsangabe](#inhaltsangabe)
@@ -28,13 +28,13 @@ Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von
   * [Kommentare auf Steroiden](#kommentare-auf-steroiden)
     * [Quasi-qualifizierte Selektoren](#quasi-qualifizierte-selektoren)
     * [Code Tags](#code-tags)
-    * [Objekt/Erweiterung Zeiger](#objekt-erweiterung-zeiger)
+    * [Objekt/Erweiterung Zeiger](#objekterweiterung-zeiger)
 * [CSS schreiben](#css-schreiben)
 * [Erstellen neuer Komponenten](#erstellen-neuer-komponenten)
 * [OOCSS](#oocss)
 * [Layout](#layout)
-* [Größenangaben für Benutzeroberflächen](#groessenangaben-fuer-benutzeroberflaechen)
-  * [Anpassen von Schriftgrößen](#anpassen-von-schriftgroessen)
+* [Größenangaben für Benutzeroberflächen](#gr%C3%B6%C3%9Fenangaben-f%C3%BCr-benutzeroberfl%C3%A4chen)
+  * [Anpassen von Schriftgrößen](#anpassen-von-schriftgr%C3%B6%C3%9Fen)
 * [Shorthand](#shorthand)
 * [IDs](#ids)
 * [Selektoren](#selektoren)
@@ -500,7 +500,7 @@ Es ist sehr verlockend einem Element `overflow: hidden;` oder ähnliches zu gebe
 
 ## Preprocessors
 
-Sass ist der Preprocessor meiner Wahl. **Verwende ihn weise**. Benutze Sass um dein CSS mächtiger zu machen aber vermeide Verschachtelungen unter allen Umständen! Verschachtele nur, wenn es auch in vanilla CSS notwendig wäre, z.B.
+Sass ist der Pgit sreprocessor meiner Wahl. **Verwende ihn weise**. Benutze Sass um dein CSS mächtiger zu machen aber vermeide Verschachtelungen unter allen Umständen! Verschachtele nur, wenn es auch in vanilla CSS notwendig wäre, z.B.
 
     .header {}
     .header .site-nav {}

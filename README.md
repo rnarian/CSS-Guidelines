@@ -441,129 +441,89 @@ Selektoren als Ganzes soltten so kurz gehalten werden wie möglich (zum Beispiel
 
 **Merke**: Klassen sind weder semantisch noch unsemantisch, sie sind entweder sinnig oder unsinnig! Mach dir keine Gedanken über die "Semantik" einer Klasse, suche lieber nach etwas sinnigem und zukunftstauglichen.
 
-### Over-qualified selectors
+### Zu spezifische Selektoren
 
-As discussed above, qualified selectors are bad news.
+Wie zuvor bereits erwähnt bedeuten spezifische Selektoren sind meißtens nichts gutes.
 
-An over-qualified selector is one like `div.promo`. You could probably get the
-same effect from just using `.promo`. Of course sometimes you will _want_ to
-qualify a class with an element (e.g. if you have a generic `.error` class that
-needs to look different when applied to different elements (e.g.
-`.error { color: red; }` `div.error { padding: 14px; }`)), but generally avoid it
-where possible.
+Ein zu spezifischer Selektor ist beispielsweise `div.promo`. Du könntest vermutlich den selben Effekt erzielen, wenn du einfach  `.promo` verwenden würdest. Natürlich wird es manchmal den Fall geben, dass du eine Klasse _bewusst_ in Verbindung mit einem Element spezifizierst, z.b. wenn du eine allgemeine `.error` Klasse hast, die - je nachdem auf welchem Element sie angewendet wird - unterschiedlich aussehen soll (z.B.
+`.error { color: red; }` `div.error { padding: 14px; }`), im Allgemeinen solltest du es allerdings wo es möglich ist vermeiden.
 
-Another example of an over-qualified selector might be `ul.nav li a {}`. As
-above, we can instantly drop the `ul` and because we know `.nav` is a list, we
-therefore know that any `a` _must_ be in an `li`, so we can get `ul.nav li a {}`
-down to just `.nav a {}`.
+Ein weiteres Beispie für einen zu spezifischen Selektor wäre `ul.nav li a {}`. Wie im obigen Beispiel, können wir die `ul` ersatzlos weglassen und da wir wissen, dass `.nav` eine Liste ist und daraus schließen können, das `a` in einem `li` sein _muss_, können wir `ul.nav li a {}` auf `.nav a {}` vereinfachen.
 
-### Selector performance
 
-Whilst it is true that browsers will only ever keep getting faster at rendering
-CSS, efficiency is something you could do to keep an eye on. Short, unnested
-selectors, not using the universal (`* {}`) selector as the key selector, and
-avoiding more complex CSS3 selectors should help circumvent these problems.
+### Performance von Selektoren
 
-## CSS selector intent
+Obwohl es richtig ist, dass Browser in der Zukunft nur noch schneller werden, was das Rendern von CSS betrifft, solltest du die Effizienz deines CSS trotzdem im Auge behalten.
 
-Instead of using selectors to drill down the DOM to an element, it is often best
-to put a class on the element you explicitly want to style. Let’s take a
-specific example with a selector like `.header ul {}`…
+Das Verwenden von kurzen, nicht verschachtelte Selektoren, das Verzichten auf den Universal-Selektor (`* {}`) als Schlüssel-Selektor, sowie das Vermeiden von komplexeren CSS3-Selektoren sollten dabei helfen diese Probleme zu umgehen.
 
-Let’s imagine that `ul` is indeed the main navigation for our website. It lives
-in the header as you might expect and is currently the only `ul` in there;
-`.header ul {}` will work, but it’s not ideal or advisable. It’s not very future
-proof and certainly not explicit enough. As soon as we add another `ul` to that
-header it will adopt the styling of our main nav and the the chances are it
-won’t want to. This means we either have to refactor a lot of code _or_ undo a
-lot of styling on subsequent `ul`s in that `.header` to remove the effects of
-the far reaching selector.
 
-Your selector’s intent must match that of your reason for styling something;
-ask yourself **‘am I selecting this because it’s a `ul` inside of `.header` or
-because it is my site’s main nav?’**. The answer to this will determine your
-selector.
+## Absicht eines CSS Selektor
 
-Make sure your key selector is never an element/type selector or
-object/abstraction class. You never really want to see selectors like
-`.sidebar ul {}` or `.footer .media {}` in our theme stylesheets.
+Anstatt sich mit Selektoren am DOM entlang zu einem Element zu hangeln, ist es meißtens besser dem Element, welches du stylen möchtest eine Klasse zu geben. Lass uns das an einem konkreten Beispiel, mit einem Selektor wie `.header ul {}` besprechen ...
 
-Be explicit; target the element you want to affect, not its parent. Never assume
-that markup won’t change. **Write selectors that target what you want, not what
-happens to be there already.**
+Nehmen wir an, dass diese `ul` tatsächlich die Hauptnavigation unserer Webseite darstellt. Sie befindet sich - wie erwartet - im Header und ist dort momentan die einzige `ul`. `.header ul {}` funktioniert zwar, ist aber weder ideal noch ratsam.
 
-For a full write up please see my article
-[Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
+Es ist nicht zukunftsorientiert und definitiv nicht spezifisch genug. Sobald wir in diesem Header eine weitere `ul` einfügen, wird diese das Styling unserer Hauptnavigation annehmen und es besteht eine hohe Wahrscheinlichkeit, dass wir das nicht möchten. Das bedeutet, dass wir entweder große Teile unseres Codes refactoren _oder_ viele Style-Anweisungen rückgängig machen müssen um die Effekte des weitreichenden Selektors zu entfernen.
+
+Die Absicht deines Selektors sollte deinem Grund entsprechend, aus dem du etwas stylen möchstes. Frag dich **‘wähle ich diese Selektoren, weil es eine `ul` innerhalb von `.header`, oder weil es die Hauptnavigation meiner Seite ist?‘**. Die Antwort darauf hilft dir dabei, deinen Selektor richtig zu wählen.
+
+Stelle sicher, dass dein Schlüssel-Selektor niemals ein Element-/Typen-Selektor oder eine Objekt-/Abstraktions- Klasse ist. Selektoren wie `.sidebar ul {}` oder `.footer .media {}` möchtest du nicht in deinem Stylesheet haben.
+
+Greife explizit auf das zu verändernde Element zu, nicht auf sein Elternelement. Gehe niemals davon aus, dass sich dein markup nicht verändern wird. **Verwende Selektoren, die auf das zugreifen, was du verändern möchtest, nicht auf das was bereits vorhanden ist.**
+
+Für eine ausführliche Beschreibung und Zusammenfassung, schau dir meinen Artikel [Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/) an.
 
 ## `!important`
 
-It is okay to use `!important` on helper classes only. To add `!important`
-preemptively is fine, e.g. `.error { color: red !important }`, as you know you will
-**always** want this rule to take precedence.
+Verwende `!important` nur auf Helper Klassen. Es ist ok, wenn du `!important` vorsorglich verwendest, wie beispielsweise bei `.error { color: red !important }`, wenn du weißt, dass diese Anweisung **immer** Vorrang haben sollte.
 
-Using `!important` reactively, e.g. to get yourself out of nasty specificity
-situations, is not advised. Rework your CSS and try to combat these issues by
-refactoring your selectors. Keeping your selectors short and avoiding IDs will
-help out here massively.
+`!important` nachträglich zu verwenden - zum Beispiel um Spezifitäts-Problemen abzuwenden - ist nicht empfohlen. 
 
-## Magic numbers and absolutes
+Verändere deine CSS und versuche diese Probleme zu lösen, indem du deine Selektoren refactorst. Wenn du deine Selektoren kurz hältst und IDs vermeidest, wird dir das hier massiv helfen.
 
-A magic number is a number which is used because ‘it just works’. These are bad
-because they rarely work for any real reason and are not usually very
-futureproof or flexible/forgiving. They tend to fix symptoms and not problems.
 
-For example, using `.dropdown-nav li:hover ul { top: 37px; }` to move a dropdown
-to the bottom of the nav on hover is bad, as 37px is a magic number. 37px only
-works here because in this particular scenario the `.dropdown-nav` happens to be
-37px tall.
+## Magische Zahlen und Konstanten
 
-Instead you should use `.dropdown-nav li:hover ul { top: 100%; }` which means no
-matter how tall the `.dropdown-nav` gets, the dropdown will always sit 100% from
-the top.
+Eine magische Zahl ist eine Zahl, die verwendet wird, weil es `einfach funktionier`. Diese sind schlecht, weil sie in den wenigsten Fällen aus einem bestimmten Grund funktionieren und in der Regel weder zukunftstauglich noch flexibel sind. Sie neigen dazu Symptome zu bekämpfen, keine Probleme.
 
-Every time you hard code a number think twice; if you can avoid it by using
-keywords or ‘aliases’ (i.e. `top: 100%` to mean ‘all the way from the top’)
-or&mdash;even better&mdash;no measurements at all then you probably should.
+Beispiel: `.dropdown-nav li:hover ul { top: 37px; }` dazu zu verwenden um ein Dropdown beim Hovern unter die Navigation zu schieben ist schlecht, da 37px eine magische Nummer ist. 37px funktioniert hier nur, weil in diesem speziellen Szenario die `.dropdown-nav` 37px hoch ist.
 
-Every hard-coded measurement you set is a commitment you might not necessarily
-want to keep.
+Stattdessen solltest du `.dropdown-nav li:hover ul { top: 100%; }` verwenden, da das Dropdown dadurch immer mit einem Abstand von 100% ausgerichtet sein wir, egal wie hoch die `.dropdown-nav` wird.
 
-## Conditional stylesheets
+Überlege dir zweimal, ob du eine Nummer fest vergibst. Wenn du es mit Hilfe von Keywords oder ‘aliases’ (z.B. `top: 100%` was soviel bedeutet wie ‘den kompletten Abstand von oben’) oder - noch besser - ohne Angabe von Abmessungen vermeiden kannst, solltest du das tun.
 
-IE stylesheets can, by and large, be totally avoided. The only time an IE
-stylesheet may be required is to circumvent blatant lack of support (e.g. PNG
+Jeder Wert, den du von Hand vergibts, ist ein Zugeständnis, das du möglicherweise nicht einräumen willst.
+
+
+## Conditional Stylesheets
+
+Spezielle IE Stylesheets können in den meißten Fällen komplett vermieden werden, es sei denn, du musst eine fehlende Browserunterstützung ausgleichen (z.B. PNG
 fixes).
 
-As a general rule, all layout and box-model rules can and _will_ work without an
-IE stylesheet if you refactor and rework your CSS. This means you never want to
-see `<!--[if IE 7]> element { margin-left: -9px; } < ![endif]-->` or other such
-CSS that is clearly using arbitrary styling to just ‘make stuff work’.
+Im Allgemeinen können und werden alle layout und box-model Anweisungen ohne eine IE Stylesheet funktionierem, wenn du dein CSS refactorst und überarbeitest. Das bedeutet, dass du niemals `<!--[if IE 7]> element { margin-left: -9px; } < ![endif]-->` oder ähnliches CSS verwenden willst, dass offensichtlich grundloses Styling verwendet nur damit Sachen wieder ‘funktionieren‘.
 
 ## Debugging
 
-If you run into a CSS problem **take code away before you start adding more** in
-a bid to fix it. The problem exists in CSS that is already written, more CSS
-isn’t the right answer!
+Wenn du ein CSS Problem entdeckst, 
+**entferne zuallererst Code, bevor du damit anfängst noch mehr hinzuzufügen** um es zu lösen. Da das Problem im CSS besteht, das du schon geschrieben hast, ist mehr CSS nicht die richtige Antwort!
 
-Delete chunks of markup and CSS until your problem goes away, then you can
-determine which part of the code the problem lies in.
+Lösche solange markup und CSS, bis dein Problem verschwindet. Anschließend kannst du bestimmten in welchem Teil deines Codes das Problem liegt.
 
-It can be tempting to put an `overflow: hidden;` on something to hide the effects
-of a layout quirk, but overflow was probably never the problem; **fix the
-problem, not its symptoms.**
+Es ist sehr verlockend einem Element `overflow: hidden;` oder ähnliches zu geben um damit die Effekte eines Layout Problems zu verstecken, aber overflow war möglicherweise nie das Problem - **Behandle das Problem, nicht seine Symptome**.
+
 
 ## Preprocessors
 
-Sass is my preprocessor of choice. **Use it wisely.** Use Sass to make your CSS
-more powerful but avoid nesting like the plague! Nest only when it would
-actually be necessary in vanilla CSS, e.g.
+Sass ist der preprocessor meiner Wahl. **Verwende ihn weise**. Benutze Sass um dein CSS mächtiger zu machen aber vermeide Verschachtelungen unter allen Umständen! Verschachtele nur, wenn es auch in vanilla CSS notwendig wäre, z.B.
 
     .header {}
     .header .site-nav {}
     .header .site-nav li {}
     .header .site-nav li a {}
 
-Would be wholly unnecessary in normal CSS, so the following would be **bad**
+wäre in normalem CSS absolut unnötig und daher wäre das Folgende **schlecht**
+
 Sass:
 
     .header {
@@ -574,7 +534,7 @@ Sass:
         }
     }
 
-If you were to Sass this up you’d write it as:
+In Sass würdest du es so schreiben:
 
     .header {}
     .site-nav {

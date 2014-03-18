@@ -500,7 +500,7 @@ Es ist sehr verlockend einem Element `overflow: hidden;` oder ähnliches zu gebe
 
 ## Preprocessors
 
-Sass ist der Pgit sreprocessor meiner Wahl. **Verwende ihn weise**. Benutze Sass um dein CSS mächtiger zu machen aber vermeide Verschachtelungen unter allen Umständen! Verschachtele nur, wenn es auch in vanilla CSS notwendig wäre, z.B.
+Sass ist der Preprocessor meiner Wahl. **Verwende ihn weise**. Benutze Sass um dein CSS mächtiger zu machen aber vermeide Verschachtelungen unter allen Umständen! Verschachtele nur, wenn es auch in vanilla CSS notwendig wäre, z.B.
 
     .header {}
     .header .site-nav {}

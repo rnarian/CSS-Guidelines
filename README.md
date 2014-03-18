@@ -30,7 +30,7 @@ Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von
   * [Kommentare auf Steroiden](#comments-on-steroids)
     * [Quasi-qualified selectors](#quasi-qualified-selectors)
     * [Code Tags](#tagging-code)
-    * [Objekt/Extension Pointer](#objectextension-pointers)
+    * [Objekt/Erweiterung Pointer](#objectErweiterung-pointers)
 * [Writing CSS](#writing-css)
 * [Building new components](#building-new-components)
 * [OOCSS](#oocss)
@@ -122,7 +122,7 @@ Ein ordentlich geordnetes Stylesheet sieht ungefähr so aus:
 **Reset**
 **Elemente** - `h1`, `ul`, etc. ohne Klassen
 **Objekte und Abstraktionen** - allgemeine, grundlegende Design Patterns
-**Komponenten** - Komplette Komponenten konstruiert aus Objekten und ihren Extensions.
+**Komponenten** - Komplette Komponenten konstruiert aus Objekten und ihren Erweiterungen.
 **Style Trümpfe** - error states etc.
 
 Das bedeutet, dass jeder Abschnitt auf den Vorherigen aufbaut und dessen Eigenschaften erbt. Dadurch sollte weniger Überschreiben, weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
@@ -288,7 +288,7 @@ Es gibt eine Reihe an fortgeschrittenen Techniken die du verwenden kannst was Ko
 
 * Quasi-Qualifizierte Selektoren
 * Code taggen
-* Objekt/Extension Hinweise
+* Objekt/Erweiterung Hinweise
 
 #### Quasi-Qualifizierte Selektoren
 
@@ -326,9 +326,9 @@ Wenn du eine neue Komponente schreibst, hinterlasse einige Tags in einem vorange
 
 Diese Tags erlauben anderen Entwicklern Code-Snippets zu finden, indem sie nach Funktionalität suchen. Wenn ein Entwickler mit Listen arbeiten muss, kann er oder sie eine Suche nach `^lists` starten und findet die `.nav` und `.matrix` Objekte (und vermutlich noch weitere).
 
-#### Objekt/Extension Pointer
+#### Objekt/Erweiterung Zeiger
 
-Beim Arbeiten in einer Objektorientieren Art und Weise wirst du oft zwei Brocken von CSS haben (einer das Skelett (das Objekt) und einer die Haut (die Extension)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Um eine feste Verbindung zwischen dem Objekt und seiner Extension herzustellen nutze <i>Objekt/Extension Pointer</i>. Diese sind einfach Kommentare die folgendermaßen funktionieren:
+Beim Arbeiten in einer Objektorientieren Art und Weise wird es oft vorkommen, dass du zwei Brocken von CSS hast (einer für das Skelett (das Objekt) und ein anderer für die Haut (die Erweiterung)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Verwende sog. <i>Objekt/Erweiterung Zeiger</i>, um eine feste Verbindung zwischen dem Objekt und seiner Erweiterung herzustellen. Diese sind einfach Kommentare die folgendermaßen funktionieren:
 
 In deinem Base-Stylesheet:
 
@@ -350,17 +350,17 @@ Hier haben wir eine feste Verbindung zwischen zwei getrennten Stücken Code herg
 
 ## Writing CSS
 
-Der vorherige Abschnitt behandelte wie wir unser CSS strukturieren und formen; Sie waren quantifizierbare Regeln. Der nächste Abschnitt ist etwas mehr theoretisch und behandelt unsere Einstellung und Herangehensweise.
+Im vorherigen Abschnitt haben wir damit beschäftigt, wie wir anhand einiger quantifizierbaren Regeln unser CSS strukturieren und formen. Der nächste Abschnitt ist hingegen etwas theoretischer und behandelt unsere Einstellung und Herangehensweise.
 
 ## Erstellen von neuen Komponenten
 
-Wenn du eine neue Komponente erstellst, schreibe dein Markup **vor** dem CSS. So kannst du sehen welche CSS Eigenschaften natürlich vererbt werden und vermeidest dadurch das wiederanwenden von überflüssigen Styles.
+Wenn du eine neue Komponente erstellst, schreibe dein Markup **vor** dem CSS. So kannst du leicht erkennen welche CSS Eigenschaften automatisch vererbt werden und vermeidest dadurch das Wiederanwenden von überflüssigen Styles.
 
-Durch das vorherige niederschreiben vom Markup kannst du dich auf Daten, Inhalt und Semantik konzentrieren und _danach_ nur die relevanten Classen und CSS verwenden.
+Außerdem kannst du dich dadurch voll und Ganz auf Daten, Inhalt und Semantik konzentrieren und _anschließend_ nur die relevanten Klassen und CSS verwenden.
 
 ## OOCSS
 
-Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte) und Skin (Extensions). Als **Analogie** stell dir folgendes vor: 
+Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte) und Skin (Erweiterungen) auf. Als **Analogie** (nicht als Beispiel) kannst du dir folgendes vorstellen:
 
     .room {}
 
@@ -368,52 +368,52 @@ Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte)
     .room--bedroom {}
     .room--bathroom {}
 
-In diesem Beispiel haben wir verschiedene Arten von Räumen, wovon alle ähnliche Eigenschaften teilen; Alle haben Flure, Dächer, Wände und Türen. Wir können diese Informationen in einer abstrahierten Klasse `.room {}` festhalten. Jedoch haben wir auch besondere Arten von Räumen, die sich von den Anderen unterscheiden; Eine Küche hat unter Umständen einen gekachelten Boden, ein Schlafzimmer jedoch eher einen Teppich, ein Bad hat nicht unbedingt ein Fenster, aber ein Schlafzimmer höchstwahrscheinlich schon. Jeder Raum hat vermutlich unterschliedlich gestrichene Wände. OOCSS lehrt uns die geteilten Eigenschaften in einem Basisobjekt zu abstrahieren und diese Information dann mit spezifischeren Klassen zu erweitern.
+In diesem Beispiel haben wir verschiedene Arten von Räumen, wovon alle ähnliche Eigenschaften teilen. Alle haben Flure, Dächer, Wände und Türen. Wir können diese Informationen in einer abstrahierten Klasse `.room {}` festhalten. Es gibt jedoch auch besondere Arten von Räumen, die sich von den Anderen unterscheiden. Eine Küche hat unter Umständen einen gekachelten Boden, ein Schlafzimmer eher einen Teppich, ein Bad hat nicht unbedingt ein Fenster, aber ein Schlafzimmer höchstwahrscheinlich schon. Jeder Raum hat vermutlich unterschliedlich gestrichene Wände. OOCSS lehrt uns die geteilten Eigenschaften in einem Basisobjekt zu abstrahieren und diese Information dann mit spezifischeren Klassen zu erweitern.
 
-Also, statt dutzende gesonderte Komponenten zu erstellen, versuche die sich wiederholenden Muster zu erkennen und abstrahiere sie in wiederverwendbare Klassen; Erstelle diese "Skelette" als Basisobjekte und baue mit weiteren Klassen auf ihnen auf und erweitere somit ihr Styling unter anderen Gegebenheiten.
+Also, anstatt dutzende gesonderte Komponenten zu erstellen, versuche die sich wiederholenden Muster zu erkennen und abstrahiere sie in wiederverwendbare Klassen. Erstelle diese "Skelette" als Basisobjekte, baue mit weiteren Klassen auf ihnen auf und erweitere somit ihr Styling unter anderen Gegebenheiten.
 
-Wenn du eine neue Komponente erstellst, teile sie in Struktur und Aussehen; Erstelle die Struktur einer Komponente mit Hilfe von allgemeineren Klassen und nutze dann spezifischere Klassen um das Aussehen zu erweitern und anzupassen.
+Wenn du eine neue Komponente erstellst, teile sie in Struktur und Aussehen. Erstelle die Struktur einer Komponente mit Hilfe von sehr allgemeinen Klassen, damit wir dieses Konstrukt wiederverwenden können und nutze dann spezifischere Klassen um das Aussehen zu erweitern und anzupassen.
 
 ## Layout
 
-Alle Komponenten sollten ohne Angabe von `width` erstellt werden; Sie sollten immer fluide bleiben und die Breite sollte vom Elterelement (z.B. Grid System) bestimmt werden.
+Alle Komponenten sollten ohne feste Breitenangaben erstellt werden. Sie sollten immer fluide bleiben und ihre Breite sollte vom jeweiligen Elterelement (z.B. Grid System) bestimmt werden.
 
-`height` sollte auf Elemente **niemals** angewandt werden. Nur bei Elementen mit festen Maßen, wie Bildern oder Sprites, darf die Höhe oder Breite definiert werden. Setze niemals die Höhe von `p`s, `ul`s, `div`s, und eigentlich auch allem Anderen. Oft kann der gewünschte Effekt über `line-height` erreicht werden, was darüber hinaus noch viel flexibler ist.
+`height` sollte **niemals** auf Elemente angewandt werden. Nur bei Elementen mit festen Maßen, wie Bildern oder Sprites, darf eine Höhe oder Breite definiert werden. Setze niemals die Höhe von `p`s, `ul`s, `div`s, und eigentlich auch allem Anderen. Oft kann der gewünschte Effekt über `line-height` erreicht werden, was darüber hinaus noch viel flexibler ist.
 
-Grid Systeme sollte man sich wie Regale vorstellen. Sie enthalten Inhalte aber sind aber nicht selbst Inhalte. Du stellst erst dein Regal auf und füllst es dann mit deinem Kram. Wenn wir also unser Grid seperat von den Komponenten aufbauen, können die Komponenten viel leichter bewegt werden, als wenn wir die Höhe oder Breite definiert hätten; Das macht unser Front-End viel anpassungsfähiger und wir können effektiver daran arbeiten.
+Grid Systeme sollte man sich wie Regale vorstellen. Sie besitzen Inhalte, sind aber nicht selbst Inhalte. Du stellst erst dein Regal auf und füllst es dann mit deinem Kram. Wenn wir also unser Grid separat von den Komponenten aufbauen, können die Komponenten viel leichter bewegt werden, als wenn wir deren Höhe oder Breite definiert hätten. Das macht unsere Front-Ends um einiges anpassungsfähiger und wir können effektiver damit arbeiten.
 
-Du darfst Styles nie auf das Grid System selbst anwenden, sie dienen nur dazu das Layout zu definieren. Wende Styles auf die Inhalte _im_ Grid System an. Wende niemals, unter _keinen_ Umständen, box-model Eigenschaften auf Grid System Elemente an.
+Du darfst Styles nie auf das Grid System selbst anwenden, dieses dient nur dazu um das Layout zu definieren. Wende Styles auf die Inhalte _innerhalb_ des Grid System an. Wende unter absolut _keinen_ Umständen box-model Eigenschaften auf ein Grid Element an.
 
-## Sizing UIs
+## Größenangaben für Benutzeroberflächen
 
-Ich nutze verschiedene Methoden um User Interfaces . Prozente, Pixel, ems, rems, (and nothing at all).
+Ich verwende und kombiniere verschiedene Methoden um Größe in Benutzeroberflächen anzugeben. Prozente, Pixel, ems, rems, (und teilweise auch ohne die Angabe einer Einheit).
 
-Grid Systeme sollte idealerweise in Prozenten gesetzt werden. Weil ich ein Grid System nutze, um die Breiten von Spalten und Seiten zu beeinflussen, kann ich die Komponenten (wie oben beschrieben) ohne Angabe von Höhe oder Breite umsetzen.
+Die Breiten in Grid Systemen sollten idealerweise in Prozenten angegeben werden. Da ich ein Grid System nutze, um die Breiten von Spalten und Seiten zu beeinflussen, kann ich die Komponenten (wie oben beschrieben) ohne Angabe von Höhe oder Breite umsetzen.
 
-Schriftgrößen setze ich in rems mit Pixel-Fallback. Dies gewährt uns alle Vorteile der Barrierefreiheit von ems (with the confidence of pixels). Anschließend ein nützliches Sass-Mixin zur Berechnung von rem und Pixel-Fallback (davon ausgehend du setzt deine Basefontsize in einer Variable):
+Schriftgrößen gebe ich in rems mit Pixel-Fallback an. Dies gewährt uns alle Vorteile der Barrierefreiheit von ems (with the confidence of pixels). Hier ist ein nützliches Sass-Mixin zur Berechnung von rem und Pixel-Fallback (davon ausgehend, dass du deine Basefontsize in einer Variable setzt):
 
     @mixin font-size($font-size) {
         font-size: $font-size +px;
         font-size: $font-size / $base-font-size +rem;
     }
 
-Ich nutze Pixel nur bei Elementen die schon feste Abmessungen hatten, bevor sie auf die Seite kamen. Hier handelt es sich um Elemente wie Bilder oder Sprites, deren Dimensionen von Haus aus in Pixel gesetzt sind.
+Pixel verwende ich nur bei Elementen, die schon feste Abmessungen hatten bevor sie auf die Seite kamen. Hier handelt es sich um Elemente wie Bilder oder Sprites, deren Dimensionen von Haus aus in Pixel angegeben werden.
 
-### Font sizing
+### Anpassen von Schriftgrößen
 
-Ich definiere eine Serie von Klassen, ähnlich die des Grid Systems, um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
+Ich definiere eine Reihe von Klassen - ähnlich wie beim Grid System - um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
 
 ## Shorthand
 
 **Shorthand CSS muss immer mit Vorsicht genutzt werden.**
 
-Deklarationen wie `background: red;` mögen erstmal verlocken, aber was du damit tatsächlich ausdrückst ist folgendes: ‘Ich möchte kein Bild was scrollt, links-oben ausgerichtet ist, sich nach X oder Y wiederholt, sondern eine rote Hintergrundfarbe’. In neun von zehn Fällen wird das auch problemlos funktionieren, aber der Fall der Auswirkungen nach sich zieht ist nervig genug um komplett auf solche Shorthands zu verzichten. Nutze stattdessen einfach `background-color: red;`.
+Deklarationen wie `background: red;` mögen erstmal verlocken, aber was du damit tatsächlich ausdrückst ist folgendes: ‘Ich möchte kein Bild das scrollt, links-oben ausgerichtet ist, sich nach X oder Y wiederholt, sondern eine rote Hintergrundfarbe’. In neun von zehn Fällen wird das auch problemlos funktionieren, aber der eine Fall, der Auswirkungen nach sich zieht ist nervig genug um komplett auf solche Shorthands zu verzichten. Nutze stattdessen einfach `background-color: red;`.
 
-Auch Deklarationen wie `margin: 0;` sind nett und kurz, aber wenn du sie benutzt, achte darauf, sie mit Bedacht zu nutzen. Wenn du eigentlich nur das margin unten beeinflussen willst, ist es besser auch `margin-bottom: 10px;` zu definieren, statt `margin: 0 0 10px 0`.
+Auch Deklarationen wie `margin: 0;` sind nett und kurz, aber  verwende sie nur mit Bedacht. Wenn du eigentlich nur den Abstand nach unten beeinflussen möchtest, ist es besser `margin-bottom: 10px;` zu definieren, anstatt `margin: 0 0 10px 0`.
 
-Definiere klar welche Eigenschaften du setzen willst und achte darauf nicht versehentlich andere Eigenschaften mit dem Shorthand zu überschreiben.
+Sei dir im Klaren darüber, welche Eigenschaften du setzen willst und achte darauf, dass du nicht versehentlich andere Eigenschaften mit dem Shorthand überschreibst.
 
-Shorthands sind nützlich aber werden schnell falsch angewandt.
+Shorthands sind nützlich aber auch leicht falsch zu verwenden.
 
 ## IDs
 

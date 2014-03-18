@@ -196,9 +196,9 @@ For the most part I simply use hyphen delimited classes (e.g. `.foo-bar`, not
 `.foo_bar` or `.fooBar`), however in certain circumstances I use BEM (Block,
 Element, Modifier) notation.
 
-Zum größten Teil verwende ich durch Bindestrich getrennte Klassen (z.B. `.foo-bar`, nicht `.foo_bar` oder `.fooBar`), allerdings nutze ich unter gewissen Umständen die BEM (Block, Element, Modifier) Notation.
+Zum größten Teil verwende ich durch Bindestrich getrennte Klassen (z.B. `.foo-bar`, nicht `.foo_bar` oder `.fooBar`), benutze allerdings unter gewissen Umständen die BEM (Block, Element, Modifier) Notation.
 
-<abbr title="Block, Element, Modifier">BEM</abbr> ist eine Methode um CSS Selektoren durch ihre Benennung und Klassifizierung viel exakter, transparent und informativ zu machen.
+<abbr title="Block, Element, Modifier">BEM</abbr> ist eine Methode um CSS-Selektoren durch ihre Benennung und Klassifizierung viel exakter, transparenter und informativer zu machen.
 
 Die Namenskonvention folgt diesem Muster:
 
@@ -206,11 +206,11 @@ Die Namenskonvention folgt diesem Muster:
     .block__element {}
     .block--modifier {}
 
-* `.block` repräsentiert die höhere Ebene einer Abstraktion oder einer Komponente.
-* `.block__element` repräsentiert eine Kindelement von `.block` das hilft `.block` als ein Ganzes zu formen.
+* `.block` repräsentiert die höhere Ebene einer Abstraktion oder eines Komponenten.
+* `.block__element` repräsentiert eine Kindelement von `.block` das hilft `.block` als Ganzes zu formen.
 * `.block--modifier` repräsentiert einen anderen Status oder eine andere Version von `.block`.
 
-Eine **Analogie** vom Aufbau mit BEM Klassen könnte sein:
+Eine **Analogie** zum Aufbau einer BEM Klassen könnte sein:
 
     .person {}
     .person--woman {}
@@ -218,23 +218,23 @@ Eine **Analogie** vom Aufbau mit BEM Klassen könnte sein:
         .person__hand--left {}
         .person__hand--right {}
 
-Hier sehen wir, dass das grundlegende Objekt das wir beschreiben eine Person ist, und das eine anderer Typ der Person eine Frau sein könnte. Wir können auch sehen, dass diese Person Hände hat; Das sind weitere "Unterteile" von Person, und es gibt verschiedene Varianten, wie 'left' und 'right'.
+Hier sehen wir, dass das grundlegende Objekt welches wir beschreiben eine Person ist, und das ein anderer Typ der Person eine Frau sein könnte. Wir können auch sehen, dass diese Person Hände hat; diese sind weitere "Bestandteile" von Personen und es gibt verschiedene Varianten, wie 'left' und 'right'.
 
-Nun können wir unsere Selektoren basierend auf ihrerem Basis Objekt benennen und kommunizieren welche Aufgabe der Selektor hat; Ist er ein eine Unter-Komponente (`__`) oder eine Variation (`--`)?
+Nun können wir unsere Selektoren basierend auf dem grundlegendem Objekt benennen und kommunizieren zugleich welche Aufgabe der Selektor hat; handel es sich um einen Bestandteil (`__`) oder eine Variation (`--`)?
 
-Also, `.page-wrapper` ist ein unabhängiger Selektor; Er form keinen Teil einer Abstraktion oder einer Komponente und ist somit korrekt benannt. Der Selektor `.widget-heading` dagegen, _ist_ einer Komponente zugehörig; Er ist ein Kind von `.widget` also würden wir diese Klasse umbenennen in `.widget__heading`.
+`.page-wrapper` ist also ein unabhängiger Selektor. Er ist weder Teil einer Abstraktion noch einer Komponente und ist somit korrekt benannt. Der Selektor `.widget-heading` dagegen, _ist_ einer Komponente zugehörig; Er ist ein Kind von `.widget` also sollten wir diese Klasse in `.widget__heading` umbenennen.
 
-BEM sieht etwas hässlicher aus und ist viel ausführlicher, aber es garantiert uns viel Macht, da wir die Funktionen und Beziehungen der Elemente von ihrem Klassennamen allein erfassen können. Ausserdem wird die BEM Syntax normalerweise ziemlich gut komprimiert (gzip), sodass die vielen Wiederholungen nicht sonderlich ins Gewicht fallen.
+BEM sieht etwas hässlicher aus und ist viel ausführlicher, aber es bietet uns auch viel Übersicht, da wir die Funktionen von Elementen und deren Beziehungen zueinander allein anhand ihres Klassennamens erfassen können. Desweiteren lässt sich die BEM Syntax normalerweise - gerade durch die vielen Wiederholungen - gut komprimieren (gzip).
 
-Unabhängig davon, ob du BEM nutzt oder nicht, stelle immer sicher, dass Klassen vernünftig benannt sind; Halte sie so kurz wie möglich, aber so lang wie nötig. Stelle sicher, das alle Objekte oder Abstraktionen sehr unbestimmt benannt sind (z.B. `.ui-list`, `.media`) um größere Wiederverwendbarkeit zu gewährleisten. Extensions von Objekten sollten viel genauer benannt sein (z.B. `.user-avatar-link`). Mach dir keine Gedanken über die Länge von Klassennamen; gzip wird ordentlich geschriebenen Code _erstaunlich_ gut komprimieren.
+Unabhängig davon, ob du BEM verwendest oder nicht, solltest du immer sicherstellen, dass Klassen vernünftig benannt sind. Halte sie so kurz wie möglich, aber so lang wie nötig. Stelle sicher, das alle Objekte oder Abstraktionen sehr unbestimmt benannt sind (z.B. `.ui-list`, `.media`) um eine größere Wiederverwendbarkeit zu gewährleisten. Erweiterungen von Objekten sollten viel genauer benannt sein (z.B. `.user-avatar-link`). Mach dir keine Gedanken über die Länge von Klassennamen; gzip komprimiert ordentlich geschriebenen Code _erstaunlich_ gut.
 
 ### Klassen im HTML
 
-Um Dinge lesbar zu halten, trenne Klassen im HTML mit zwei (2) Leerzeichen:
+Um die Lesbarkeit zu verbessern, trenne deine Klassen im HTML mit zwei (2) Leerzeichen:
 
     <div class="foo--bar  bar__baz">
 
-Der erweiterte Leerraum sollte das Ausmachen von mehreren Klassen erleichtern.
+Durch den größeren Leerraum sollte es leichter sein mehrere Klassen zu erkennen und lesen.
 
 ### JS hooks
 
@@ -245,49 +245,49 @@ Wenn du JavaScript ans Markup binden musst, nutze eine spezielle JS CSS Klasse. 
     <th class="is-sortable  js-is-sortable">
     </th>
 
-Das obige Markup hält zwei Klassen; Eine über die du Styles für sortierbare Table-Columns anhängen kannst, und eine Andere welche uns erlaubt Sortierungsfunktionalität hinzuzufügen.
+Das obige Markup beinhaltet zwei Klassen. Eine über die du Styles für sortierbare Table-Columns anhängen kannst, und eine weitere welche uns erlaubt die Sortierungsfunktionalität hinzuzufügen.
 
 ### Internationalisierung
 
-Obwohl ich ein Britischer Entwickler bin—und mein ganzes Leben <i>colour</i> statt <i>color</i> schreibe—denke ich, dass es besser ist, zum Wohle der Beständigkeit, im CSS immer US-English zu nutzen. CSS, wie die meisten (wenn nicht alle) anderen Sprachen wird in US-English geschrieben, sodass es Misch-Syntax wie `color: red;` in Klassen wie `.colour-picker {}` an Beständigkeit mangelt. Ich habe bislang nahegelegt Klassennamen zweisprachig auszuformulieren, zum Beispiel:
+Obwohl ich ein Britischer Entwickler bin—und mein ganzes Leben damit verbracht habe <i>colour</i> statt <i>color</i> zu schreiben-denke ich, dass es besser ist, zum Wohle der Beständigkeit, im CSS immer US-English zu nutzen. CSS, wie die meisten (wenn nicht alle) anderen Sprachen wird in US-English geschrieben, sodass es Misch-Syntax wie `color: red;` in Klassen wie `.colour-picker {}` an Beständigkeit mangelt. Ich habe bislang nahegelegt Klassennamen zweisprachig auszuformulieren, zum Beispiel:
 
     .color-picker,
     .colour-picker {
     }
 
-Allerdings wurde das Beibehalten von zwei Versionen von jeder Variable beim Arbeiten an einem sehr großen Sass Project mit duzenden Farb-Variablen (z.B. `$brand-color`, `$highlight-color` etc.) schnell lästig. Es bedeutet auch doppelt so viel arbeit bei Dingen wie "Finden und Ersetzen".
+Allerdings wurde das Beibehalten von zwei Versionen von jeder Variable beim Arbeiten an einem sehr großen Sass Project mit dutzenden Farb-Variablen (z.B. `$brand-color`, `$highlight-color` etc.) schnell lästig. Es bedeutet auch doppelt so viel arbeit bei Dingen wie "Suchen und Ersetzen".
 
 Benenne Klassen und Variablen deshalb immer in der Sprache in der du arbeitest.
 
 ## Kommentare
 
-Ich nutze einen docBlock-ähnlichen Kommentar Stil welchen ich auf 80 Zeichen beschränke:
+Ich nutze einen docBlock-ähnlichen Kommentar Stil welchen ich in der Länge auf 80 Zeichen pro Zeile beschränke:
 
     /**
      * Das ist ein docBlock Kommentar
      *
      * Das ist eine längere Beschreibung des Kommentars, der den Code genauer 
-     * beschreibt. Wir limitieren diese Zeilen auf maximal 80 Zeichen. 
+     * beschreibt. Wir beschränken diese Zeilen auf maximal 80 Zeichen. 
      *
-     * Wir können markup in Kommentaren nutzen und sind ermutigt das 
-     * folgendermaßen zu tun:
+     * Wir können markup in den Kommentaren nutzen und sollten das 
+     * auch tun:
      *
        <div class=foo>
            <p>Lorem</p>
        </div>
      *
-     * Wir stellen Codezeilen kein Sternchen vor, um Copy und Paste zu 
+     * Wir stellen Codezeilen kein Sternchen voran, um damit Copy und Paste zu 
      * ermöglichen.
      */
 
-Du solltest deinen Code so gut wie möglich kommentieren und dokumentieren. Was für dich transparent oder selbsterklärend wirkt, ist es womöglich nicht für einen anderen Entwickler. Schreib einen Brocken Code und dann schreib darüber. 
+Du solltest deinen Code so gut wie möglich kommentieren und dokumentieren. Selbst was dir verständlich und selbsterklärend erscheint, ist womöglich für einen anderen Entwickler nicht ganz so leicht zu erkennen. Schreib einen Brocken Code und dokumentiere ihn anschließend. 
 
 ### Kommentare auf Steroiden
 
-Es gibt eine Reihe von fortgeschritteneren Techniken die du verwenden kannst, und zwar:
+Es gibt eine Reihe an fortgeschrittenen Techniken die du verwenden kannst was Kommentare angeht:
 
 * Quasi-Qualifizierte Selektoren
-* Code markieren
+* Code taggen
 * Objekt/Extension Hinweise
 
 #### Quasi-Qualifizierte Selektoren
@@ -370,7 +370,7 @@ Ich arbeite auf OOCSS Art und Weise; Ich teile Komponenten in Struktur (Objekte)
 
 In diesem Beispiel haben wir verschiedene Arten von Räumen, wovon alle ähnliche Eigenschaften teilen; Alle haben Flure, Dächer, Wände und Türen. Wir können diese Informationen in einer abstrahierten Klasse `.room {}` festhalten. Jedoch haben wir auch besondere Arten von Räumen, die sich von den Anderen unterscheiden; Eine Küche hat unter Umständen einen gekachelten Boden, ein Schlafzimmer jedoch eher einen Teppich, ein Bad hat nicht unbedingt ein Fenster, aber ein Schlafzimmer höchstwahrscheinlich schon. Jeder Raum hat vermutlich unterschliedlich gestrichene Wände. OOCSS lehrt uns die geteilten Eigenschaften in einem Basisobjekt zu abstrahieren und diese Information dann mit spezifischeren Klassen zu erweitern.
 
-Also, statt duzende gesonderte Komponenten zu erstellen, versuche die sich wiederholenden Muster zu erkennen und abstrahiere sie in wiederverwendbare Klassen; Erstelle diese "Skelette" als Basisobjekte und baue mit weiteren Klassen auf ihnen auf und erweitere somit ihr Styling unter anderen Gegebenheiten.
+Also, statt dutzende gesonderte Komponenten zu erstellen, versuche die sich wiederholenden Muster zu erkennen und abstrahiere sie in wiederverwendbare Klassen; Erstelle diese "Skelette" als Basisobjekte und baue mit weiteren Klassen auf ihnen auf und erweitere somit ihr Styling unter anderen Gegebenheiten.
 
 Wenn du eine neue Komponente erstellst, teile sie in Struktur und Aussehen; Erstelle die Struktur einer Komponente mit Hilfe von allgemeineren Klassen und nutze dann spezifischere Klassen um das Aussehen zu erweitern und anzupassen.
 

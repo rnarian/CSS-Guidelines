@@ -470,20 +470,18 @@ Die Absicht deines Selektors sollte deinem Grund entsprechend, aus dem du etwas 
 
 Stelle sicher, dass dein Schlüssel-Selektor niemals ein Element-/Typen-Selektor oder eine Objekt-/Abstraktions- Klasse ist. Selektoren wie `.sidebar ul {}` oder `.footer .media {}` möchtest du nicht in deinem Stylesheet haben.
 
-Greife explizit auf das Element zu, das du verändern möchtest, nicht auf sein Elternelement. Gehe niemals davon aus, dass sich dein markup nicht verändern wird. **Verwende Selektoren, die auf das zugreifen, was du verändern möchtest, nicht auf das was bereits vorhanden ist.**
+Greife explizit auf das zu verändernde Element zu, nicht auf sein Elternelement. Gehe niemals davon aus, dass sich dein markup nicht verändern wird. **Verwende Selektoren, die auf das zugreifen, was du verändern möchtest, nicht auf das was bereits vorhanden ist.**
 
 Für eine ausführliche Beschreibung und Zusammenfassung, schau dir meinen Artikel [Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/) an.
 
 ## `!important`
 
-It is okay to use `!important` on helper classes only. To add `!important`
-preemptively is fine, e.g. `.error { color: red !important }`, as you know you will
-**always** want this rule to take precedence.
+Verwende `!important` nur auf Helper Klassen. Es ist ok, wenn du `!important` vorsorglich verwendest, wie beispielsweise bei `.error { color: red !important }`, wenn du weißt, dass diese Anweisung **immer** Vorrang haben sollte.
 
-Using `!important` reactively, e.g. to get yourself out of nasty specificity
-situations, is not advised. Rework your CSS and try to combat these issues by
-refactoring your selectors. Keeping your selectors short and avoiding IDs will
-help out here massively.
+`!important` nachträglich zu verwenden - zum Beispiel um Spezifitäts-Problemen abzuwenden - ist nicht empfohlen. 
+
+Verändere deine CSS und versuche diese Probleme zu lösen, indem du deine Selektoren refactorst. Wenn du deine Selektoren kurz hältst und IDs vermeidest, wird dir das hier massiv helfen.
+
 
 ## Magic numbers and absolutes
 

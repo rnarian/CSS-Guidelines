@@ -505,16 +505,13 @@ Im Allgemeinen können und werden alle layout und box-model Anweisungen ohne ein
 
 ## Debugging
 
-If you run into a CSS problem **take code away before you start adding more** in
-a bid to fix it. The problem exists in CSS that is already written, more CSS
-isn’t the right answer!
+Wenn du ein CSS Problem entdeckst, 
+**entferne zuallererst Code, bevor du damit anfängst noch mehr hinzuzufügen** um es zu lösen. Da das Problem im CSS besteht, das du schon geschrieben hast, ist mehr CSS nicht die richtige Antwort!
 
-Delete chunks of markup and CSS until your problem goes away, then you can
-determine which part of the code the problem lies in.
+Lösche solange markup und CSS, bis dein Problem verschwindet. Anschließend kannst du bestimmten in welchem Teil deines Codes das Problem liegt.
 
-It can be tempting to put an `overflow: hidden;` on something to hide the effects
-of a layout quirk, but overflow was probably never the problem; **fix the
-problem, not its symptoms.**
+Es ist sehr verlockend einem Element `overflow: hidden;` oder ähnliches zu geben um damit die Effekte eines Layout Problems zu verstecken, aber overflow war möglicherweise nie das Problem - **Behandle das Problem, nicht seine Symptome**.
+
 
 ## Preprocessors
 

@@ -453,10 +453,10 @@ Ein weiteres Beispie für einen zu spezifischen Selektor wäre `ul.nav li a {}`.
 
 ### Performance von Selektoren
 
-Whilst it is true that browsers will only ever keep getting faster at rendering
-CSS, efficiency is something you could do to keep an eye on. Short, unnested
-selectors, not using the universal (`* {}`) selector as the key selector, and
-avoiding more complex CSS3 selectors should help circumvent these problems.
+Obwohl es richtig ist, dass Browsers in der Zukunft nur noch schneller werden, was das rendern von CSS betrifft, solltest du die Effizienz deines CSS trotzdem im Auge behalten.
+
+Das Verwenden von kurzen, nicht verschachtelte Selektoren, das Verzichten auf den universal Selektor (`* {}`) als Schlüssel Selektor, sowie das Vermeiden von komplexeren CSS3 Selektoren sollten dabei helfen diese Probleme zu umgehen.
+
 
 ## CSS selector intent
 

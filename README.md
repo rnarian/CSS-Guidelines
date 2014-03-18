@@ -496,16 +496,12 @@ Stattdessen solltest du `.dropdown-nav li:hover ul { top: 100%; }` verwenden, da
 Jeder Wert, den du von Hand vergibts, ist ein Zugeständnis, das du möglicherweise nicht einräumen willst.
 
 
-## Conditional stylesheets
+## Conditional Stylesheets
 
-IE stylesheets can, by and large, be totally avoided. The only time an IE
-stylesheet may be required is to circumvent blatant lack of support (e.g. PNG
+Spezielle IE Stylesheets können in den meißten Fällen komplett vermieden werden, es sei denn, du musst eine fehlende Browserunterstützung ausgleichen (z.B. PNG
 fixes).
 
-As a general rule, all layout and box-model rules can and _will_ work without an
-IE stylesheet if you refactor and rework your CSS. This means you never want to
-see `<!--[if IE 7]> element { margin-left: -9px; } < ![endif]-->` or other such
-CSS that is clearly using arbitrary styling to just ‘make stuff work’.
+Im Allgemeinen können und werden alle layout und box-model Anweisungen ohne eine IE Stylesheet funktionierem, wenn du dein CSS refactorst und überarbeitest. Das bedeutet, dass du niemals `<!--[if IE 7]> element { margin-left: -9px; } < ![endif]-->` oder ähnliches CSS verwenden willst, dass offensichtlich grundloses Styling verwendet nur damit Sachen wieder ‘funktionieren‘.
 
 ## Debugging
 

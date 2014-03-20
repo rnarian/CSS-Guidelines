@@ -1,7 +1,5 @@
 # Allgemeine Notizen, Ratschläge und Richtlinien zu CSS
 
----
-
 Gerade bei langen und komplexen Projekten mit dutzenden von Entwicklern, ist es wichtig, dass wir alle einheitlich und nach denselben Richtlinien arbeiten um:
  
  * Unsere Stylesheets wartbar zu halten

@@ -49,13 +49,13 @@ Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von
 
 ## Anatomie eines CSS Dokumentes
 
-Egal um welches Dokument es sich handelt, unser Ziel ist es immer eine gleichbleibende Formatierung zu schaffen und erhalten. Das bedeutet einheitliche Kommentare, einheitliche Syntax und einheitliche Benennungen.
+Egal um welches Dokument es sich handelt, unser Ziel ist es immer eine gleichbleibende Formatierung zu schaffen und zu erhalten. Das bedeutet einheitliche Kommentare, einheitliche Syntax und einheitliche Benennungen.
 
 ### Allgemein
 
 Begrenze deine Stylesheets, wo es möglich ist, auf eine maximale Breite von 80 Zeichen. Von dieser Faustregel ausgenommen sind Gradient Syntax und URLs in Kommentaren. Das ist in Ordnung, denn es gibt nichts was wir dagegen machen können.
 
-Ich bevorzuge Einrückungen von vier (4) Leerzeichen gegenüber Tabs und schreibe mein CSS mehrzeilig.
+Ich bevorzuge Einrückungen über vier (4) Leerzeichen gegenüber Tabs und schreibe mein CSS mehrzeilig.
 
 ### Eine Datei vs. Viele Dateien
 
@@ -63,7 +63,7 @@ Einige bevorzugen es mit einzelnen, großen Dateien zu arbeiten. Das ist in Ordn
 
 ### Inhaltsangabe
 
-Am Anfang eines Stylesheets pflege ich eine Inhaltsangabe, welche die Abschnitte des Dokuments beschreibt. Zum Beispiel:
+Am Anfang eines Stylesheets pflege ich eine Inhaltsangabe, welche die Abschnitte des Dokumentes beschreibt. Zum Beispiel:
 
     /*------------------------------------*\
        $CONTENTS
@@ -121,7 +121,7 @@ Ein ordentlich geordnetes Stylesheet sieht ungefähr so aus:
 **Komponenten** - komplette Komponenten bestehend aus Objekten und ihren Erweiterungen
 **Style Trümpfe** - error states etc.
 
-Das bedeutet, dass jeder Abschnitt auf den Vorherigen aufbaut und dessen Eigenschaften erbt. Dadurch sollte weniger Überschreiben, weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
+Das bedeutet, dass jeder Abschnitt auf den Vorherigen aufbaut und deren Eigenschaften erbt. Dadurch sollte weniger Überschreiben, weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
 
 Wenn du dich noch ausgiebiger mit diesem Thema beschäftigen möchtest, kann ich dir Jonathan Snooks [SMACSS](http://smacss.com) wärmstens empfehlen.
 
@@ -134,7 +134,7 @@ Wenn du dich noch ausgiebiger mit diesem Thema beschäftigen möchtest, kann ich
 
 Ich habe einige Standards beim Strukturieren von rulesets:
 
-* Nutze mit Bindestrich getrennte Klassennamen (Ausgenommen BEM Notation,
+* Verwende mit Bindestrich getrennte Klassennamen (Ausgenommen BEM Notation,
   [siehe unten](#namenskonventionen))
 * Rücke mit 4 Leerzeichen ein
 * Schreibe Mehrzeilig
@@ -210,13 +210,13 @@ Eine **Analogie** zum Aufbau einer BEM Klassen könnte sein:
         .person__hand--left {}
         .person__hand--right {}
 
-Hier sehen wir, dass das grundlegende Objekt welches wir beschreiben eine Person ist, und das ein anderer Typ der Person eine Frau sein könnte. Wir können auch sehen, dass die Person Hände hat. Dies sind weitere "Bestandteile" von Personen und es gibt verschiedene Varianten, wie 'left' und 'right'.
+Hier sehen wir, dass das grundlegende Objekt welches wir beschreiben eine Person ist und das ein anderer Typ der Person eine Frau sein könnte. Wir können auch sehen, dass die Person Hände hat. Dies sind weitere "Bestandteile" von Personen und es gibt verschiedene Varianten, wie 'left' und 'right'.
 
 Nun können wir unsere Selektoren basierend auf dem grundlegendem Objekt benennen und kommunizieren zugleich welche Aufgabe der Selektor hat. Handelt es sich um einen Bestandteil (`__`) oder eine Variation (`--`)?
 
 `.page-wrapper` ist also ein unabhängiger Selektor. Er ist weder Teil einer Abstraktion noch einer Komponente und ist somit korrekt benannt. Der Selektor `.widget-heading` dagegen, _ist_ einer Komponente zugehörig. Er ist ein Kind von `.widget`, also sollten wir diese Klasse in `.widget__heading` umbenennen.
 
-BEM sieht etwas hässlicher aus und ist viel ausführlicher, aber es bietet uns auch viel Übersicht, da wir die Funktionen von Elementen und deren Beziehungen zueinander allein anhand ihres Klassennamens erfassen können. Desweiteren lässt sich die BEM Syntax normalerweise - gerade durch die vielen Wiederholungen - gut komprimieren (gzip).
+BEM sieht etwas hässlicher aus und ist viel ausführlicher, aber es bietet uns auch viel Übersicht, da wir die Funktionen von Elementen und deren Beziehungen zueinander alleine anhand ihres Klassennamens erfassen können. Desweiteren lässt sich die BEM Syntax normalerweise - gerade durch die vielen Wiederholungen - gut komprimieren (gzip).
 
 Unabhängig davon, ob du BEM verwendest oder nicht, solltest du immer sicherstellen, dass Klassen vernünftig benannt sind. Halte sie so kurz wie möglich, aber so lang wie nötig. Stelle sicher, das alle Objekte oder Abstraktionen sehr unbestimmt benannt sind (z.B. `.ui-list`, `.media`) um eine größere Wiederverwendbarkeit zu gewährleisten. Erweiterungen von Objekten sollten viel genauer benannt sein (z.B. `.user-avatar-link`). Mach dir keine Gedanken über die Länge von Klassennamen; gzip komprimiert ordentlich geschriebenen Code _erstaunlich_ gut.
 
@@ -232,16 +232,16 @@ Durch den größeren Leerraum sollte es leichter sein, mehrere Klassen zu erkenn
 
 **Nutze niemals CSS _styling_ Klassen als JavaScript hook.** Anfügen von JS Verhalten an eine styling-Klasse bedeutet, dass wir das Eine nie ohne das Andere nutzen können.
 
-Wenn du JavaScript ans Markup binden musst, nutze eine spezielle JS CSS Klasse. Das ist einfach eine Klasse mit vorangestelltem `.js-`, z.B. `.js-toggle`, `.js-drag-and-drop`. Das bedeutet, dass wir JS und CSS ohne etwaige Überschneidungen an Klassen binden können.
+Wenn du JavaScript ans Markup binden musst, nutze eine spezielle JS CSS Klasse. Das ist einfach eine Klasse mit vorangestelltem `.js-`, z.B. `.js-toggle`, `.js-drag-and-drop`. Das bedeutet, dass wir JS und CSS Klassen ohne etwaige Überschneidungen an unser Markup binden können.
 
     <th class="is-sortable  js-is-sortable">
     </th>
 
-Das obige Markup beinhaltet zwei Klassen. Eine über die du Styles für sortierbare Table-Columns anhängen kannst, und eine weitere um die Sortierungsfunktionalität zu gewährleisten.
+Das obige Markup beinhaltet zwei Klassen. Eine über die du Styles für sortierbare Tabellenspalten anhängen kannst, und eine weitere um die Sortierungsfunktionalität zu gewährleisten.
 
 ### Internationalisierung
 
-Obwohl ich ein Britischer Entwickler bin—und mein ganzes Leben damit verbracht habe <i>colour</i> statt <i>color</i> zu schreiben-denke ich, dass es besser ist, zum Wohle der Beständigkeit, im CSS immer US-English zu nutzen. CSS, wie die meisten (wenn nicht alle) anderen Sprachen wird in US-English geschrieben, sodass es Misch-Syntax wie `color: red;` in Klassen wie `.colour-picker {}` an Beständigkeit mangelt. Bislang habe ich nahegelegt Klassennamen zweisprachig auszuformulieren, zum Beispiel:
+Obwohl ich ein Britischer Entwickler bin — und mein ganzes Leben damit verbracht habe <i>colour</i> statt <i>color</i> zu schreiben - denke ich, dass es - aus Gründen der Beständigkeit - besser ist, im CSS immer US-English zu nutzen. CSS wird, wie die meisten (wenn nicht alle) anderen Sprachen in US-English geschrieben, sodass es Misch-Syntax wie `color: red;` in Klassen wie `.colour-picker {}` an Beständigkeit mangelt. Ich habe bisher empfohlen Klassennamen zweisprachig auszuformulieren, zum Beispiel:
 
     .color-picker,
     .colour-picker {

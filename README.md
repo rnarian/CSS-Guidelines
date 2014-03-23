@@ -284,7 +284,7 @@ Was Kommentare angeht gibt es eine Reihe an fortgeschritteneren Techniken die du
 
 #### Quasi-qualifizierte Selektoren
 
-Du solltest deine Selektoren niemals zusätzlich qualifizieren - also niemals `ul.nav {}` schreiben, wenn du einfach `.nav` nutzen kannst. Das Qualifizieren von Selektoren vermindert die Leistung und verhindert ein potenzielles Wiederverwenden der Klasse auf einen anderen Element-Typ. Außerdem nimmt die Spezifität des Selektors zu. Das sind alles Dinge, die unter allen Umständen vermieden werden müssen.
+Du solltest deine Selektoren niemals zusätzlich qualifizieren - also niemals `ul.nav {}` schreiben, wenn du auch `.nav` nutzen könntest. Das Qualifizieren von Selektoren vermindert die Leistung und verhindert ein potenzielles Wiederverwenden der Klasse auf einen anderen Element-Typ. Außerdem nimmt die Spezifität des Selektors zu. Das sind alles Dinge, die unter allen Umständen vermieden werden müssen.
 
 Allerdings ist es manchmal hilfreich dem nächsten Entwickler zu zeigen wo eine Klasse genutzt werden soll. Nehmen wir `.product-page` als Beispiel; Diese Klasse sieht so aus, als würde sie auf einem Container auf hoher Ebene genutzt werden, eventuell das `html` oder `body` Element, aber mit `.product-page` alleine ist das unmöglich zu bestimmen.
 
@@ -320,7 +320,7 @@ Diese Tags erlauben anderen Entwicklern Code-Snippets zu finden, indem sie nach 
 
 #### Objekt/Erweiterung Zeiger
 
-Wenn du nach objekt-orientieren Prinzipien arbeitest, wird es oft vorkommen, dass du zwei Chunks an CSS hast (einer für das Skelett (das Objekt) und ein anderer für die Haut (die Erweiterung)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Verwende sog. <i>Objekt/Erweiterung Zeiger</i>, um eine feste Verbindung zwischen dem Objekt und seiner Erweiterung herzustellen. Dies sind einfach Kommentare die folgendermaßen funktionieren:
+Wenn du nach objekt-orientieren Prinzipien arbeitest, wird es oft vorkommen, dass du zwei Chunks an CSS hast (einer für das Skelett (das Objekt) und ein anderer für die Haut (die Erweiterung)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Verwende sog. <i>Objekt/Erweiterung Zeiger</i>, um eine feste Verbindung zwischen dem Objekt und seiner Erweiterung herzustellen. Dies sind Kommentare die folgendermaßen funktionieren:
 
 In deinem Base-Stylesheet:
 
@@ -399,7 +399,7 @@ Ich definiere eine Reihe von Klassen - ähnlich wie beim Grid System - um die Sc
 
 **Shorthand CSS muss immer mit Vorsicht genutzt werden.**
 
-Deklarationen wie `background: red;` mögen erstmal verlocken, aber was du damit tatsächlich ausdrückst ist folgendes: ‘Ich möchte kein Bild das scrollt, links-oben ausgerichtet ist, sich nach X oder Y wiederholt, sondern eine rote Hintergrundfarbe’. In neun von zehn Fällen wird das auch problemlos funktionieren, aber der eine Fall, der Auswirkungen nach sich zieht ist nervig genug, um komplett auf solche Shorthands zu verzichten. Nutze stattdessen einfach `background-color: red;`.
+Deklarationen wie `background: red;` mögen erstmal verlocken, aber was du damit tatsächlich ausdrückst ist folgendes: ‘Ich möchte kein Bild das scrollt, links-oben ausgerichtet ist, sich nach X oder Y wiederholt, sondern eine rote Hintergrundfarbe’. In neun von zehn Fällen wird das auch problemlos funktionieren, aber der eine Fall, der Auswirkungen nach sich zieht ist nervig genug, um komplett auf solche Shorthands zu verzichten. Nutze stattdessen `background-color: red;`.
 
 Auch Deklarationen wie `margin: 0;` sind nett und kurz, aber verwende sie nur mit Bedacht. Wenn du eigentlich nur den Abstand nach unten beeinflussen möchtest, ist es besser `margin-bottom: 10px;` zu definieren, anstatt `margin: 0 0 10px 0`.
 
@@ -435,7 +435,7 @@ Selektoren als Ganzes sollten so kurz wie möglich gehalten werden (zum Beispiel
 
 Wie zuvor bereits erwähnt bedeuten spezifische Selektoren meißt nichts gutes.
 
-Ein zu spezifischer Selektor ist beispielsweise `div.promo`. Du könntest vermutlich den selben Effekt erzielen, wenn du einfach  `.promo` verwenden würdest. Natürlich wird es manchmal Fälle geben, in denen du eine Klasse _bewusst_ in Verbindung mit einem Element spezifizierst, z.b. wenn du eine allgemeine `.error` Klasse hast, die - je nachdem auf welchem Element sie angewendet wird - unterschiedlich aussehen soll (z.B.
+Ein zu spezifischer Selektor ist beispielsweise `div.promo`. Du könntest vermutlich den selben Effekt erzielen, wenn du nur `.promo` verwenden würdest. Natürlich wird es manchmal Fälle geben, in denen du eine Klasse _bewusst_ in Verbindung mit einem Element spezifizierst, z.b. wenn du eine allgemeine `.error` Klasse hast, die - je nachdem auf welchem Element sie angewendet wird - unterschiedlich aussehen soll (z.B.
 `.error { color: red; }` `div.error { padding: 14px; }`). Im Allgemeinen solltest du es allerdings, wo es möglich ist, vermeiden.
 
 Ein weiteres Beispiel für einen zu spezifischen Selektor wäre `ul.nav li a {}`. Auch hier können wir die `ul` ersatzlos streichen und da wir wissen, dass `.nav` eine Liste ist und daraus schließen können, das `a` in einem `li` sein _muss_, können wir `ul.nav li a {}` auf `.nav a {}` vereinfachen.

@@ -1,14 +1,14 @@
 # Allgemeine Notizen, Ratschläge und Richtlinien zu CSS
 
-Gerade bei langen und komplexen Projekten mit dutzenden von Entwicklern, ist es wichtig, dass wir alle einheitlich und nach denselben Richtlinien arbeiten um:
+Gerade bei langen und komplexen Projekten mit dutzenden von Entwicklern, ist es wichtig, dass wir alle einheitlich und nach denselben Richtlinien arbeiten, um:
  
- * Unsere Stylesheets wartbar zu halten
- * Unseren Code verständlich und gut lesbar zu halten
- * Unsere Stylesheets erweiterbar zu halten
+* unsere Stylesheets wartbar zu halten.
+* unseren Code verständlich und gut lesbar zu halten.
+* unsere Stylesheets erweiterbar zu halten.
 
 Um diese Ziele zu erfüllen, müssen wir eine Vielzahl von Techniken anwenden.
 
-Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von CSS, der zweite Teil beschäftigt sich mit der Herangehensweise und Grundhaltung um CSS zu konzipieren. Aufregend, oder?
+Der erste Teil dieses Dokumentes behandelt Syntax, Formatierung und Anatomie von CSS. Der zweite Teil beschäftigt sich mit der Herangehensweise und Grundhaltung um skalierbares CSS zu konzipieren. Aufregend, oder?
 
 ## Inhalte
 
@@ -55,11 +55,11 @@ Egal um welches Dokument es sich handelt, unser Ziel ist es immer eine gleichble
 
 Begrenze deine Stylesheets, wo es möglich ist, auf eine maximale Breite von 80 Zeichen. Von dieser Faustregel ausgenommen sind Gradient Syntax und URLs in Kommentaren. Das ist in Ordnung, denn es gibt nichts was wir dagegen machen können.
 
-Ich bevorzuge Einrückungen über vier (4) Leerzeichen gegenüber Tabs und schreibe mein CSS mehrzeilig.
+Ich bevorzuge Einrückungen über vier (4) Leerzeichen gegenüber von Tabs und schreibe mein CSS mehrzeilig.
 
 ### Eine Datei vs. Viele Dateien
 
-Einige bevorzugen es mit einzelnen, großen Dateien zu arbeiten. Das ist in Ordnung und solange du dich an die folgenden Richtlinien hältst, wirst du dadurch auch keine Probleme bekommen. Seit dem Wechsel zu Sass habe ich angefangen meine Stylesheets in viele kleine Includes aufzuteilen. Das ist auch in Ordnung... Die folgenden Regeln und Richtlinien gelten unabhängig davon, für welche Methode du dich entscheidest. Der einzige beachtenswerte Unterschied besteht hinsichtlich unserer Inhaltsangabe und unserer Abschnittstitel. Lies weiter für weitere Erläuterungen...
+Einige bevorzugen es mit einzelnen, großen Dateien zu arbeiten. Das ist in Ordnung und solange du dich an die folgenden Richtlinien hältst, wirst du dadurch auch keine Probleme bekommen. Seit dem Wechsel zu Sass habe ich angefangen meine Stylesheets in viele kleine Includes aufzuteilen. Auch das ist in Ordnung... Die folgenden Regeln und Richtlinien gelten unabhängig davon, für welche Methode du dich entscheidest. Der einzige beachtenswerte Unterschied besteht hinsichtlich unserer Inhaltsangabe und unserer Abschnittstitel. Lies weiter für zusätzliche Erläuterungen...
 
 ### Inhaltsangabe
 
@@ -121,7 +121,7 @@ Ein ordentlich geordnetes Stylesheet sieht ungefähr so aus:
 **Komponenten** - komplette Komponenten bestehend aus Objekten und ihren Erweiterungen
 **Style Trümpfe** - error states etc.
 
-Das bedeutet, dass jeder Abschnitt auf den Vorherigen aufbaut und deren Eigenschaften erbt. Dadurch sollte weniger Überschreiben, weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
+Das bedeutet, dass jeder Abschnitt auf den Vorherigen aufbaut und deren Eigenschaften erbt. Dadurch sollte zum Einen weniger Überschreiben, zum Anderen weniger Spezifitätsprobleme und rundum besser konzipierte Stylesheets entstehen.
 
 Wenn du dich noch ausgiebiger mit diesem Thema beschäftigen möchtest, kann ich dir Jonathan Snooks [SMACSS](http://smacss.com) wärmstens empfehlen.
 
@@ -188,7 +188,7 @@ macht es mehr Sinn unser CSS einzeilig zu schreiben.
 
 ## Namenskonventionen
 
-Zum größten Teil verwende ich durch Bindestrich getrennte Klassen (z.B. `.foo-bar`, nicht `.foo_bar` oder `.fooBar`), unter gewissen Umständen allerdings die BEM (Block, Element, Modifier) Notation.
+Zum größten Teil verwende ich durch Bindestrich getrennte Klassen (z.B. `.foo-bar`, nicht `.foo_bar` oder `.fooBar`). Unter gewissen Umständen allerdings die BEM (Block, Element, Modifier) Notation.
 
 <abbr title="Block, Element, Modifier">BEM</abbr> ist eine Methode um CSS-Selektoren durch ihre Benennung und Klassifizierung viel exakter, transparenter und informativer zu machen.
 
@@ -226,13 +226,13 @@ Um die Lesbarkeit zu verbessern, trenne deine Klassen im HTML mit zwei (2) Leerz
 
     <div class="foo--bar  bar__baz">
 
-Durch den größeren Leerraum sollte es leichter sein, mehrere Klassen zu erkennen und lesen.
+Durch den größeren Leerraum sollte es leichter sein, mehrere Klassen zu erkennen und zu lesen.
 
 ### JS hooks
 
 **Nutze niemals CSS _styling_ Klassen als JavaScript hook.** Anfügen von JS Verhalten an eine styling-Klasse bedeutet, dass wir das Eine nie ohne das Andere nutzen können.
 
-Wenn du JavaScript ans Markup binden musst, nutze eine spezielle JS CSS Klasse. Das ist einfach eine Klasse mit vorangestelltem `.js-`, z.B. `.js-toggle`, `.js-drag-and-drop`. Das bedeutet, dass wir JS und CSS Klassen ohne etwaige Überschneidungen an unser Markup binden können.
+Wenn du JavaScript ans Markup binden musst, nutze eine spezielle JS CSS Klasse. Das ist eine Klasse mit vorangestelltem `.js-`, z.B. `.js-toggle`, `.js-drag-and-drop`. Das bedeutet, dass wir JS und CSS Klassen ohne etwaige Überschneidungen an unser Markup binden können.
 
     <th class="is-sortable  js-is-sortable">
     </th>
@@ -247,7 +247,7 @@ Obwohl ich ein Britischer Entwickler bin — und mein ganzes Leben damit verbrac
     .colour-picker {
     }
 
-Allerdings wurde das Beibehalten von zwei Versionen von jeder Variable beim Arbeiten an einem sehr großen Sass Projekt mit dutzenden Farb-Variablen (z.B. `$brand-color`, `$highlight-color` etc.) schnell lästig. Es bedeutet auch doppelt so viel arbeit bei Aufgaben wie "Suchen und Ersetzen".
+Allerdings wurde das Beibehalten von zwei Versionen von jeder Variable beim Arbeiten an einem sehr großen Sass Projekt mit dutzenden Farb-Variablen (z.B. `$brand-color`, `$highlight-color` etc.) schnell lästig. Es bedeutet auch doppelt so viel Arbeit bei Aufgaben wie "Suchen und Ersetzen".
 
 Benenne Klassen und Variablen deshalb immer in der Sprache in der du arbeitest.
 
@@ -272,7 +272,7 @@ Ich nutze einen docBlock-ähnlichen Kommentar Stil, den ich in der Länge auf 80
      * ermöglichen.
      */
 
-Du solltest deinen Code so gut wie möglich kommentieren und dokumentieren. Selbst was dir verständlich und selbsterklärend erscheint, ist womöglich für einen anderen Entwickler nicht ganz so leicht zu verstehen. Schreibe einen chunk Code und dokumentiere ihn anschließend.
+Du solltest deinen Code so gut wie möglich kommentieren und dokumentieren. Selbst was dir verständlich und selbsterklärend erscheint, ist womöglich für einen anderen Entwickler nicht ganz so leicht zu verstehen. Schreibe einen Chunk Code und dokumentiere ihn anschließend.
 
 ### Kommentare auf Steroiden
 
@@ -284,9 +284,9 @@ Was Kommentare angeht gibt es eine Reihe an fortgeschritteneren Techniken die du
 
 #### Quasi-qualifizierte Selektoren
 
-Du solltest deine Selektoren niemals zusätzlich qualifizieren - also niemals `ul.nav {}` schreiben, wenn du einfach `.nav` nutzen kannst. Das Qualifizieren von Selektoren vermindert die Leistung, verhindert ein potenzielles Wiederverwenden der Klasse auf einen anderen Element-Typ und die Spezifität des Selektors nimmt zu. Das sind alles Dinge, die unter allen Umständen vermieden werden müssen.
+Du solltest deine Selektoren niemals zusätzlich qualifizieren - also niemals `ul.nav {}` schreiben, wenn du einfach `.nav` nutzen kannst. Das Qualifizieren von Selektoren vermindert die Leistung und verhindert ein potenzielles Wiederverwenden der Klasse auf einen anderen Element-Typ. Außerdem nimmt die Spezifität des Selektors zu. Das sind alles Dinge, die unter allen Umständen vermieden werden müssen.
 
-Allerdings ist es manchmal hilfreich dem nächsten Entwickler zu zeigen wo eine Klasse genutzt werden soll. Nehmen wir `.product-page` als Beispiel; Diese Klasse hört sich so an, als würde sie auf einem Container auf hoher Ebene genutzt werden, eventuell das `html` oder `body` Element, aber mit `.product-page` alleine ist das unmöglich zu sagen.
+Allerdings ist es manchmal hilfreich dem nächsten Entwickler zu zeigen wo eine Klasse genutzt werden soll. Nehmen wir `.product-page` als Beispiel; Diese Klasse sieht so aus, als würde sie auf einem Container auf hoher Ebene genutzt werden, eventuell das `html` oder `body` Element, aber mit `.product-page` alleine ist das unmöglich zu bestimmen.
 
 Indem wir den Selektor quasi-qualifizieren (auskommentieren des vorangestellten Selektor Typs) können wir kommunizieren an welcher Stelle wir diese Klasse anwenden möchten:
 
@@ -304,7 +304,7 @@ Hier können wir sehen, wo wir diese Klassen platzieren möchten, ohne dabei die
 
 #### Code Tags
 
-Wenn du eine neue Komponente schreibst, hinterlasse einige Tags in einem vorangestellten Kommentar, um ihre Funktionalität beschreiben. Zum Beispiel:
+Wenn du eine neue Komponente entwickelst, hinterlasse einige Tags in einem vorangestellten Kommentar, um ihre Funktionalität beschreiben. Zum Beispiel:
 
     /**
      * ^navigation ^lists
@@ -320,7 +320,7 @@ Diese Tags erlauben anderen Entwicklern Code-Snippets zu finden, indem sie nach 
 
 #### Objekt/Erweiterung Zeiger
 
-Wenn du in nach objekt-orientieren Prinzipien arbeitest, wird es oft vorkommen, dass du zwei chunks an CSS hast (einer für das Skelett (das Objekt) und ein anderer für die Haut (die Erweiterung)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Verwende sog. <i>Objekt/Erweiterung Zeiger</i>, um eine feste Verbindung zwischen dem Objekt und seiner Erweiterung herzustellen. Dies sind einfach Kommentare die folgendermaßen funktionieren:
+Wenn du nach objekt-orientieren Prinzipien arbeitest, wird es oft vorkommen, dass du zwei Chunks an CSS hast (einer für das Skelett (das Objekt) und ein anderer für die Haut (die Erweiterung)) die sehr eng miteinander verbunden, aber an ganz unterschiedlichen Orten abgelegt sind. Verwende sog. <i>Objekt/Erweiterung Zeiger</i>, um eine feste Verbindung zwischen dem Objekt und seiner Erweiterung herzustellen. Dies sind einfach Kommentare die folgendermaßen funktionieren:
 
 In deinem Base-Stylesheet:
 
@@ -346,7 +346,7 @@ Im vorherigen Abschnitt haben wir uns damit beschäftigt, wie wir anhand einiger
 
 ## Erstellen neuer Komponenten
 
-Wenn du eine neue Komponente erstellst, schreibe dein Markup **bevor** du CSS schreibst. So kannst du leicht erkennen, welche CSS Eigenschaften automatisch vererbt werden und vermeidest dadurch das Wiederanwenden von überflüssigen Styles.
+Wenn du eine neue Komponente erstellst, schreibe dein Markup **bevor** du dein CSS schreibst. So kannst du leicht erkennen, welche CSS Eigenschaften automatisch vererbt werden und vermeidest dadurch das Wiederanwenden von überflüssigen Styles.
 
 Außerdem kannst du dich dadurch voll und Ganz auf Daten, Inhalt und Semantik konzentrieren und _anschließend_ nur die relevanten Klassen und CSS verwenden.
 
@@ -372,7 +372,7 @@ Alle Komponenten sollten ohne feste Breitenangaben erstellt werden. Sie sollten 
 
 `height` sollte **niemals** auf Elemente angewandt werden. Nur bei Elementen mit festen Abmessungen, wie Bildern oder Sprites, darf eine Höhe oder Breite definiert werden. Setze niemals die Höhe von `p`s, `ul`s, `div`s, und eigentlich auch allem Anderen. Oft kann der gewünschte Effekt auch über `line-height` erreicht werden, was darüber hinaus noch viel flexibler ist.
 
-Grid Systeme sollte man sich wie Regale vorstellen. Sie besitzen Inhalte, sind aber nicht selbst Inhalte. Du stellst erst dein Regal auf und füllst es dann mit deinem Kram. Wenn wir also unser Grid separat von den Komponenten aufbauen, können die Komponenten viel leichter bewegt werden, als wenn wir deren Höhe oder Breite definiert hätten. Das macht unsere Front-Ends um einiges anpassungsfähiger und wir können effektiver daran arbeiten.
+Grid Systeme sollte man sich wie Regale vorstellen. Sie besitzen Inhalte, sind aber nicht selbst Inhalte. Du stellst erst dein Regal auf und füllst es dann mit deinem Kram. Wenn wir also unser Grid separat von den Komponenten aufbauen, können die Komponenten viel leichter bewegt werden, als wenn wir deren Höhe oder Breite fest definiert hätten. Das macht unsere Front-Ends um einiges anpassungsfähiger und wir können effektiver daran arbeiten.
 
 Du darfst Styles nie auf das Grid System selbst anwenden, dieses dient nur dazu um das Layout zu definieren. Wende Styles auf die Inhalte _innerhalb_ des Grid Systems an. Wende unter absolut _keinen_ Umständen box-model Eigenschaften auf ein Grid Element an.
 

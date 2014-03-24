@@ -423,7 +423,7 @@ Halte deine Selektoren so kurz, effizient und wiederverwendbar wie möglich.
 
 Selektoren, die stark von ihrer Position abhängig sind, sind aus mehreren Gründen unpraktisch. Nehmen wir zum Beispiel `.sidebar h3 span {}`. Dieser Selektor ist zu stark von seiner Position abhängig, weshalb wir die `span` nicht außerhalb einer `h3`, und diese wiederum nicht außerhalb von `.sidebar` verwenden können, ohne dabei unser Styling zu verlieren.
 
-Zu lange Selektoren bringen außerdem Performance-Problemen mit sich: Je mehr Abgleiche in einem Selektor enthalten sind (`.sidebar h3 span` hat beispielsweise drei Abgleiche, `.content ul p a` hat vier), desto mehr Arbeit hat der Browser damit.
+Zu lange Selektoren bringen außerdem Performance-Probleme mit sich: Je mehr Abgleiche in einem Selektor enthalten sind (`.sidebar h3 span` hat beispielsweise drei Abgleiche, `.content ul p a` hat vier), desto mehr Arbeit hat der Browser damit.
 
 Stelle deshalb sicher, dass deine Styles nicht abhängig von ihrer Position sind, wähle deine Selektoren mit Bedacht und halte sie kurz.
 

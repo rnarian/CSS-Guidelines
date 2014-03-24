@@ -389,7 +389,7 @@ Schriftgrößen gebe ich in rems mit Pixel-Fallback an. Das gewährleistet uns a
         font-size: $font-size / $base-font-size +rem;
     }
 
-Pixel verwende ich nur bei Elementen, die schon feste Abmessungen hatten bevor sie auf die Seite kamen. Hier handelt es sich um Elemente wie Bilder oder Sprites, deren Dimensionen von Haus aus in Pixel angegeben werden.
+Pixel verwende ich nur bei Elementen, die schon feste Abmessungen hatten, bevor sie auf die Seite kamen. Hier handelt es sich um Elemente wie Bilder oder Sprites, deren Dimensionen von Haus aus in Pixel angegeben werden.
 
 ### Anpassen von Schriftgrößen
 
@@ -401,11 +401,11 @@ Ich definiere eine Reihe von Klassen - ähnlich wie beim Grid System - um die Sc
 
 Deklarationen wie `background: red;` mögen erstmal verlocken, aber was du damit tatsächlich ausdrückst ist folgendes: ‘Ich möchte kein Bild das scrollt, links-oben ausgerichtet ist, sich nach X oder Y wiederholt, sondern eine rote Hintergrundfarbe’. In neun von zehn Fällen wird das auch problemlos funktionieren, aber der eine Fall, der Auswirkungen nach sich zieht ist nervig genug, um komplett auf solche Shorthands zu verzichten. Nutze stattdessen `background-color: red;`.
 
-Auch Deklarationen wie `margin: 0;` sind nett und kurz, aber verwende sie nur mit Bedacht. Wenn du eigentlich nur den Abstand nach unten beeinflussen möchtest, ist es besser `margin-bottom: 10px;` zu definieren, anstatt `margin: 0 0 10px 0`.
+Auch Deklarationen wie `margin: 0;` sind nett und kurz, aber verwende sie nur immer Bedacht. Wenn du eigentlich nur den Abstand nach unten beeinflussen möchtest, ist es besser `margin-bottom: 10px;` zu definieren, anstatt `margin: 0 0 10px 0`.
 
 Sei dir im Klaren darüber, welche Eigenschaften du setzen willst und achte darauf, dass du nicht versehentlich andere Eigenschaften mit dem Shorthand überschreibst.
 
-Shorthands sind nützlich aber auch leicht falsch zu verwenden.
+Shorthands sind nützlich aber auch leicht falsch angewendet.
 
 ## IDs
 
@@ -413,7 +413,7 @@ Eine kurze Bemerkung zu IDs in CSS, bevor wir uns um Selektoren im Allgemeinen k
 
 **Benutze IDs NIEMALS in CSS.**
 
-Du kannst Sie in deinem Markup als JS Hooks oder als Fragmentbezeichner verwenden, aber in deinen Stylesheets will ich niemals IDs sehen.
+Du kannst Sie in deinem Markup als JS Hooks oder als Fragmentbezeichner verwenden, aber in deinen Stylesheets will ich niemals IDs sehen. ;)
 
 Klassen haben den Vorteil, dass sie wiederverwendbar sind (selbst wenn wir das nicht brauchen, die Möglichkeit bleibt bestehen) und kommen mit einer angenehmen, niedrigen Spezifität. Spezifität ist einer der schnellsten Wege um bei Projekten in Probleme zu geraten, daher ist es erforderlich sie zu allen Zeiten so gering wie möglich zu halten. Eine ID ist **255** mal spezifischer als eine Klasse, benutze sie deshalb _niemals_ in CSS.
 
@@ -423,7 +423,7 @@ Halte deine Selektoren so kurz, effizient und wiederverwendbar wie möglich.
 
 Selektoren, die stark von ihrer Position abhängig sind, sind aus mehreren Gründen unpraktisch. Nehmen wir zum Beispiel `.sidebar h3 span {}`. Dieser Selektor ist zu stark von seiner Position abhängig, weshalb wir die `span` nicht außerhalb einer `h3`, und diese wiederum nicht außerhalb von `.sidebar` verwenden können, ohne dabei unser Styling zu verlieren.
 
-Zu lange Selektoren bringen außerdem Performance Problemen mit sich: Je mehr Abgleiche in einem Selektor enthalten sind (`.sidebar h3 span` hat beispielsweise drei Abgleiche, `.content ul p a` hat vier), desto mehr Arbeit hat der Browser damit.
+Zu lange Selektoren bringen außerdem Performance-Problemen mit sich: Je mehr Abgleiche in einem Selektor enthalten sind (`.sidebar h3 span` hat beispielsweise drei Abgleiche, `.content ul p a` hat vier), desto mehr Arbeit hat der Browser damit.
 
 Stelle deshalb sicher, dass deine Styles nicht abhängig von ihrer Position sind, wähle deine Selektoren mit Bedacht und halte sie kurz.
 

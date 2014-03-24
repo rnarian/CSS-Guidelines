@@ -382,7 +382,7 @@ Ich verwende und kombiniere verschiedene Methoden um Größen in Benutzeroberfl�
 
 Die Breiten in Grid Systemen sollten idealerweise in Prozenten angegeben werden. Da ich ein Grid System nutze, um die Breiten von Spalten und Seiten zu beeinflussen, kann ich die Komponenten (wie oben beschrieben) ohne Angabe von Höhe oder Breite umsetzen.
 
-Schriftgrößen gebe ich in rems mit Pixel-Fallback an. Das gewährleistet uns alle Vorteile der Barrierefreiheit von ems (with the confidence of pixels). Hier ist ein nützliches Sass-Mixin zur Berechnung von rem und Pixel-Fallback (davon ausgehend, dass du deine Basefontsize in einer Variable setzt):
+Schriftgrößen gebe ich in rems mit Pixel-Fallback an. Das gewährleistet uns alle Vorteile der Barrierefreiheit von ems. Hier ist ein nützliches Sass-Mixin zur Berechnung von rem und Pixel-Fallback (davon ausgehend, dass du deine Basefontsize in einer Variable setzt):
 
     @mixin font-size($font-size) {
         font-size: $font-size +px;

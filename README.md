@@ -389,7 +389,7 @@ Schriftgrößen gebe ich in rems mit Pixel-Fallback an. Das gewährleistet uns a
         font-size: $font-size / $base-font-size +rem;
     }
 
-Pixel verwende ich nur bei Elementen, die schon feste Abmessungen hatten, bevor sie auf die Seite kamen. Hier handelt es sich um Elemente wie Bilder oder Sprites, deren Dimensionen von Haus aus in Pixel angegeben werden.
+Pixel verwende ich nur bei Elementen, die bereits feste Abmessungen hatten, bevor sie auf die Seite kamen. Hier handelt es sich um Elemente wie Bilder oder Sprites, deren Dimensionen von Haus aus in Pixel angegeben werden.
 
 ### Anpassen von Schriftgrößen
 
@@ -401,7 +401,7 @@ Ich definiere eine Reihe von Klassen - ähnlich wie beim Grid System - um die Sc
 
 Deklarationen wie `background: red;` mögen erstmal verlocken, aber was du damit tatsächlich ausdrückst ist folgendes: ‘Ich möchte kein Bild das scrollt, links-oben ausgerichtet ist, sich nach X oder Y wiederholt, sondern eine rote Hintergrundfarbe’. In neun von zehn Fällen wird das auch problemlos funktionieren, aber der eine Fall, der Auswirkungen nach sich zieht ist nervig genug, um komplett auf solche Shorthands zu verzichten. Nutze stattdessen `background-color: red;`.
 
-Auch Deklarationen wie `margin: 0;` sind nett und kurz, aber verwende sie nur immer Bedacht. Wenn du eigentlich nur den Abstand nach unten beeinflussen möchtest, ist es besser `margin-bottom: 10px;` zu definieren, anstatt `margin: 0 0 10px 0`.
+Auch Deklarationen wie `margin: 0;` sind nett und kurz, aber verwende sie immer mit Bedacht. Wenn du eigentlich nur den Abstand nach unten beeinflussen möchtest, ist es besser `margin-bottom: 10px;` zu definieren, anstatt `margin: 0 0 10px 0`.
 
 Sei dir im Klaren darüber, welche Eigenschaften du setzen willst und achte darauf, dass du nicht versehentlich andere Eigenschaften mit dem Shorthand überschreibst.
 

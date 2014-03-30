@@ -216,7 +216,7 @@ Nun können wir unsere Selektoren basierend auf dem grundlegendem Objekt benenne
 
 `.page-wrapper` ist also ein unabhängiger Selektor. Er ist weder Teil einer Abstraktion noch einer Komponente und ist somit korrekt benannt. Der Selektor `.widget-heading` dagegen, _ist_ einer Komponente zugehörig. Er ist ein Kind von `.widget`, also sollten wir diese Klasse in `.widget__heading` umbenennen.
 
-BEM sieht etwas hässlicher aus und ist viel ausführlicher, aber es bietet uns auch viel Übersicht, da wir die Funktionen von Elementen und deren Beziehungen zueinander alleine anhand ihres Klassennamens erfassen können. Desweiteren lässt sich die BEM Syntax normalerweise - gerade durch die vielen Wiederholungen - gut komprimieren (gzip).
+BEM sieht etwas hässlicher aus und ist viel ausführlicher, aber es bietet uns auch viel Übersicht, da wir die Funktionen von Elementen und deren Beziehungen zueinander alleine anhand ihres Klassennamens erfassen können. Desweiteren lässt sich die BEM Syntax normalerweise – gerade durch die vielen Wiederholungen – gut komprimieren (gzip).
 
 Unabhängig davon, ob du BEM verwendest oder nicht, solltest du immer sicherstellen, dass Klassen vernünftig benannt sind. Halte sie so kurz wie möglich, aber so lang wie nötig. Stelle sicher, das alle Objekte oder Abstraktionen sehr unbestimmt benannt sind (z.B. `.ui-list`, `.media`) um eine größere Wiederverwendbarkeit zu gewährleisten. Erweiterungen von Objekten sollten viel genauer benannt sein (z.B. `.user-avatar-link`). Mach dir keine Gedanken über die Länge von Klassennamen; gzip komprimiert ordentlich geschriebenen Code _erstaunlich_ gut.
 
@@ -241,7 +241,7 @@ Das obige Markup beinhaltet zwei Klassen. Eine über die du Styles für sortierb
 
 ### Internationalisierung
 
-Obwohl ich ein Britischer Entwickler bin — und mein ganzes Leben damit verbracht habe <i>colour</i> statt <i>color</i> zu schreiben - denke ich, dass es - aus Gründen der Beständigkeit - besser ist, im CSS immer US-English zu nutzen. CSS wird, wie die meisten (wenn nicht alle) anderen Sprachen in US-English geschrieben, sodass es Misch-Syntax wie `color: red;` in Klassen wie `.colour-picker {}` an Beständigkeit mangelt. Ich habe bisher empfohlen Klassennamen zweisprachig auszuformulieren, zum Beispiel:
+Obwohl ich ein Britischer Entwickler bin — und mein ganzes Leben damit verbracht habe <i>colour</i> statt <i>color</i> zu schreiben – denke ich, dass es – aus Gründen der Beständigkeit – besser ist, im CSS immer US-English zu nutzen. CSS wird, wie die meisten (wenn nicht alle) anderen Sprachen in US-English geschrieben, sodass es Misch-Syntax wie `color: red;` in Klassen wie `.colour-picker {}` an Beständigkeit mangelt. Ich habe bisher empfohlen Klassennamen zweisprachig auszuformulieren, zum Beispiel:
 
     .color-picker,
     .colour-picker {
@@ -393,7 +393,7 @@ Pixel verwende ich nur bei Elementen, die bereits feste Abmessungen hatten, bevo
 
 ### Anpassen von Schriftgrößen
 
-Ich definiere eine Reihe von Klassen - ähnlich wie beim Grid System - um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig von ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
+Ich definiere eine Reihe von Klassen – ähnlich wie beim Grid System – um die Schriftgrößen anzupassen. Diese Klassen können dann genutzt werden, um Überschriften unabhängig von ihrer Hierarchie zu stylen. Für weitere Informationen zu diesem Thema empfehle ich meinen Artikel [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
 
 ## Shorthand
 
@@ -435,7 +435,7 @@ Selektoren als Ganzes sollten so kurz wie möglich gehalten werden (zum Beispiel
 
 Wie zuvor bereits erwähnt bedeuten spezifische Selektoren meißt nichts gutes.
 
-Ein zu spezifischer Selektor ist beispielsweise `div.promo`. Du könntest vermutlich den selben Effekt erzielen, wenn du nur `.promo` verwenden würdest. Natürlich wird es manchmal Fälle geben, in denen du eine Klasse _bewusst_ in Verbindung mit einem Element spezifizierst, z.b. wenn du eine allgemeine `.error` Klasse hast, die - je nachdem auf welchem Element sie angewendet wird - unterschiedlich aussehen soll (z.B.
+Ein zu spezifischer Selektor ist beispielsweise `div.promo`. Du könntest vermutlich den selben Effekt erzielen, wenn du nur `.promo` verwenden würdest. Natürlich wird es manchmal Fälle geben, in denen du eine Klasse _bewusst_ in Verbindung mit einem Element spezifizierst, z.b. wenn du eine allgemeine `.error` Klasse hast, die – je nachdem auf welchem Element sie angewendet wird – unterschiedlich aussehen soll (z.B.
 `.error { color: red; }` `div.error { padding: 14px; }`). Im Allgemeinen solltest du es allerdings, wo es möglich ist, vermeiden.
 
 Ein weiteres Beispiel für einen zu spezifischen Selektor wäre `ul.nav li a {}`. Auch hier können wir die `ul` ersatzlos streichen und da wir wissen, dass `.nav` eine Liste ist und daraus schließen können, das `a` in einem `li` sein _muss_, können wir `ul.nav li a {}` auf `.nav a {}` vereinfachen.
@@ -450,7 +450,7 @@ Das Verwenden von kurzen, unverschachtelten Selektoren, das Verzichten auf den U
 
 Anstatt sich mit Selektoren am DOM entlang zu einem Element zu hangeln, ist es meistens ratsamer, dem Element, welches du stylen möchtest, eine Klasse zu geben. Lass uns das an einem konkreten Beispiel, mit einem Selektor wie `.header ul {}` veranschaulichen ...
 
-Nehmen wir an, dass diese `ul` tatsächlich die Hauptnavigation unserer Webseite darstellt. Sie befindet sich - wie erwartet - im Header und ist dort momentan die einzige `ul`. `.header ul {}` funktioniert zwar, ist aber in diesem Fall weder ideal noch ratsam.
+Nehmen wir an, dass diese `ul` tatsächlich die Hauptnavigation unserer Webseite darstellt. Sie befindet sich – wie erwartet – im Header und ist dort momentan die einzige `ul`. `.header ul {}` funktioniert zwar, ist aber in diesem Fall weder ideal noch ratsam.
 
 Es ist nicht zukunftsorientiert und definitiv nicht spezifisch genug. Sobald wir in diesem Header eine weitere `ul` einfügen, wird diese das Styling unserer Hauptnavigation annehmen, doch es besteht die hohe Wahrscheinlichkeit, dass wir das gar nicht möchten. Das bedeutet, dass wir entweder große Teile unseres Codes überarbeiten _oder_ viele Style-Anweisungen rückgängig machen müssen, um die Effekte des weitreichenden Selektors wieder zu entfernen.
 
@@ -466,7 +466,7 @@ Für eine ausführliche Beschreibung und Zusammenfassung, schau dir meinen Artik
 
 Verwende `!important` nur auf Helper-Klassen. Es ist ok, wenn du `!important` vorsorglich verwendest, wie beispielsweise bei `.error { color: red !important }`, wenn du weißt, dass diese Anweisung **immer** Vorrang haben sollte.
 
-`!important` nachträglich zu verwenden - zum Beispiel um Spezifitäts-Problemen abzuwenden - ist nicht empfohlen. 
+`!important` nachträglich zu verwenden – zum Beispiel um Spezifitäts-Problemen abzuwenden – ist nicht empfohlen. 
 
 Verändere deine CSS und versuche diese Probleme zu lösen, indem du deine Selektoren überarbeitest. Wenn du deine Selektoren kurz hältst und IDs vermeidest, wird dir das massiv helfen.
 
@@ -478,7 +478,7 @@ Beispiel: `.dropdown-nav li:hover ul { top: 37px; }` dazu zu verwenden um ein Dr
 
 Stattdessen solltest du `.dropdown-nav li:hover ul { top: 100%; }` verwenden, da das Dropdown dadurch immer mit einem Abstand von 100% ausgerichtet sein wir, egal wie hoch die `.dropdown-nav` wird.
 
-Überlege dir genau, ob du eine feste Nummer vergibst. Wenn du es mit Hilfe von Keywords oder ‘Aliasen’ (z.B. `top: 100%` was soviel bedeutet wie ‘den kompletten Abstand von oben’) oder - noch besser - ohne Angabe von Abmessungen vermeiden kannst, solltest du das tun.
+Überlege dir genau, ob du eine feste Nummer vergibst. Wenn du es mit Hilfe von Keywords oder ‘Aliasen’ (z.B. `top: 100%` was soviel bedeutet wie ‘den kompletten Abstand von oben’) oder – noch besser – ohne Angabe von Abmessungen vermeiden kannst, solltest du das tun.
 
 Jeder Wert, den du von Hand vergibst, ist ein Zugeständnis, das du möglicherweise nicht einräumen willst.
 
